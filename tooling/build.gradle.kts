@@ -18,7 +18,9 @@ version = libraryVersion
 kotlin {
     jvm()
 
-    androidTarget()
+    androidTarget {
+        publishAllLibraryVariants()
+    }
     androidNativeX64()
     androidNativeX86()
     androidNativeArm64()
