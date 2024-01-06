@@ -1,7 +1,8 @@
 [versions]
-library = "0.1.1-SNAPSHOT"
+library = "0.2.0-SNAPSHOT"
 android = "8.1.4"
 android-core = "1.12.0"
+appdirs = "1.2.2"
 compose = "1.6.0-alpha01"
 coroutines = "1.8.0-RC2"
 decompose = "3.0.0-alpha04"
@@ -11,6 +12,7 @@ publish = "0.25.3"
 
 [libraries]
 android = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
+appdirs = { group = "net.harawata", name = "appdirs", version.ref = "appdirs" }
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines" }

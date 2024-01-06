@@ -78,6 +78,7 @@ kotlin {
 
         jvmMain.dependencies {
             implementation(libs.lang)
+            implementation(libs.appdirs)
         }
     }
 }

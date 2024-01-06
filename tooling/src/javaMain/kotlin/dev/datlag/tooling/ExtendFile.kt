@@ -167,3 +167,34 @@ fun File.mkdirsSafely(default: Boolean = false): Boolean {
         this.mkdirs()
     }.getOrNull() ?: default
 }
+
+@JvmOverloads
+fun File.createAsFileSafely(default: Boolean = false): Boolean {
+    if (this.existsSafely()) {
+        return default
+    }
+
+    return scopeCatching {
+        Files.createFile(this.toPath())
+    }.getOrNull()?.toFile()?.existsSafely() ?: scopeCatching {
+        this.createNewFile()
+    }.getOrNull() ?: default
+}
+
+@JvmOverloads
+fun File.parentExistsOrCreateSafely(fallbackParent: File? = null): Boolean {
+    return (this.parentSafely() ?: fallbackParent).existsSafely()
+            || ((this.parentSafely() ?: fallbackParent)?.mkdirsSafely() == true && (this.parentSafely() ?: fallbackParent).existsSafely())
+}
+
+@JvmOverloads
+fun File.parentExistsROrCreateSafely(fallbackParent: File? = null): Boolean {
+    return (this.parentSafely() ?: fallbackParent).existsRSafely()
+            || ((this.parentSafely() ?: fallbackParent)?.mkdirsSafely() == true && (this.parentSafely() ?: fallbackParent).existsRSafely())
+}
+
+@JvmOverloads
+fun File.parentExistsRWOrCreateSafely(fallbackParent: File? = null): Boolean {
+    return (this.parentSafely() ?: fallbackParent).existsRWSafely()
+            || ((this.parentSafely() ?: fallbackParent)?.mkdirsSafely() == true && (this.parentSafely() ?: fallbackParent).existsRWSafely())
+}
