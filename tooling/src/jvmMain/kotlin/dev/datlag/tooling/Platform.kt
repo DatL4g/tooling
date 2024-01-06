@@ -9,6 +9,8 @@ data object Platform {
     private const val PROPERTY_OS_ARCH = "os.arch"
 
     private var osInfo: OSInfo? = null
+    private var os: OS? = null
+    private var arch: ARCH? = null
 
     /**
      * Get information about the current OS.
@@ -22,19 +24,45 @@ data object Platform {
             return it
         }
 
-        val osName = systemProperty(PROPERTY_OS_NAME)
-        val osArch = systemProperty(PROPERTY_OS_ARCH)
+        return OSInfo(getCurrentOS(), getCurrentArch()).also {
+            osInfo = it
+        }
+    }
 
+    /**
+     * Get the current OS without information about the architecture
+     *
+     * @see OS
+     * @return [OS]
+     */
+    @Throws(IllegalStateException::class)
+    fun getCurrentOS(): OS {
+        os?.let {
+            return it
+        }
+
+        val osName = systemProperty(PROPERTY_OS_NAME)
         val os = osName?.let { OS.matching(it) } ?: OS.fromSystemUtils()
+
+        return os ?: throw IllegalStateException("Could not get matching OS: $osName")
+    }
+
+    /**
+     * Get the current architecture without information about the OS
+     *
+     * @see ARCH
+     * @return [ARCH]
+     */
+    @Throws(IllegalStateException::class)
+    fun getCurrentArch(): ARCH {
+        arch?.let {
+            return it
+        }
+
+        val osArch = systemProperty(PROPERTY_OS_ARCH)
         val arch = osArch?.let { ARCH.matching(it) }
 
-        if (os == null || arch == null) {
-            throw IllegalStateException("Could not get matching platform for OS: $osName, Arch: $osArch")
-        } else {
-            return OSInfo(os, arch).also {
-                osInfo = it
-            }
-        }
+        return arch ?: throw IllegalStateException("Could not get matching Arch: $osArch")
     }
 
     sealed class OS(open val name: String, private vararg val values: String) {
