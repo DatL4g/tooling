@@ -75,6 +75,10 @@ kotlin {
             jvmMain.get().dependsOn(this)
             androidMain.get().dependsOn(this)
         }
+
+        jvmMain.dependencies {
+            implementation(libs.lang)
+        }
     }
 }
 

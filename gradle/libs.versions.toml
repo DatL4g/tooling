@@ -1,11 +1,12 @@
 [versions]
-library = "0.1.0-SNAPSHOT"
+library = "0.1.1-SNAPSHOT"
 android = "8.1.4"
 android-core = "1.12.0"
 compose = "1.6.0-alpha01"
 coroutines = "1.8.0-RC2"
 decompose = "3.0.0-alpha04"
 kotlin = "1.9.22"
+lang = "3.13.0"
 publish = "0.25.3"
 
 [libraries]
@@ -15,6 +16,7 @@ coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutin
 coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines" }
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 decompose-compose = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
+lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "lang" }
 
 [plugins]
 android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

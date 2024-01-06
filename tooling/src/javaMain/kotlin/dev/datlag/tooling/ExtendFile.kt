@@ -158,3 +158,12 @@ fun File.parentSafely(): File? {
         this.parentFile
     }.getOrNull()
 }
+
+@JvmOverloads
+fun File.mkdirsSafely(default: Boolean = false): Boolean {
+    return scopeCatching {
+        Files.createDirectories(this.toPath())
+    }.getOrNull()?.toFile()?.existsSafely() ?: scopeCatching {
+        this.mkdirs()
+    }.getOrNull() ?: default
+}
