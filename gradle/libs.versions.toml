@@ -1,5 +1,5 @@
 [versions]
-library = "0.2.0-SNAPSHOT"
+library = "1.0.0"
 android = "8.1.4"
 android-core = "1.12.0"
 appdirs = "1.2.2"
