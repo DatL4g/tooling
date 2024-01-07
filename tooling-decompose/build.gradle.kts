@@ -1,5 +1,6 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import java.net.URL
 
 plugins {
     alias(libs.plugins.multiplatform)
@@ -8,6 +9,7 @@ plugins {
     alias(libs.plugins.publish)
     `maven-publish`
     signing
+    alias(libs.plugins.dokka)
 }
 
 val libName = "tooling-decompose"
@@ -15,6 +17,15 @@ val artifact = "dev.datlag.tooling"
 
 group = artifact
 version = libraryVersion
+
+tasks.dokkaHtmlPartial {
+    dokkaSourceSets.configureEach {
+        sourceLink {
+            localDirectory.set(file("src"))
+            remoteUrl.set(URL("https://github.com/DatL4g/tooling/tree/master/tooling-decompose/src"))
+        }
+    }
+}
 
 kotlin {
     jvm()

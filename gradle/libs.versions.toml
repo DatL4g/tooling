@@ -6,8 +6,9 @@ appdirs = "1.2.2"
 compose = "1.6.0-alpha01"
 coroutines = "1.8.0-RC2"
 decompose = "3.0.0-alpha04"
+dokka = "1.9.10"
 kotlin = "1.9.22"
-lang = "3.13.0"
+lang = "3.14.0"
 publish = "0.25.3"
 
 [libraries]
@@ -25,5 +26,6 @@ android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
