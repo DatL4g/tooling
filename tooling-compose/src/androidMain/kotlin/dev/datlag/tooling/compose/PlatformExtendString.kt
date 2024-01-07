@@ -6,6 +6,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import dev.datlag.tooling.scopeCatching
 
+/**
+ * Open a given [String] in browser.
+ *
+ * @param [context] the [Context] used to open the uri in browser.
+ */
 fun String.openInBrowser(context: Context) {
     val browserIntent = Intent(Intent.ACTION_VIEW, this.toUri())
 

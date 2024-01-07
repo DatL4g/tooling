@@ -27,11 +27,27 @@ actual object Platform {
     actual val isWindowsJvm: Boolean = false
     actual val isWindowsNative: Boolean = false
 
+    /**
+     * Check if the current platform is an AndroidTV.
+     *
+     * @param [packageManager] the required PackageManager to check if the current platform has TV system features.
+     * @return whether the current platform is an AndroidTV.
+     */
     @Suppress("DEPRECATION")
-    fun isTelevision(context: Context): Boolean {
-        val packageManager = context.packageManager ?: context.applicationContext.packageManager
+    fun isTelevision(packageManager: PackageManager): Boolean {
         return packageManager.hasSystemFeature(PackageManager.FEATURE_TELEVISION)
                 || packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
                 || packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK_ONLY)
+    }
+
+    /**
+     * Check if the current platform is an AndroidTV.
+     *
+     * @param [context] the [Context] to get the required PackageManager to check if the current platform has TV system features.
+     * @return whether the current platform is an AndroidTV.
+     */
+    @Suppress("DEPRECATION")
+    fun isTelevision(context: Context): Boolean {
+        return isTelevision(context.packageManager ?: context.applicationContext.packageManager)
     }
 }

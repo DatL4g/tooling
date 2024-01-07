@@ -5,6 +5,11 @@ import kotlinx.coroutines.CancellationException
 import java.awt.Desktop
 import java.net.URI
 
+/**
+ * Open a given [String] in browser, working on all platforms.
+ *
+ * @return the [Result] with information about the call was successful.
+ */
 fun String.openInBrowser() = scopeCatching {
     val openBrowserCommands = arrayOf(
         arrayOf("xdg-open", "$1"),

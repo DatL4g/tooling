@@ -160,7 +160,7 @@ actual data object Platform {
 
     sealed class ARCH(open val arch: String, private vararg val values: String) {
         data class AMD64(override val arch: String) : ARCH(arch, "amd64", "x86_64", "x64")
-        data class I386(override val arch: String) : ARCH(arch, "x86", "i386", "i486", "i586", "i686", "i786")
+        data class I386(override val arch: String) : ARCH(arch, "x32", "x86", "i386", "i486", "i586", "i686", "i786")
         data class ARM64(override val arch: String) : ARCH(arch, "arm64", "aarch64")
         data class ARM(override val arch: String) : ARCH(arch, "arm")
 

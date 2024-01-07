@@ -37,6 +37,17 @@ private val dirs: AppDirs by lazy {
     }.getOrNull() ?: AppDirsFactory.getInstance()
 }
 
+/**
+ * Get a read-write able file in the application user config directory (platform dependent).
+ *
+ * @param child the child in the user config directory or null to get the root dir.
+ * @param appName the name of the application which is used.
+ * @param appVersion specify if the file is dependent on a specific application version.
+ * @param appAuthor specify if the file is dependent on a specific application author.
+ * @param roaming whether file should be created in the Roaming folder (Windows) or not.
+ * @param createIfNotExists create file if it doesn't exist.
+ * @return a [File] in a platform dependent user config folder.
+ */
 @JvmOverloads
 fun Tooling.getFileRWInUserConfigDir(
     child: String?,
@@ -77,6 +88,17 @@ fun Tooling.getFileRWInUserConfigDir(
     return returnFile
 }
 
+/**
+ * Get a read-write able file in the application user data directory (platform dependent).
+ *
+ * @param child the child in the user data directory or null to get the root dir.
+ * @param appName the name of the application which is used.
+ * @param appVersion specify if the file is dependent on a specific application version.
+ * @param appAuthor specify if the file is dependent on a specific application author.
+ * @param roaming whether file should be created in the Roaming folder (Windows) or not.
+ * @param createIfNotExists create file if it doesn't exist.
+ * @return a [File] in a platform dependent user data folder.
+ */
 @JvmOverloads
 fun Tooling.getFileRWInUserDataDir(
     child: String?,
@@ -117,6 +139,17 @@ fun Tooling.getFileRWInUserDataDir(
     return returnFile
 }
 
+/**
+ * Get a read-write able file in the application site data directory (platform dependent).
+ *
+ * @param child the child in the site data directory or null to get the root dir.
+ * @param appName the name of the application which is used.
+ * @param appVersion specify if the file is dependent on a specific application version.
+ * @param appAuthor specify if the file is dependent on a specific application author.
+ * @param multiPath whether multi path should be used (Windows) or not.
+ * @param createIfNotExists create file if it doesn't exist.
+ * @return a [File] in a platform dependent site data folder.
+ */
 @JvmOverloads
 fun Tooling.getFileRWInSiteDataDir(
     child: String?,
@@ -169,13 +202,22 @@ fun Tooling.getFileRWInSiteDataDir(
     return returnFile
 }
 
+/**
+ * Get a read-write able folder for (a compose) application to store user unrelated data.
+ *
+ * @param appName the name of the application which is used.
+ * @param appVersion specify if the file is dependent on a specific application version.
+ * @param appAuthor specify if the file is dependent on a specific application author.
+ * @param multiPath whether multi path should be used (Windows) or not.
+ * @return a [File] in a platform dependent application data folder or null if no path was read-writeable.
+ */
 @JvmOverloads
 fun Tooling.getComposeWriteableRootFolder(
     appName: String,
     appVersion: String? = null,
     appAuthor: String? = null,
     multiPath: Boolean = false,
-): File {
+): File? {
     val resDir = systemProperty("compose.application.resources.dir")?.let { File(it) }
     return if (resDir.existsRWSafely()) {
         resDir!!
@@ -192,7 +234,7 @@ fun Tooling.getComposeWriteableRootFolder(
         if (site.existsRWSafely()) {
             site
         } else {
-            File("./")
+            null
         }
     }
 }

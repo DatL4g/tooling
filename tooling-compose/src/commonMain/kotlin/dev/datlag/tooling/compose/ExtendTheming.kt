@@ -5,6 +5,7 @@ import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
+import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.TextStyle
@@ -12,7 +13,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-fun androidx.compose.material3.ColorScheme.toLegacyColors(useDark: Boolean): Colors {
+/**
+ * Get Material3 [ColorScheme] as Material [Colors].
+ * Useful to commonize theming with old and new [Composable]s.
+ *
+ * @param [useDark] whether the provided [ColorScheme] should be converted to dark Material [Colors].
+ * @return Material [Colors] from a provided [ColorScheme].
+ */
+fun ColorScheme.toLegacyColors(useDark: Boolean): Colors {
     return if (useDark) {
         darkColors(
             primary = this.primary,
@@ -46,6 +54,12 @@ fun androidx.compose.material3.ColorScheme.toLegacyColors(useDark: Boolean): Col
     }
 }
 
+/**
+ * Get Material3 [androidx.compose.material3.Shapes] as Material [Shapes].
+ * Useful to commonize theming with old and new [Composable]s.
+ *
+ * @return Material [Shapes] of Material3 ones.
+ */
 fun androidx.compose.material3.Shapes.toLegacyShapes(): Shapes {
     return Shapes(
         small = this.small,
@@ -54,6 +68,11 @@ fun androidx.compose.material3.Shapes.toLegacyShapes(): Shapes {
     )
 }
 
+/**
+ * Get Material3 [androidx.compose.material3.Typography] with default sizes.
+ *
+ * @return Material3 [androidx.compose.material3.Typography] of a given [FontFamily]
+ */
 @Composable
 fun FontFamily.toTypography(): androidx.compose.material3.Typography {
     return remember(this) {
@@ -167,6 +186,11 @@ fun FontFamily.toTypography(): androidx.compose.material3.Typography {
     }
 }
 
+/**
+ * Get Material [Typography] with default sizes.
+ *
+ * @return Material [Typography] of a given [FontFamily]
+ */
 @Composable
 fun FontFamily.toLegacyTypography(): Typography {
     return remember(this) {
