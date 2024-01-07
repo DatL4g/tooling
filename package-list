@@ -1,0 +1,12 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:tooling
+dev.datlag.tooling
+module:tooling-async
+dev.datlag.tooling.async
+module:tooling-compose
+dev.datlag.tooling.compose
+module:tooling-decompose
+dev.datlag.tooling.decompose
+dev.datlag.tooling.decompose.lifecycle
