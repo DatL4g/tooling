@@ -2,7 +2,7 @@
 
 This is a collection of tooling methods useful for nearly all **Kotlin Multiplatform** applications.
 
-It's devided in separate modules to provide minimal to excessive support depending on your usecase.
+It's divided in separate modules to provide minimal to excessive support depending on your usecase.
 
 - [Core module](#core-module)
 - [Async module](#async-module)
@@ -19,24 +19,26 @@ Take a look here: https://datl4g.github.io/tooling/tooling/dev.datlag.tooling/in
 
 It supports the following targets:
 
-- Android
-- Android Native
-- JVM
-- iOS
-- tvOS
-- watchOS
-- macOS
-- Linux
-- Windows
-- Javascript
-- WASM
-- WASI
+|  ✅ Supported   | ❌ Unsupported |
+|:--------------:|:-------------:|
+|    Android     |               |
+| Android Native |               |
+|      JVM       |               |
+|      iOS       |               |
+|      tvOS      |               |
+|    watchOS     |               |
+|     macOS      |               |
+|     Linux      |               |
+|    Windows     |               |
+|   Javascript   |               |
+|      WASM      |               |
+|      WASI      |               |
 
 ### Usage
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling:1.0.0")
+  implementation("dev.datlag.tooling:tooling:1.1.0")
 }
 ```
 
@@ -50,23 +52,25 @@ Take a look here: https://datl4g.github.io/tooling/tooling-async/dev.datlag.tool
 
 It supports the following targets:
 
-- Android
-- Android Native
-- JVM
-- iOS
-- tvOS
-- watchOS
-- macOS
-- Linux
-- Windows
-- Javascript
-- WASM
+|  ✅ Supported   | ❌ Unsupported |
+|:--------------:|:-------------:|
+|    Android     |     WASI      |
+| Android Native |               |
+|      JVM       |               |
+|      iOS       |               |
+|      tvOS      |               |
+|    watchOS     |               |
+|     macOS      |               |
+|     Linux      |               |
+|    Windows     |               |
+|   Javascript   |               |
+|      WASM      |               |
 
 ### Usage
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling-async:1.0.0")
+  implementation("dev.datlag.tooling:tooling-async:1.1.0")
 }
 ```
 
@@ -80,18 +84,20 @@ Take a look here: https://datl4g.github.io/tooling/tooling-compose/dev.datlag.to
 
 It supports the following targets:
 
-- Android
-- JVM
-- iOS
-- macOS
-- Javascript
-- WASM
+|  ✅ Supported   | ❌ Unsupported  |
+|:--------------:|:--------------:|
+|    Android     | Android Native |
+|      JVM       |      tvOS      |
+|      iOS       |    watchOS     |
+|     macOS      |     Linux      |
+|   Javascript   |    Windows     |
+|      WASM      |      WASI      |
 
 ### Usage
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling-compose:1.0.0")
+  implementation("dev.datlag.tooling:tooling-compose:1.1.0")
 }
 ```
 
@@ -108,17 +114,19 @@ Take a look here:
 
 It supports the following targets:
 
-- Android
-- JVM
-- iOS
-- macOS
-- Javascript
-- WASM
+|  ✅ Supported   | ❌ Unsupported  |
+|:--------------:|:--------------:|
+|    Android     | Android Native |
+|      JVM       |      tvOS      |
+|      iOS       |    watchOS     |
+|     macOS      |     Linux      |
+|   Javascript   |    Windows     |
+|      WASM      |      WASI      |
 
 ### Usage
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling-decompose:1.0.0")
+  implementation("dev.datlag.tooling:tooling-decompose:1.1.0")
 }
 ```

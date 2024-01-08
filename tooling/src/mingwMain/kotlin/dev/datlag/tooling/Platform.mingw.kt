@@ -23,4 +23,5 @@ actual object Platform {
     actual val isWindows: Boolean = true
     actual val isWindowsJvm: Boolean = false
     actual val isWindowsNative: Boolean = true
+    actual val isNative: Boolean = true
 }

@@ -49,7 +49,7 @@ private val dirs: AppDirs by lazy {
  * @return a [File] in a platform dependent user config folder.
  */
 @JvmOverloads
-fun Tooling.getFileRWInUserConfigDir(
+fun Tooling.getRWUserConfigFile(
     child: String?,
     appName: String,
     appVersion: String? = null,
@@ -100,7 +100,7 @@ fun Tooling.getFileRWInUserConfigDir(
  * @return a [File] in a platform dependent user data folder.
  */
 @JvmOverloads
-fun Tooling.getFileRWInUserDataDir(
+fun Tooling.getRWUserDataFile(
     child: String?,
     appName: String,
     appVersion: String? = null,
@@ -151,7 +151,7 @@ fun Tooling.getFileRWInUserDataDir(
  * @return a [File] in a platform dependent site data folder.
  */
 @JvmOverloads
-fun Tooling.getFileRWInSiteDataDir(
+fun Tooling.getRWSiteDataFile(
     child: String?,
     appName: String,
     appVersion: String? = null,
@@ -212,7 +212,7 @@ fun Tooling.getFileRWInSiteDataDir(
  * @return a [File] in a platform dependent application data folder or null if no path was read-writeable.
  */
 @JvmOverloads
-fun Tooling.getComposeWriteableRootFolder(
+fun Tooling.getApplicationWriteableRootFolder(
     appName: String,
     appVersion: String? = null,
     appAuthor: String? = null,
@@ -222,7 +222,7 @@ fun Tooling.getComposeWriteableRootFolder(
     return if (resDir.existsRWSafely()) {
         resDir!!
     } else {
-        val site = getFileRWInSiteDataDir(
+        val site = getRWSiteDataFile(
             child = null,
             appName = appName,
             appVersion = appVersion,

@@ -45,6 +45,7 @@ actual data object Platform {
         isWindows
     }
     actual val isWindowsNative: Boolean = false
+    actual val isNative: Boolean = false
 
     private const val PROPERTY_OS_NAME = "os.name"
     private const val PROPERTY_OS_ARCH = "os.arch"

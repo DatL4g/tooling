@@ -38,8 +38,8 @@ allprojects {
     tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions.jvmTarget = CompileOptions.jvmTarget
     }
-}
 
-plugins.withType<YarnPlugin> {
-    yarn.yarnLockAutoReplace = true
+    plugins.withType<YarnPlugin> {
+        yarn.yarnLockAutoReplace = true
+    }
 }

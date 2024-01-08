@@ -114,4 +114,9 @@ expect object Platform {
      * Whether the current platform is Windows Native (excluding JVM)
      */
     val isWindowsNative: Boolean
+
+    /**
+     * Whether the current platform is a Native Target
+     */
+    val isNative: Boolean
 }
