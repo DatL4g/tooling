@@ -3,13 +3,14 @@ library = "1.1.1"
 android = "8.2.2"
 android-core = "1.12.0"
 appdirs = "1.2.2"
-compose = "1.6.0-beta01"
+compose = "1.6.0-beta02"
 coroutines = "1.8.0-RC2"
 decompose = "3.0.0-alpha05"
 dokka = "1.9.10"
 kotlin = "1.9.22"
 lang = "3.14.0"
 publish = "0.27.0"
+serialization = "1.6.2"
 versions = "0.51.0"
 
 [libraries]
@@ -21,6 +22,7 @@ coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 decompose-compose = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
 lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "lang" }
+serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 
 [plugins]
 android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -3,6 +3,7 @@ rootProject.name = "tooling"
 include(":tooling")
 include(":tooling-async")
 include(":tooling-compose")
+include(":tooling-country")
 include(":tooling-decompose")
 
 pluginManagement {
