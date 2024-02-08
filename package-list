@@ -7,6 +7,8 @@ module:tooling-async
 dev.datlag.tooling.async
 module:tooling-compose
 dev.datlag.tooling.compose
+module:tooling-country
+dev.datlag.tooling.country
 module:tooling-decompose
 dev.datlag.tooling.decompose
 dev.datlag.tooling.decompose.lifecycle
