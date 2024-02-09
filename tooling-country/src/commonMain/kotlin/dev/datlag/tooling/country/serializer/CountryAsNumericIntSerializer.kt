@@ -10,7 +10,11 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
-@Serializer(forClass = Country::class)
+/**
+ * Optional serializer for [Country] objects.
+ *
+ * Parses the [Country.Format.Numeric] code to [Int].
+ */
 object CountryAsNumericIntSerializer : KSerializer<Country?> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Country", PrimitiveKind.INT)
 

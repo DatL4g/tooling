@@ -11,7 +11,11 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
-@Serializer(forClass = Country::class)
+/**
+ * Default serializer for [Country] objects.
+ *
+ * Parses the [Country.Format.Alpha2] code to [String].
+ */
 object CountryAsAlpha2StringSerializer : KSerializer<Country?> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Country", PrimitiveKind.STRING)
 

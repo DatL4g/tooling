@@ -305,6 +305,8 @@ sealed interface Country {
                         HeardIslandAndMcDonaldIslands.alpha2 -> HeardIslandAndMcDonaldIslands
                         HolySee.alpha2 -> HolySee
                         Honduras.alpha2 -> Honduras
+                        HongKong.alpha2 -> HongKong
+                        Hungary.alpha2 -> Hungary
                         else -> null
                     }
                 }
