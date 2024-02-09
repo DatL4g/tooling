@@ -3,7 +3,6 @@ package dev.datlag.tooling.country.serializer
 import dev.datlag.tooling.country.Country
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
-import kotlinx.serialization.Serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
@@ -21,7 +20,7 @@ object CountryAsAlpha3StringSerializer : KSerializer<Country?> {
     @OptIn(ExperimentalSerializationApi::class)
     override fun deserialize(decoder: Decoder): Country? {
         return if (decoder.decodeNotNullMark()) {
-            Country.parseOrNull(decoder.decodeString())
+            Country.forCodeOrNull(decoder.decodeString())
         } else {
             decoder.decodeNull()
         }
