@@ -279,6 +279,31 @@ sealed interface Country {
                         FalklandIslands.alpha2 -> FalklandIslands
                         FaroeIslands.alpha2 -> FaroeIslands
                         Fiji.alpha2 -> Fiji
+                        Finland.alpha2 -> Finland
+                        France.alpha2 -> France
+                        FrenchGuiana.alpha2 -> FrenchGuiana
+                        FrenchPolynesia.alpha2 -> FrenchPolynesia
+                        FrenchSouthernTerritories.alpha2 -> FrenchSouthernTerritories
+                        Gabon.alpha2 -> Gabon
+                        Gambia.alpha2 -> Gambia
+                        Georgia.alpha2 -> Georgia
+                        Germany.alpha2 -> Germany
+                        Ghana.alpha2 -> Ghana
+                        Gibraltar.alpha2 -> Gibraltar
+                        Greece.alpha2 -> Greece
+                        Greenland.alpha2 -> Greenland
+                        Grenada.alpha2 -> Grenada
+                        Guadeloupe.alpha2 -> Guadeloupe
+                        Guam.alpha2 -> Guam
+                        Guatemala.alpha2 -> Guatemala
+                        Guernsey.alpha2 -> Guernsey
+                        Guinea.alpha2 -> Guinea
+                        GuineaBissau.alpha2 -> GuineaBissau
+                        Guyana.alpha2 -> Guyana
+                        Haiti.alpha2 -> Haiti
+                        HeardIslandAndMcDonaldIslands.alpha2 -> HeardIslandAndMcDonaldIslands
+                        HolySee.alpha2 -> HolySee
+                        Honduras.alpha2 -> Honduras
                         else -> null
                     }
                 }
