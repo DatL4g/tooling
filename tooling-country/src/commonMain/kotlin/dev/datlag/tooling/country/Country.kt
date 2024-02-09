@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmStatic
 
 /**
- * Country with information
+ * Country holding related country codes.
  */
 @Serializable
 sealed interface Country {
@@ -60,10 +60,7 @@ sealed interface Country {
             }
 
             override fun equals(other: Any?): Boolean {
-                if (other is CharSequence) {
-                    return other == code || other.toString() == code || super.equals(other)
-                }
-                return super.equals(other)
+                return code.contentEquals(other as? CharSequence, ignoreCase = true) ||  super.equals(other)
             }
 
             override fun hashCode(): Int {
@@ -114,10 +111,7 @@ sealed interface Country {
             }
 
             override fun equals(other: Any?): Boolean {
-                if (other is CharSequence) {
-                    return other == code || other.toString() == code || super.equals(other)
-                }
-                return super.equals(other)
+                return code.contentEquals(other as? CharSequence, ignoreCase = true) ||  super.equals(other)
             }
 
             override fun hashCode(): Int {
@@ -152,7 +146,7 @@ sealed interface Country {
         data class Numeric internal constructor(
             @SerialName("code") val code: Int
         ) : Format, Number() {
-            
+
             override fun toByte(): Byte {
                 return code.toByte()
             }
@@ -213,6 +207,53 @@ sealed interface Country {
                         Afghanistan.alpha2 -> Afghanistan
                         Albania.alpha2 -> Albania
                         Algeria.alpha2 -> Algeria
+                        AmericanSamoa.alpha2 -> AmericanSamoa
+                        Andorra.alpha2 -> Andorra
+                        Angola.alpha2 -> Angola
+                        Anguilla.alpha2 -> Anguilla
+                        Antarctica.alpha2 -> Antarctica
+                        AntiguaAndBarbuda.alpha2 -> AntiguaAndBarbuda
+                        Argentina.alpha2 -> Argentina
+                        Armenia.alpha2 -> Armenia
+                        Aruba.alpha2 -> Aruba
+                        Australia.alpha2 -> Australia
+                        Austria.alpha2 -> Austria
+                        Azerbaijan.alpha2 -> Azerbaijan
+                        Bahamas.alpha2 -> Bahamas
+                        Bahrain.alpha2 -> Bahrain
+                        Bangladesh.alpha2 -> Bangladesh
+                        Barbados.alpha2 -> Barbados
+                        Belarus.alpha2 -> Belarus
+                        Belgium.alpha2 -> Belgium
+                        Belize.alpha2 -> Belize
+                        Benin.alpha2 -> Benin
+                        Bermuda.alpha2 -> Bermuda
+                        ÅlandIslands.alpha2 -> ÅlandIslands
+                        Bhutan.alpha2 -> Bhutan
+                        Bolivia.alpha2 -> Bolivia
+                        Bonaire.alpha2 -> Bonaire
+                        BosniaAndHerzegovina.alpha2 -> BosniaAndHerzegovina
+                        Botswana.alpha2 -> Botswana
+                        BouvetIsland.alpha2 -> BouvetIsland
+                        Brazil.alpha2 -> Brazil
+                        BritishIndianOceanTerritory.alpha2 -> BritishIndianOceanTerritory
+                        BruneiDarussalam.alpha2 -> BruneiDarussalam
+                        Bulgaria.alpha2 -> Bulgaria
+                        BurkinaFaso.alpha2 -> BurkinaFaso
+                        Burundi.alpha2 -> Burundi
+                        CaboVerde.alpha2 -> CaboVerde
+                        Cambodia.alpha2 -> Cambodia
+                        Cameroon.alpha2 -> Cameroon
+                        Canada.alpha2 -> Canada
+                        CaymanIslands.alpha2 -> CaymanIslands
+                        CentralAfricanRepublic.alpha2 -> CentralAfricanRepublic
+                        Chad.alpha2 -> Chad
+                        Chile.alpha2 -> Chile
+                        China.alpha2 -> China
+                        ChristmasIsland.alpha2 -> ChristmasIsland
+                        CocosIslands.alpha2 -> CocosIslands
+                        Colombia.alpha2 -> Colombia
+                        Comoros.alpha2 -> Comoros
                         else -> null
                     }
                 }
