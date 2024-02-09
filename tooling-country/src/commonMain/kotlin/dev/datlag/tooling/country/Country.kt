@@ -254,6 +254,31 @@ sealed interface Country {
                         CocosIslands.alpha2 -> CocosIslands
                         Colombia.alpha2 -> Colombia
                         Comoros.alpha2 -> Comoros
+                        DemocraticRepublicCongo.alpha2 -> DemocraticRepublicCongo
+                        Congo.alpha2 -> Congo
+                        CookIslands.alpha2 -> CookIslands
+                        CostaRica.alpha2 -> CostaRica
+                        Croatia.alpha2 -> Croatia
+                        Cuba.alpha2 -> Cuba
+                        Curaçao.alpha2 -> Curaçao
+                        Cyprus.alpha2 -> Cyprus
+                        Czechia.alpha2 -> Czechia
+                        IvoryCoast.alpha2 -> IvoryCoast
+                        Denmark.alpha2 -> Denmark
+                        Djibouti.alpha2 -> Djibouti
+                        Dominica.alpha2 -> Dominica
+                        DominicanRepublic.alpha2 -> DominicanRepublic
+                        Ecuador.alpha2 -> Ecuador
+                        Egypt.alpha2 -> Egypt
+                        ElSalvador.alpha2 -> ElSalvador
+                        EquatorialGuinea.alpha2 -> EquatorialGuinea
+                        Eritrea.alpha2 -> Eritrea
+                        Estonia.alpha2 -> Estonia
+                        Eswatini.alpha2 -> Eswatini
+                        Ethiopia.alpha2 -> Ethiopia
+                        FalklandIslands.alpha2 -> FalklandIslands
+                        FaroeIslands.alpha2 -> FaroeIslands
+                        Fiji.alpha2 -> Fiji
                         else -> null
                     }
                 }
