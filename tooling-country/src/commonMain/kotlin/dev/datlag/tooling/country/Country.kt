@@ -404,6 +404,30 @@ sealed interface Country {
                         Serbia.alpha2 -> Serbia
                         Seychelles.alpha2 -> Seychelles
                         SierraLeone.alpha2 -> SierraLeone
+                        Singapore.alpha2 -> Singapore
+                        SintMaarten.alpha2 -> SintMaarten
+                        Slovakia.alpha2 -> Slovakia
+                        Slovenia.alpha2 -> Slovenia
+                        SolomonIslands.alpha2 -> SolomonIslands
+                        SouthAfrica.alpha2 -> SouthAfrica
+                        SouthGeorgiaAndTheSouthSandwichIslands.alpha2 -> SouthGeorgiaAndTheSouthSandwichIslands
+                        SouthSudan.alpha2 -> SouthSudan
+                        Spain.alpha2 -> Spain
+                        SriLanka.alpha2 -> SriLanka
+                        Sudan.alpha2 -> Sudan
+                        Suriname.alpha2 -> Suriname
+                        SvalbardAndJanMayen.alpha2 -> SvalbardAndJanMayen
+                        Sweden.alpha2 -> Sweden
+                        Switzerland.alpha2 -> Switzerland
+                        Syrian.alpha2 -> Syrian
+                        Taiwan.alpha2 -> Taiwan
+                        Tajikistan.alpha2 -> Tajikistan
+                        Tanzania.alpha2 -> Tanzania
+                        Thailand.alpha2 -> Thailand
+                        TimorLeste.alpha2 -> TimorLeste
+                        Togo.alpha2 -> Togo
+                        Tokelau.alpha2 -> Tokelau
+                        Tonga.alpha2 -> Tonga
                         else -> null
                     }
                 }
