@@ -307,6 +307,54 @@ sealed interface Country {
                         Honduras.alpha2 -> Honduras
                         HongKong.alpha2 -> HongKong
                         Hungary.alpha2 -> Hungary
+                        Iceland.alpha2 -> Iceland
+                        India.alpha2 -> India
+                        Indonesia.alpha2 -> Indonesia
+                        Iran.alpha2 -> Iran
+                        Iraq.alpha2 -> Iraq
+                        Ireland.alpha2 -> Ireland
+                        IsleOfMan.alpha2 -> IsleOfMan
+                        Israel.alpha2 -> Israel
+                        Italy.alpha2 -> Italy
+                        Jamaica.alpha2 -> Jamaica
+                        Japan.alpha2 -> Japan
+                        Jersey.alpha2 -> Jersey
+                        Jordan.alpha2 -> Jordan
+                        Kazakhstan.alpha2 -> Kazakhstan
+                        Kenya.alpha2 -> Kenya
+                        Kiribati.alpha2 -> Kiribati
+                        NorthKorea.alpha2 -> NorthKorea
+                        SouthKorea.alpha2 -> SouthKorea
+                        Kuwait.alpha2 -> Kuwait
+                        Kyrgyzstan.alpha2 -> Kyrgyzstan
+                        Lao.alpha2 -> Lao
+                        Latvia.alpha2 -> Latvia
+                        Lebanon.alpha2 -> Lebanon
+                        Lesotho.alpha2 -> Lesotho
+                        Liberia.alpha2 -> Liberia
+                        Libya.alpha2 -> Libya
+                        Liechtenstein.alpha2 -> Liechtenstein
+                        Lithuania.alpha2 -> Lithuania
+                        Luxembourg.alpha2 -> Luxembourg
+                        Macao.alpha2 -> Macao
+                        Madagascar.alpha2 -> Madagascar
+                        Malawi.alpha2 -> Malawi
+                        Malaysia.alpha2 -> Malaysia
+                        Maldives.alpha2 -> Maldives
+                        Mali.alpha2 -> Mali
+                        Malta.alpha2 -> Malta
+                        MarshallIslands.alpha2 -> MarshallIslands
+                        Martinique.alpha2 -> Martinique
+                        Mauritania.alpha2 -> Mauritania
+                        Mauritius.alpha2 -> Mauritius
+                        Mayotte.alpha2 -> Mayotte
+                        Mexico.alpha2 -> Mexico
+                        Micronesia.alpha2 -> Micronesia
+                        Moldova.alpha2 -> Moldova
+                        Monaco.alpha2 -> Monaco
+                        Mongolia.alpha2 -> Mongolia
+                        Montenegro.alpha2 -> Montenegro
+                        Montserrat.alpha2 -> Montserrat
                         else -> null
                     }
                 }
