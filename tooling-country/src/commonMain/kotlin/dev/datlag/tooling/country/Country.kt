@@ -1,5 +1,6 @@
 package dev.datlag.tooling.country
 
+import dev.datlag.tooling.country.serializer.CountryAsAlpha2StringSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmStatic
@@ -7,7 +8,7 @@ import kotlin.jvm.JvmStatic
 /**
  * Country holding related country codes.
  */
-@Serializable
+@Serializable(CountryAsAlpha2StringSerializer::class)
 sealed interface Country {
 
     /**

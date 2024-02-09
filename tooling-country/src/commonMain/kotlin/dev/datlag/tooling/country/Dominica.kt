@@ -1,8 +1,9 @@
 package dev.datlag.tooling.country
 
+import dev.datlag.tooling.country.serializer.CountryAsAlpha2StringSerializer
 import kotlinx.serialization.Serializable
 
-@Serializable
+@Serializable(CountryAsAlpha2StringSerializer::class)
 data object Dominica : Country {
     override val alpha2: Country.Format.Alpha2 = Country.Format.Alpha2("DM")
     override val alpha3: Country.Format.Alpha3 = Country.Format.Alpha3("DMA")

@@ -9,6 +9,7 @@ plugins {
     `maven-publish`
     signing
     alias(libs.plugins.dokka)
+    alias(libs.plugins.serialization)
 }
 
 val libName = "tooling-country"
