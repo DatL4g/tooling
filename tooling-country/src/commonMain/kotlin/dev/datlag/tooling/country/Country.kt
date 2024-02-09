@@ -380,6 +380,30 @@ sealed interface Country {
                         PapuaNewGuinea.alpha2 -> PapuaNewGuinea
                         Paraguay.alpha2 -> Paraguay
                         Peru.alpha2 -> Peru
+                        Philippines.alpha2 -> Philippines
+                        Pitcairn.alpha2 -> Pitcairn
+                        Poland.alpha2 -> Poland
+                        Portugal.alpha2 -> Portugal
+                        PuertoRico.alpha2 -> PuertoRico
+                        Qatar.alpha2 -> Qatar
+                        Romania.alpha2 -> Romania
+                        RussianFederation.alpha2 -> RussianFederation
+                        Rwanda.alpha2 -> Rwanda
+                        Réunion.alpha2 -> Réunion
+                        SaintBarthélemy.alpha2 -> SaintBarthélemy
+                        SaintHelena.alpha2 -> SaintHelena
+                        SaintKittsAndNevis.alpha2 -> SaintKittsAndNevis
+                        SaintLucia.alpha2 -> SaintLucia
+                        SaintMartin.alpha2 -> SaintMartin
+                        SaintPierreAndMiquelon.alpha2 -> SaintPierreAndMiquelon
+                        SaintVincentAndTheGrenadines.alpha2 -> SaintVincentAndTheGrenadines
+                        Samoa.alpha2 -> Samoa
+                        SaoTomeAndPrincipe.alpha2 -> SaoTomeAndPrincipe
+                        SaudiArabia.alpha2 -> SaudiArabia
+                        Senegal.alpha2 -> Senegal
+                        Serbia.alpha2 -> Serbia
+                        Seychelles.alpha2 -> Seychelles
+                        SierraLeone.alpha2 -> SierraLeone
                         else -> null
                     }
                 }
