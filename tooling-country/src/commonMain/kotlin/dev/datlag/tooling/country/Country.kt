@@ -355,6 +355,31 @@ sealed interface Country {
                         Mongolia.alpha2 -> Mongolia
                         Montenegro.alpha2 -> Montenegro
                         Montserrat.alpha2 -> Montserrat
+                        Morocco.alpha2 -> Morocco
+                        Mozambique.alpha2 -> Mozambique
+                        Myanmar.alpha2 -> Myanmar
+                        Namibia.alpha2 -> Namibia
+                        Nauru.alpha2 -> Nauru
+                        Nepal.alpha2 -> Nepal
+                        Netherlands.alpha2 -> Netherlands
+                        NewCaledonia.alpha2 -> NewCaledonia
+                        NewZealand.alpha2 -> NewZealand
+                        Nicaragua.alpha2 -> Nicaragua
+                        Niger.alpha2 -> Niger
+                        Nigeria.alpha2 -> Nigeria
+                        Niue.alpha2 -> Niue
+                        NorfolkIsland.alpha2 -> NorfolkIsland
+                        NorthMacedonia.alpha2 -> NorthMacedonia
+                        NorthernMarianaIslands.alpha2 -> NorthernMarianaIslands
+                        Norway.alpha2 -> Norway
+                        Oman.alpha2 -> Oman
+                        Pakistan.alpha2 -> Pakistan
+                        Palau.alpha2 -> Palau
+                        Palestine.alpha2 -> Palestine
+                        Panama.alpha2 -> Panama
+                        PapuaNewGuinea.alpha2 -> PapuaNewGuinea
+                        Paraguay.alpha2 -> Paraguay
+                        Peru.alpha2 -> Peru
                         else -> null
                     }
                 }
