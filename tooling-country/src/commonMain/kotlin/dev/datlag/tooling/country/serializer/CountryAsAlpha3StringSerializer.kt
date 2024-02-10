@@ -12,7 +12,7 @@ import kotlinx.serialization.encoding.Encoder
 /**
  * Optional serializer for [Country] objects.
  *
- * Parses the [Country.Format.Alpha3] code to [String].
+ * Parses the [Country.Code.Alpha3] code to [String].
  */
 object CountryAsAlpha3StringSerializer : KSerializer<Country?> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Country", PrimitiveKind.STRING)
@@ -30,7 +30,7 @@ object CountryAsAlpha3StringSerializer : KSerializer<Country?> {
     override fun serialize(encoder: Encoder, value: Country?) {
         if (value != null) {
             encoder.encodeNotNullMark()
-            encoder.encodeString(value.alpha3.code)
+            encoder.encodeString(value.codeAlpha3.code)
         } else {
             encoder.encodeNull()
         }

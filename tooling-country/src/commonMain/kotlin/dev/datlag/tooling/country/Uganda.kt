@@ -1,11 +1,8 @@
 package dev.datlag.tooling.country
 
-import dev.datlag.tooling.country.serializer.CountryAsAlpha2StringSerializer
-import kotlinx.serialization.Serializable
 
-@Serializable(CountryAsAlpha2StringSerializer::class)
 data object Uganda : Country {
-    override val alpha2: Country.Format.Alpha2 = Country.Format.Alpha2("UG")
-    override val alpha3: Country.Format.Alpha3 = Country.Format.Alpha3("UGA")
-    override val numeric: Country.Format.Numeric = Country.Format.Numeric(800)
+    override val codeAlpha2: Country.Code.Alpha2 = Country.Code.Alpha2("UG")
+    override val codeAlpha3: Country.Code.Alpha3 = Country.Code.Alpha3("UGA")
+    override val codeNumeric: Country.Code.Numeric = Country.Code.Numeric(800)
 }
