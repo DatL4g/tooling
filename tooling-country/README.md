@@ -2,11 +2,13 @@
 
 Kotlin multiplatform country library.
 
+Take a look here: https://datl4g.github.io/tooling/tooling-country/dev.datlag.tooling.country/index.html
+
 ## Installation
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling-country:1.2.0")
+  implementation("dev.datlag.tooling:tooling-country:<version>")
 }
 ```
 
@@ -56,7 +58,7 @@ val numeric = country.codeNumeric
 
 ### Serialization
 
-It supports kotlin serialization of any kind (JSON, Protobuf, etc).
+It supports kotlin serialization of any kind (JSON, Protobuf, etc...).
 
 Example an API which returns the following:
 
