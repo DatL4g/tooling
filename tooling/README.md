@@ -8,7 +8,7 @@ Take a look here: https://datl4g.github.io/tooling/tooling/dev.datlag.tooling/in
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling:1.1.0")
+  implementation("dev.datlag.tooling:tooling:<version>")
 }
 ```
 

@@ -8,7 +8,7 @@ Take a look here: https://datl4g.github.io/tooling/tooling-async/dev.datlag.tool
 
 ```gradle
 dependencies {
-  implementation("dev.datlag.tooling:tooling-async:1.1.0")
+  implementation("dev.datlag.tooling:tooling-async:<version>")
 }
 ```
 
