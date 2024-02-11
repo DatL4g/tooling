@@ -202,510 +202,512 @@ sealed interface Country {
             val trimmedCode = code.trim()
 
             fun parseAlpha2(): Country? {
-                return when (trimmedCode.takeIf(Code.Alpha2::isValidFormat)) {
-                    null -> null // make sure it doesn't check other types
-                    Afghanistan.codeAlpha2.toString() -> Afghanistan
-                    Albania.codeAlpha2.toString() -> Albania
-                    Algeria.codeAlpha2.toString() -> Algeria
-                    AmericanSamoa.codeAlpha2.toString() -> AmericanSamoa
-                    Andorra.codeAlpha2.toString() -> Andorra
-                    Angola.codeAlpha2.toString() -> Angola
-                    Anguilla.codeAlpha2.toString() -> Anguilla
-                    Antarctica.codeAlpha2.toString() -> Antarctica
-                    AntiguaAndBarbuda.codeAlpha2.toString() -> AntiguaAndBarbuda
-                    Argentina.codeAlpha2.toString() -> Argentina
-                    Armenia.codeAlpha2.toString() -> Armenia
-                    Aruba.codeAlpha2.toString() -> Aruba
-                    Australia.codeAlpha2.toString() -> Australia
-                    Austria.codeAlpha2.toString() -> Austria
-                    Azerbaijan.codeAlpha2.toString() -> Azerbaijan
-                    Bahamas.codeAlpha2.toString() -> Bahamas
-                    Bahrain.codeAlpha2.toString() -> Bahrain
-                    Bangladesh.codeAlpha2.toString() -> Bangladesh
-                    Barbados.codeAlpha2.toString() -> Barbados
-                    Belarus.codeAlpha2.toString() -> Belarus
-                    Belgium.codeAlpha2.toString() -> Belgium
-                    Belize.codeAlpha2.toString() -> Belize
-                    Benin.codeAlpha2.toString() -> Benin
-                    Bermuda.codeAlpha2.toString() -> Bermuda
-                    ÅlandIslands.codeAlpha2.toString() -> ÅlandIslands
-                    Bhutan.codeAlpha2.toString() -> Bhutan
-                    Bolivia.codeAlpha2.toString() -> Bolivia
-                    Bonaire.codeAlpha2.toString() -> Bonaire
-                    BosniaAndHerzegovina.codeAlpha2.toString() -> BosniaAndHerzegovina
-                    Botswana.codeAlpha2.toString() -> Botswana
-                    BouvetIsland.codeAlpha2.toString() -> BouvetIsland
-                    Brazil.codeAlpha2.toString() -> Brazil
-                    BritishIndianOceanTerritory.codeAlpha2.toString() -> BritishIndianOceanTerritory
-                    BruneiDarussalam.codeAlpha2.toString() -> BruneiDarussalam
-                    Bulgaria.codeAlpha2.toString() -> Bulgaria
-                    BurkinaFaso.codeAlpha2.toString() -> BurkinaFaso
-                    Burundi.codeAlpha2.toString() -> Burundi
-                    CaboVerde.codeAlpha2.toString() -> CaboVerde
-                    Cambodia.codeAlpha2.toString() -> Cambodia
-                    Cameroon.codeAlpha2.toString() -> Cameroon
-                    Canada.codeAlpha2.toString() -> Canada
-                    CaymanIslands.codeAlpha2.toString() -> CaymanIslands
-                    CentralAfricanRepublic.codeAlpha2.toString() -> CentralAfricanRepublic
-                    Chad.codeAlpha2.toString() -> Chad
-                    Chile.codeAlpha2.toString() -> Chile
-                    China.codeAlpha2.toString() -> China
-                    ChristmasIsland.codeAlpha2.toString() -> ChristmasIsland
-                    CocosIslands.codeAlpha2.toString() -> CocosIslands
-                    Colombia.codeAlpha2.toString() -> Colombia
-                    Comoros.codeAlpha2.toString() -> Comoros
-                    DemocraticRepublicCongo.codeAlpha2.toString() -> DemocraticRepublicCongo
-                    Congo.codeAlpha2.toString() -> Congo
-                    CookIslands.codeAlpha2.toString() -> CookIslands
-                    CostaRica.codeAlpha2.toString() -> CostaRica
-                    Croatia.codeAlpha2.toString() -> Croatia
-                    Cuba.codeAlpha2.toString() -> Cuba
-                    Curaçao.codeAlpha2.toString() -> Curaçao
-                    Cyprus.codeAlpha2.toString() -> Cyprus
-                    Czechia.codeAlpha2.toString() -> Czechia
-                    IvoryCoast.codeAlpha2.toString() -> IvoryCoast
-                    Denmark.codeAlpha2.toString() -> Denmark
-                    Djibouti.codeAlpha2.toString() -> Djibouti
-                    Dominica.codeAlpha2.toString() -> Dominica
-                    DominicanRepublic.codeAlpha2.toString() -> DominicanRepublic
-                    Ecuador.codeAlpha2.toString() -> Ecuador
-                    Egypt.codeAlpha2.toString() -> Egypt
-                    ElSalvador.codeAlpha2.toString() -> ElSalvador
-                    EquatorialGuinea.codeAlpha2.toString() -> EquatorialGuinea
-                    Eritrea.codeAlpha2.toString() -> Eritrea
-                    Estonia.codeAlpha2.toString() -> Estonia
-                    Eswatini.codeAlpha2.toString() -> Eswatini
-                    Ethiopia.codeAlpha2.toString() -> Ethiopia
-                    FalklandIslands.codeAlpha2.toString() -> FalklandIslands
-                    FaroeIslands.codeAlpha2.toString() -> FaroeIslands
-                    Fiji.codeAlpha2.toString() -> Fiji
-                    Finland.codeAlpha2.toString() -> Finland
-                    France.codeAlpha2.toString() -> France
-                    FrenchGuiana.codeAlpha2.toString() -> FrenchGuiana
-                    FrenchPolynesia.codeAlpha2.toString() -> FrenchPolynesia
-                    FrenchSouthernTerritories.codeAlpha2.toString() -> FrenchSouthernTerritories
-                    Gabon.codeAlpha2.toString() -> Gabon
-                    Gambia.codeAlpha2.toString() -> Gambia
-                    Georgia.codeAlpha2.toString() -> Georgia
-                    Germany.codeAlpha2.toString() -> Germany
-                    Ghana.codeAlpha2.toString() -> Ghana
-                    Gibraltar.codeAlpha2.toString() -> Gibraltar
-                    Greece.codeAlpha2.toString() -> Greece
-                    Greenland.codeAlpha2.toString() -> Greenland
-                    Grenada.codeAlpha2.toString() -> Grenada
-                    Guadeloupe.codeAlpha2.toString() -> Guadeloupe
-                    Guam.codeAlpha2.toString() -> Guam
-                    Guatemala.codeAlpha2.toString() -> Guatemala
-                    Guernsey.codeAlpha2.toString() -> Guernsey
-                    Guinea.codeAlpha2.toString() -> Guinea
-                    GuineaBissau.codeAlpha2.toString() -> GuineaBissau
-                    Guyana.codeAlpha2.toString() -> Guyana
-                    Haiti.codeAlpha2.toString() -> Haiti
-                    HeardIslandAndMcDonaldIslands.codeAlpha2.toString() -> HeardIslandAndMcDonaldIslands
-                    HolySee.codeAlpha2.toString() -> HolySee
-                    Honduras.codeAlpha2.toString() -> Honduras
-                    HongKong.codeAlpha2.toString() -> HongKong
-                    Hungary.codeAlpha2.toString() -> Hungary
-                    Iceland.codeAlpha2.toString() -> Iceland
-                    India.codeAlpha2.toString() -> India
-                    Indonesia.codeAlpha2.toString() -> Indonesia
-                    Iran.codeAlpha2.toString() -> Iran
-                    Iraq.codeAlpha2.toString() -> Iraq
-                    Ireland.codeAlpha2.toString() -> Ireland
-                    IsleOfMan.codeAlpha2.toString() -> IsleOfMan
-                    Israel.codeAlpha2.toString() -> Israel
-                    Italy.codeAlpha2.toString() -> Italy
-                    Jamaica.codeAlpha2.toString() -> Jamaica
-                    Japan.codeAlpha2.toString() -> Japan
-                    Jersey.codeAlpha2.toString() -> Jersey
-                    Jordan.codeAlpha2.toString() -> Jordan
-                    Kazakhstan.codeAlpha2.toString() -> Kazakhstan
-                    Kenya.codeAlpha2.toString() -> Kenya
-                    Kiribati.codeAlpha2.toString() -> Kiribati
-                    NorthKorea.codeAlpha2.toString() -> NorthKorea
-                    SouthKorea.codeAlpha2.toString() -> SouthKorea
-                    Kuwait.codeAlpha2.toString() -> Kuwait
-                    Kyrgyzstan.codeAlpha2.toString() -> Kyrgyzstan
-                    Lao.codeAlpha2.toString() -> Lao
-                    Latvia.codeAlpha2.toString() -> Latvia
-                    Lebanon.codeAlpha2.toString() -> Lebanon
-                    Lesotho.codeAlpha2.toString() -> Lesotho
-                    Liberia.codeAlpha2.toString() -> Liberia
-                    Libya.codeAlpha2.toString() -> Libya
-                    Liechtenstein.codeAlpha2.toString() -> Liechtenstein
-                    Lithuania.codeAlpha2.toString() -> Lithuania
-                    Luxembourg.codeAlpha2.toString() -> Luxembourg
-                    Macao.codeAlpha2.toString() -> Macao
-                    Madagascar.codeAlpha2.toString() -> Madagascar
-                    Malawi.codeAlpha2.toString() -> Malawi
-                    Malaysia.codeAlpha2.toString() -> Malaysia
-                    Maldives.codeAlpha2.toString() -> Maldives
-                    Mali.codeAlpha2.toString() -> Mali
-                    Malta.codeAlpha2.toString() -> Malta
-                    MarshallIslands.codeAlpha2.toString() -> MarshallIslands
-                    Martinique.codeAlpha2.toString() -> Martinique
-                    Mauritania.codeAlpha2.toString() -> Mauritania
-                    Mauritius.codeAlpha2.toString() -> Mauritius
-                    Mayotte.codeAlpha2.toString() -> Mayotte
-                    Mexico.codeAlpha2.toString() -> Mexico
-                    Micronesia.codeAlpha2.toString() -> Micronesia
-                    Moldova.codeAlpha2.toString() -> Moldova
-                    Monaco.codeAlpha2.toString() -> Monaco
-                    Mongolia.codeAlpha2.toString() -> Mongolia
-                    Montenegro.codeAlpha2.toString() -> Montenegro
-                    Montserrat.codeAlpha2.toString() -> Montserrat
-                    Morocco.codeAlpha2.toString() -> Morocco
-                    Mozambique.codeAlpha2.toString() -> Mozambique
-                    Myanmar.codeAlpha2.toString() -> Myanmar
-                    Namibia.codeAlpha2.toString() -> Namibia
-                    Nauru.codeAlpha2.toString() -> Nauru
-                    Nepal.codeAlpha2.toString() -> Nepal
-                    Netherlands.codeAlpha2.toString() -> Netherlands
-                    NewCaledonia.codeAlpha2.toString() -> NewCaledonia
-                    NewZealand.codeAlpha2.toString() -> NewZealand
-                    Nicaragua.codeAlpha2.toString() -> Nicaragua
-                    Niger.codeAlpha2.toString() -> Niger
-                    Nigeria.codeAlpha2.toString() -> Nigeria
-                    Niue.codeAlpha2.toString() -> Niue
-                    NorfolkIsland.codeAlpha2.toString() -> NorfolkIsland
-                    NorthMacedonia.codeAlpha2.toString() -> NorthMacedonia
-                    NorthernMarianaIslands.codeAlpha2.toString() -> NorthernMarianaIslands
-                    Norway.codeAlpha2.toString() -> Norway
-                    Oman.codeAlpha2.toString() -> Oman
-                    Pakistan.codeAlpha2.toString() -> Pakistan
-                    Palau.codeAlpha2.toString() -> Palau
-                    Palestine.codeAlpha2.toString() -> Palestine
-                    Panama.codeAlpha2.toString() -> Panama
-                    PapuaNewGuinea.codeAlpha2.toString() -> PapuaNewGuinea
-                    Paraguay.codeAlpha2.toString() -> Paraguay
-                    Peru.codeAlpha2.toString() -> Peru
-                    Philippines.codeAlpha2.toString() -> Philippines
-                    Pitcairn.codeAlpha2.toString() -> Pitcairn
-                    Poland.codeAlpha2.toString() -> Poland
-                    Portugal.codeAlpha2.toString() -> Portugal
-                    PuertoRico.codeAlpha2.toString() -> PuertoRico
-                    Qatar.codeAlpha2.toString() -> Qatar
-                    Romania.codeAlpha2.toString() -> Romania
-                    RussianFederation.codeAlpha2.toString() -> RussianFederation
-                    Rwanda.codeAlpha2.toString() -> Rwanda
-                    Réunion.codeAlpha2.toString() -> Réunion
-                    SaintBarthélemy.codeAlpha2.toString() -> SaintBarthélemy
-                    SaintHelena.codeAlpha2.toString() -> SaintHelena
-                    SaintKittsAndNevis.codeAlpha2.toString() -> SaintKittsAndNevis
-                    SaintLucia.codeAlpha2.toString() -> SaintLucia
-                    SaintMartin.codeAlpha2.toString() -> SaintMartin
-                    SaintPierreAndMiquelon.codeAlpha2.toString() -> SaintPierreAndMiquelon
-                    SaintVincentAndTheGrenadines.codeAlpha2.toString() -> SaintVincentAndTheGrenadines
-                    Samoa.codeAlpha2.toString() -> Samoa
-                    SaoTomeAndPrincipe.codeAlpha2.toString() -> SaoTomeAndPrincipe
-                    SaudiArabia.codeAlpha2.toString() -> SaudiArabia
-                    Senegal.codeAlpha2.toString() -> Senegal
-                    Serbia.codeAlpha2.toString() -> Serbia
-                    Seychelles.codeAlpha2.toString() -> Seychelles
-                    SierraLeone.codeAlpha2.toString() -> SierraLeone
-                    Singapore.codeAlpha2.toString() -> Singapore
-                    SintMaarten.codeAlpha2.toString() -> SintMaarten
-                    Slovakia.codeAlpha2.toString() -> Slovakia
-                    Slovenia.codeAlpha2.toString() -> Slovenia
-                    SolomonIslands.codeAlpha2.toString() -> SolomonIslands
-                    SouthAfrica.codeAlpha2.toString() -> SouthAfrica
-                    SouthGeorgiaAndTheSouthSandwichIslands.codeAlpha2.toString() -> SouthGeorgiaAndTheSouthSandwichIslands
-                    SouthSudan.codeAlpha2.toString() -> SouthSudan
-                    Spain.codeAlpha2.toString() -> Spain
-                    SriLanka.codeAlpha2.toString() -> SriLanka
-                    Sudan.codeAlpha2.toString() -> Sudan
-                    Suriname.codeAlpha2.toString() -> Suriname
-                    SvalbardAndJanMayen.codeAlpha2.toString() -> SvalbardAndJanMayen
-                    Sweden.codeAlpha2.toString() -> Sweden
-                    Switzerland.codeAlpha2.toString() -> Switzerland
-                    Syrian.codeAlpha2.toString() -> Syrian
-                    Taiwan.codeAlpha2.toString() -> Taiwan
-                    Tajikistan.codeAlpha2.toString() -> Tajikistan
-                    Tanzania.codeAlpha2.toString() -> Tanzania
-                    Thailand.codeAlpha2.toString() -> Thailand
-                    TimorLeste.codeAlpha2.toString() -> TimorLeste
-                    Togo.codeAlpha2.toString() -> Togo
-                    Tokelau.codeAlpha2.toString() -> Tokelau
-                    Tonga.codeAlpha2.toString() -> Tonga
-                    TrinidadAndTobago.codeAlpha2.toString() -> TrinidadAndTobago
-                    Tunisia.codeAlpha2.toString() -> Tunisia
-                    Turkmenistan.codeAlpha2.toString() -> Turkmenistan
-                    TurksAndCaicosIsland.codeAlpha2.toString() -> TurksAndCaicosIsland
-                    Tuvalu.codeAlpha2.toString() -> Tuvalu
-                    Türkiye.codeAlpha2.toString() -> Türkiye
-                    Uganda.codeAlpha2.toString() -> Uganda
-                    Ukraine.codeAlpha2.toString() -> Ukraine
-                    UnitedArabEmirates.codeAlpha2.toString() -> UnitedArabEmirates
-                    UnitedKingdomOfGreatBritainAndNorthernIreland.codeAlpha2.toString() -> UnitedKingdomOfGreatBritainAndNorthernIreland
-                    UnitedStatesMinorOutlyingIslands.codeAlpha2.toString() -> UnitedStatesMinorOutlyingIslands
-                    UnitedStatesOfAmerica.codeAlpha2.toString() -> UnitedStatesOfAmerica
-                    Uruguay.codeAlpha2.toString() -> Uruguay
-                    Uzbekistan.codeAlpha2.toString() -> Uzbekistan
-                    Vanuatu.codeAlpha2.toString() -> Vanuatu
-                    Venezuela.codeAlpha2.toString() -> Venezuela
-                    VietNam.codeAlpha2.toString() -> VietNam
-                    VirginIslandsBritish.codeAlpha2.toString() -> VirginIslandsBritish
-                    VirginIslandsUS.codeAlpha2.toString() -> VirginIslandsUS
-                    WallisAndFutuna.codeAlpha2.toString() -> WallisAndFutuna
-                    WesternSahara.codeAlpha2.toString() -> WesternSahara
-                    Yemen.codeAlpha2.toString() -> Yemen
-                    Zambia.codeAlpha2.toString() -> Zambia
-                    Zimbabwe.codeAlpha2.toString() -> Zimbabwe
+                val validCode = trimmedCode.takeIf(Code.Alpha2::isValidFormat)
+                return when {
+                    validCode == null -> null // make sure it doesn't check other types
+                    Afghanistan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Afghanistan
+                    Albania.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Albania
+                    Algeria.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Algeria
+                    AmericanSamoa.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> AmericanSamoa
+                    Andorra.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Andorra
+                    Angola.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Angola
+                    Anguilla.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Anguilla
+                    Antarctica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Antarctica
+                    AntiguaAndBarbuda.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> AntiguaAndBarbuda
+                    Argentina.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Argentina
+                    Armenia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Armenia
+                    Aruba.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Aruba
+                    Australia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Australia
+                    Austria.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Austria
+                    Azerbaijan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Azerbaijan
+                    Bahamas.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bahamas
+                    Bahrain.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bahrain
+                    Bangladesh.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bangladesh
+                    Barbados.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Barbados
+                    Belarus.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Belarus
+                    Belgium.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Belgium
+                    Belize.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Belize
+                    Benin.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Benin
+                    Bermuda.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bermuda
+                    ÅlandIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> ÅlandIslands
+                    Bhutan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bhutan
+                    Bolivia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bolivia
+                    Bonaire.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bonaire
+                    BosniaAndHerzegovina.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> BosniaAndHerzegovina
+                    Botswana.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Botswana
+                    BouvetIsland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> BouvetIsland
+                    Brazil.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Brazil
+                    BritishIndianOceanTerritory.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> BritishIndianOceanTerritory
+                    BruneiDarussalam.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> BruneiDarussalam
+                    Bulgaria.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Bulgaria
+                    BurkinaFaso.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> BurkinaFaso
+                    Burundi.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Burundi
+                    CaboVerde.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CaboVerde
+                    Cambodia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Cambodia
+                    Cameroon.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Cameroon
+                    Canada.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Canada
+                    CaymanIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CaymanIslands
+                    CentralAfricanRepublic.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CentralAfricanRepublic
+                    Chad.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Chad
+                    Chile.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Chile
+                    China.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> China
+                    ChristmasIsland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> ChristmasIsland
+                    CocosIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CocosIslands
+                    Colombia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Colombia
+                    Comoros.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Comoros
+                    DemocraticRepublicCongo.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> DemocraticRepublicCongo
+                    Congo.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Congo
+                    CookIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CookIslands
+                    CostaRica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> CostaRica
+                    Croatia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Croatia
+                    Cuba.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Cuba
+                    Curaçao.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Curaçao
+                    Cyprus.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Cyprus
+                    Czechia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Czechia
+                    IvoryCoast.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> IvoryCoast
+                    Denmark.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Denmark
+                    Djibouti.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Djibouti
+                    Dominica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Dominica
+                    DominicanRepublic.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> DominicanRepublic
+                    Ecuador.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Ecuador
+                    Egypt.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Egypt
+                    ElSalvador.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> ElSalvador
+                    EquatorialGuinea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> EquatorialGuinea
+                    Eritrea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Eritrea
+                    Estonia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Estonia
+                    Eswatini.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Eswatini
+                    Ethiopia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Ethiopia
+                    FalklandIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> FalklandIslands
+                    FaroeIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> FaroeIslands
+                    Fiji.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Fiji
+                    Finland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Finland
+                    France.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> France
+                    FrenchGuiana.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> FrenchGuiana
+                    FrenchPolynesia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> FrenchPolynesia
+                    FrenchSouthernTerritories.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> FrenchSouthernTerritories
+                    Gabon.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Gabon
+                    Gambia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Gambia
+                    Georgia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Georgia
+                    Germany.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Germany
+                    Ghana.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Ghana
+                    Gibraltar.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Gibraltar
+                    Greece.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Greece
+                    Greenland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Greenland
+                    Grenada.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Grenada
+                    Guadeloupe.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guadeloupe
+                    Guam.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guam
+                    Guatemala.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guatemala
+                    Guernsey.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guernsey
+                    Guinea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guinea
+                    GuineaBissau.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> GuineaBissau
+                    Guyana.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Guyana
+                    Haiti.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Haiti
+                    HeardIslandAndMcDonaldIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> HeardIslandAndMcDonaldIslands
+                    HolySee.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> HolySee
+                    Honduras.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Honduras
+                    HongKong.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> HongKong
+                    Hungary.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Hungary
+                    Iceland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Iceland
+                    India.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> India
+                    Indonesia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Indonesia
+                    Iran.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Iran
+                    Iraq.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Iraq
+                    Ireland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Ireland
+                    IsleOfMan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> IsleOfMan
+                    Israel.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Israel
+                    Italy.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Italy
+                    Jamaica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Jamaica
+                    Japan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Japan
+                    Jersey.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Jersey
+                    Jordan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Jordan
+                    Kazakhstan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Kazakhstan
+                    Kenya.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Kenya
+                    Kiribati.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Kiribati
+                    NorthKorea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NorthKorea
+                    SouthKorea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SouthKorea
+                    Kuwait.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Kuwait
+                    Kyrgyzstan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Kyrgyzstan
+                    Lao.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Lao
+                    Latvia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Latvia
+                    Lebanon.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Lebanon
+                    Lesotho.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Lesotho
+                    Liberia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Liberia
+                    Libya.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Libya
+                    Liechtenstein.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Liechtenstein
+                    Lithuania.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Lithuania
+                    Luxembourg.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Luxembourg
+                    Macao.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Macao
+                    Madagascar.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Madagascar
+                    Malawi.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Malawi
+                    Malaysia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Malaysia
+                    Maldives.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Maldives
+                    Mali.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mali
+                    Malta.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Malta
+                    MarshallIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> MarshallIslands
+                    Martinique.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Martinique
+                    Mauritania.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mauritania
+                    Mauritius.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mauritius
+                    Mayotte.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mayotte
+                    Mexico.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mexico
+                    Micronesia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Micronesia
+                    Moldova.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Moldova
+                    Monaco.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Monaco
+                    Mongolia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mongolia
+                    Montenegro.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Montenegro
+                    Montserrat.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Montserrat
+                    Morocco.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Morocco
+                    Mozambique.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Mozambique
+                    Myanmar.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Myanmar
+                    Namibia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Namibia
+                    Nauru.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Nauru
+                    Nepal.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Nepal
+                    Netherlands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Netherlands
+                    NewCaledonia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NewCaledonia
+                    NewZealand.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NewZealand
+                    Nicaragua.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Nicaragua
+                    Niger.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Niger
+                    Nigeria.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Nigeria
+                    Niue.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Niue
+                    NorfolkIsland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NorfolkIsland
+                    NorthMacedonia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NorthMacedonia
+                    NorthernMarianaIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> NorthernMarianaIslands
+                    Norway.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Norway
+                    Oman.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Oman
+                    Pakistan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Pakistan
+                    Palau.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Palau
+                    Palestine.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Palestine
+                    Panama.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Panama
+                    PapuaNewGuinea.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> PapuaNewGuinea
+                    Paraguay.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Paraguay
+                    Peru.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Peru
+                    Philippines.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Philippines
+                    Pitcairn.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Pitcairn
+                    Poland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Poland
+                    Portugal.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Portugal
+                    PuertoRico.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> PuertoRico
+                    Qatar.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Qatar
+                    Romania.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Romania
+                    RussianFederation.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> RussianFederation
+                    Rwanda.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Rwanda
+                    Réunion.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Réunion
+                    SaintBarthélemy.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintBarthélemy
+                    SaintHelena.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintHelena
+                    SaintKittsAndNevis.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintKittsAndNevis
+                    SaintLucia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintLucia
+                    SaintMartin.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintMartin
+                    SaintPierreAndMiquelon.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintPierreAndMiquelon
+                    SaintVincentAndTheGrenadines.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaintVincentAndTheGrenadines
+                    Samoa.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Samoa
+                    SaoTomeAndPrincipe.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaoTomeAndPrincipe
+                    SaudiArabia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SaudiArabia
+                    Senegal.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Senegal
+                    Serbia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Serbia
+                    Seychelles.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Seychelles
+                    SierraLeone.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SierraLeone
+                    Singapore.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Singapore
+                    SintMaarten.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SintMaarten
+                    Slovakia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Slovakia
+                    Slovenia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Slovenia
+                    SolomonIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SolomonIslands
+                    SouthAfrica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SouthAfrica
+                    SouthGeorgiaAndTheSouthSandwichIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SouthGeorgiaAndTheSouthSandwichIslands
+                    SouthSudan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SouthSudan
+                    Spain.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Spain
+                    SriLanka.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SriLanka
+                    Sudan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Sudan
+                    Suriname.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Suriname
+                    SvalbardAndJanMayen.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> SvalbardAndJanMayen
+                    Sweden.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Sweden
+                    Switzerland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Switzerland
+                    Syrian.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Syrian
+                    Taiwan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Taiwan
+                    Tajikistan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tajikistan
+                    Tanzania.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tanzania
+                    Thailand.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Thailand
+                    TimorLeste.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> TimorLeste
+                    Togo.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Togo
+                    Tokelau.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tokelau
+                    Tonga.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tonga
+                    TrinidadAndTobago.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> TrinidadAndTobago
+                    Tunisia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tunisia
+                    Turkmenistan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Turkmenistan
+                    TurksAndCaicosIsland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> TurksAndCaicosIsland
+                    Tuvalu.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Tuvalu
+                    Türkiye.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Türkiye
+                    Uganda.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Uganda
+                    Ukraine.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Ukraine
+                    UnitedArabEmirates.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> UnitedArabEmirates
+                    UnitedKingdomOfGreatBritainAndNorthernIreland.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> UnitedKingdomOfGreatBritainAndNorthernIreland
+                    UnitedStatesMinorOutlyingIslands.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> UnitedStatesMinorOutlyingIslands
+                    UnitedStatesOfAmerica.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> UnitedStatesOfAmerica
+                    Uruguay.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Uruguay
+                    Uzbekistan.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Uzbekistan
+                    Vanuatu.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Vanuatu
+                    Venezuela.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Venezuela
+                    VietNam.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> VietNam
+                    VirginIslandsBritish.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> VirginIslandsBritish
+                    VirginIslandsUS.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> VirginIslandsUS
+                    WallisAndFutuna.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> WallisAndFutuna
+                    WesternSahara.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> WesternSahara
+                    Yemen.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Yemen
+                    Zambia.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Zambia
+                    Zimbabwe.codeAlpha2.contentEquals(validCode, ignoreCase = true) -> Zimbabwe
                     else -> null
 
                 }
             }
 
             fun parseAlpha3(): Country? {
-                return when (trimmedCode.takeIf(Code.Alpha3::isValidFormat)) {
-                    null -> null // make sure it doesn't check other types
-                    Afghanistan.codeAlpha3.toString() -> Afghanistan
-                    Albania.codeAlpha3.toString() -> Albania
-                    Algeria.codeAlpha3.toString() -> Algeria
-                    AmericanSamoa.codeAlpha3.toString() -> AmericanSamoa
-                    Andorra.codeAlpha3.toString() -> Andorra
-                    Angola.codeAlpha3.toString() -> Angola
-                    Anguilla.codeAlpha3.toString() -> Anguilla
-                    Antarctica.codeAlpha3.toString() -> Antarctica
-                    AntiguaAndBarbuda.codeAlpha3.toString() -> AntiguaAndBarbuda
-                    Argentina.codeAlpha3.toString() -> Argentina
-                    Armenia.codeAlpha3.toString() -> Armenia
-                    Aruba.codeAlpha3.toString() -> Aruba
-                    Australia.codeAlpha3.toString() -> Australia
-                    Austria.codeAlpha3.toString() -> Austria
-                    Azerbaijan.codeAlpha3.toString() -> Azerbaijan
-                    Bahamas.codeAlpha3.toString() -> Bahamas
-                    Bahrain.codeAlpha3.toString() -> Bahrain
-                    Bangladesh.codeAlpha3.toString() -> Bangladesh
-                    Barbados.codeAlpha3.toString() -> Barbados
-                    Belarus.codeAlpha3.toString() -> Belarus
-                    Belgium.codeAlpha3.toString() -> Belgium
-                    Belize.codeAlpha3.toString() -> Belize
-                    Benin.codeAlpha3.toString() -> Benin
-                    Bermuda.codeAlpha3.toString() -> Bermuda
-                    ÅlandIslands.codeAlpha3.toString() -> ÅlandIslands
-                    Bhutan.codeAlpha3.toString() -> Bhutan
-                    Bolivia.codeAlpha3.toString() -> Bolivia
-                    Bonaire.codeAlpha3.toString() -> Bonaire
-                    BosniaAndHerzegovina.codeAlpha3.toString() -> BosniaAndHerzegovina
-                    Botswana.codeAlpha3.toString() -> Botswana
-                    BouvetIsland.codeAlpha3.toString() -> BouvetIsland
-                    Brazil.codeAlpha3.toString() -> Brazil
-                    BritishIndianOceanTerritory.codeAlpha3.toString() -> BritishIndianOceanTerritory
-                    BruneiDarussalam.codeAlpha3.toString() -> BruneiDarussalam
-                    Bulgaria.codeAlpha3.toString() -> Bulgaria
-                    BurkinaFaso.codeAlpha3.toString() -> BurkinaFaso
-                    Burundi.codeAlpha3.toString() -> Burundi
-                    CaboVerde.codeAlpha3.toString() -> CaboVerde
-                    Cambodia.codeAlpha3.toString() -> Cambodia
-                    Cameroon.codeAlpha3.toString() -> Cameroon
-                    Canada.codeAlpha3.toString() -> Canada
-                    CaymanIslands.codeAlpha3.toString() -> CaymanIslands
-                    CentralAfricanRepublic.codeAlpha3.toString() -> CentralAfricanRepublic
-                    Chad.codeAlpha3.toString() -> Chad
-                    Chile.codeAlpha3.toString() -> Chile
-                    China.codeAlpha3.toString() -> China
-                    ChristmasIsland.codeAlpha3.toString() -> ChristmasIsland
-                    CocosIslands.codeAlpha3.toString() -> CocosIslands
-                    Colombia.codeAlpha3.toString() -> Colombia
-                    Comoros.codeAlpha3.toString() -> Comoros
-                    DemocraticRepublicCongo.codeAlpha3.toString() -> DemocraticRepublicCongo
-                    Congo.codeAlpha3.toString() -> Congo
-                    CookIslands.codeAlpha3.toString() -> CookIslands
-                    CostaRica.codeAlpha3.toString() -> CostaRica
-                    Croatia.codeAlpha3.toString() -> Croatia
-                    Cuba.codeAlpha3.toString() -> Cuba
-                    Curaçao.codeAlpha3.toString() -> Curaçao
-                    Cyprus.codeAlpha3.toString() -> Cyprus
-                    Czechia.codeAlpha3.toString() -> Czechia
-                    IvoryCoast.codeAlpha3.toString() -> IvoryCoast
-                    Denmark.codeAlpha3.toString() -> Denmark
-                    Djibouti.codeAlpha3.toString() -> Djibouti
-                    Dominica.codeAlpha3.toString() -> Dominica
-                    DominicanRepublic.codeAlpha3.toString() -> DominicanRepublic
-                    Ecuador.codeAlpha3.toString() -> Ecuador
-                    Egypt.codeAlpha3.toString() -> Egypt
-                    ElSalvador.codeAlpha3.toString() -> ElSalvador
-                    EquatorialGuinea.codeAlpha3.toString() -> EquatorialGuinea
-                    Eritrea.codeAlpha3.toString() -> Eritrea
-                    Estonia.codeAlpha3.toString() -> Estonia
-                    Eswatini.codeAlpha3.toString() -> Eswatini
-                    Ethiopia.codeAlpha3.toString() -> Ethiopia
-                    FalklandIslands.codeAlpha3.toString() -> FalklandIslands
-                    FaroeIslands.codeAlpha3.toString() -> FaroeIslands
-                    Fiji.codeAlpha3.toString() -> Fiji
-                    Finland.codeAlpha3.toString() -> Finland
-                    France.codeAlpha3.toString() -> France
-                    FrenchGuiana.codeAlpha3.toString() -> FrenchGuiana
-                    FrenchPolynesia.codeAlpha3.toString() -> FrenchPolynesia
-                    FrenchSouthernTerritories.codeAlpha3.toString() -> FrenchSouthernTerritories
-                    Gabon.codeAlpha3.toString() -> Gabon
-                    Gambia.codeAlpha3.toString() -> Gambia
-                    Georgia.codeAlpha3.toString() -> Georgia
-                    Germany.codeAlpha3.toString() -> Germany
-                    Ghana.codeAlpha3.toString() -> Ghana
-                    Gibraltar.codeAlpha3.toString() -> Gibraltar
-                    Greece.codeAlpha3.toString() -> Greece
-                    Greenland.codeAlpha3.toString() -> Greenland
-                    Grenada.codeAlpha3.toString() -> Grenada
-                    Guadeloupe.codeAlpha3.toString() -> Guadeloupe
-                    Guam.codeAlpha3.toString() -> Guam
-                    Guatemala.codeAlpha3.toString() -> Guatemala
-                    Guernsey.codeAlpha3.toString() -> Guernsey
-                    Guinea.codeAlpha3.toString() -> Guinea
-                    GuineaBissau.codeAlpha3.toString() -> GuineaBissau
-                    Guyana.codeAlpha3.toString() -> Guyana
-                    Haiti.codeAlpha3.toString() -> Haiti
-                    HeardIslandAndMcDonaldIslands.codeAlpha3.toString() -> HeardIslandAndMcDonaldIslands
-                    HolySee.codeAlpha3.toString() -> HolySee
-                    Honduras.codeAlpha3.toString() -> Honduras
-                    HongKong.codeAlpha3.toString() -> HongKong
-                    Hungary.codeAlpha3.toString() -> Hungary
-                    Iceland.codeAlpha3.toString() -> Iceland
-                    India.codeAlpha3.toString() -> India
-                    Indonesia.codeAlpha3.toString() -> Indonesia
-                    Iran.codeAlpha3.toString() -> Iran
-                    Iraq.codeAlpha3.toString() -> Iraq
-                    Ireland.codeAlpha3.toString() -> Ireland
-                    IsleOfMan.codeAlpha3.toString() -> IsleOfMan
-                    Israel.codeAlpha3.toString() -> Israel
-                    Italy.codeAlpha3.toString() -> Italy
-                    Jamaica.codeAlpha3.toString() -> Jamaica
-                    Japan.codeAlpha3.toString() -> Japan
-                    Jersey.codeAlpha3.toString() -> Jersey
-                    Jordan.codeAlpha3.toString() -> Jordan
-                    Kazakhstan.codeAlpha3.toString() -> Kazakhstan
-                    Kenya.codeAlpha3.toString() -> Kenya
-                    Kiribati.codeAlpha3.toString() -> Kiribati
-                    NorthKorea.codeAlpha3.toString() -> NorthKorea
-                    SouthKorea.codeAlpha3.toString() -> SouthKorea
-                    Kuwait.codeAlpha3.toString() -> Kuwait
-                    Kyrgyzstan.codeAlpha3.toString() -> Kyrgyzstan
-                    Lao.codeAlpha3.toString() -> Lao
-                    Latvia.codeAlpha3.toString() -> Latvia
-                    Lebanon.codeAlpha3.toString() -> Lebanon
-                    Lesotho.codeAlpha3.toString() -> Lesotho
-                    Liberia.codeAlpha3.toString() -> Liberia
-                    Libya.codeAlpha3.toString() -> Libya
-                    Liechtenstein.codeAlpha3.toString() -> Liechtenstein
-                    Lithuania.codeAlpha3.toString() -> Lithuania
-                    Luxembourg.codeAlpha3.toString() -> Luxembourg
-                    Macao.codeAlpha3.toString() -> Macao
-                    Madagascar.codeAlpha3.toString() -> Madagascar
-                    Malawi.codeAlpha3.toString() -> Malawi
-                    Malaysia.codeAlpha3.toString() -> Malaysia
-                    Maldives.codeAlpha3.toString() -> Maldives
-                    Mali.codeAlpha3.toString() -> Mali
-                    Malta.codeAlpha3.toString() -> Malta
-                    MarshallIslands.codeAlpha3.toString() -> MarshallIslands
-                    Martinique.codeAlpha3.toString() -> Martinique
-                    Mauritania.codeAlpha3.toString() -> Mauritania
-                    Mauritius.codeAlpha3.toString() -> Mauritius
-                    Mayotte.codeAlpha3.toString() -> Mayotte
-                    Mexico.codeAlpha3.toString() -> Mexico
-                    Micronesia.codeAlpha3.toString() -> Micronesia
-                    Moldova.codeAlpha3.toString() -> Moldova
-                    Monaco.codeAlpha3.toString() -> Monaco
-                    Mongolia.codeAlpha3.toString() -> Mongolia
-                    Montenegro.codeAlpha3.toString() -> Montenegro
-                    Montserrat.codeAlpha3.toString() -> Montserrat
-                    Morocco.codeAlpha3.toString() -> Morocco
-                    Mozambique.codeAlpha3.toString() -> Mozambique
-                    Myanmar.codeAlpha3.toString() -> Myanmar
-                    Namibia.codeAlpha3.toString() -> Namibia
-                    Nauru.codeAlpha3.toString() -> Nauru
-                    Nepal.codeAlpha3.toString() -> Nepal
-                    Netherlands.codeAlpha3.toString() -> Netherlands
-                    NewCaledonia.codeAlpha3.toString() -> NewCaledonia
-                    NewZealand.codeAlpha3.toString() -> NewZealand
-                    Nicaragua.codeAlpha3.toString() -> Nicaragua
-                    Niger.codeAlpha3.toString() -> Niger
-                    Nigeria.codeAlpha3.toString() -> Nigeria
-                    Niue.codeAlpha3.toString() -> Niue
-                    NorfolkIsland.codeAlpha3.toString() -> NorfolkIsland
-                    NorthMacedonia.codeAlpha3.toString() -> NorthMacedonia
-                    NorthernMarianaIslands.codeAlpha3.toString() -> NorthernMarianaIslands
-                    Norway.codeAlpha3.toString() -> Norway
-                    Oman.codeAlpha3.toString() -> Oman
-                    Pakistan.codeAlpha3.toString() -> Pakistan
-                    Palau.codeAlpha3.toString() -> Palau
-                    Palestine.codeAlpha3.toString() -> Palestine
-                    Panama.codeAlpha3.toString() -> Panama
-                    PapuaNewGuinea.codeAlpha3.toString() -> PapuaNewGuinea
-                    Paraguay.codeAlpha3.toString() -> Paraguay
-                    Peru.codeAlpha3.toString() -> Peru
-                    Philippines.codeAlpha3.toString() -> Philippines
-                    Pitcairn.codeAlpha3.toString() -> Pitcairn
-                    Poland.codeAlpha3.toString() -> Poland
-                    Portugal.codeAlpha3.toString() -> Portugal
-                    PuertoRico.codeAlpha3.toString() -> PuertoRico
-                    Qatar.codeAlpha3.toString() -> Qatar
-                    Romania.codeAlpha3.toString() -> Romania
-                    RussianFederation.codeAlpha3.toString() -> RussianFederation
-                    Rwanda.codeAlpha3.toString() -> Rwanda
-                    Réunion.codeAlpha3.toString() -> Réunion
-                    SaintBarthélemy.codeAlpha3.toString() -> SaintBarthélemy
-                    SaintHelena.codeAlpha3.toString() -> SaintHelena
-                    SaintKittsAndNevis.codeAlpha3.toString() -> SaintKittsAndNevis
-                    SaintLucia.codeAlpha3.toString() -> SaintLucia
-                    SaintMartin.codeAlpha3.toString() -> SaintMartin
-                    SaintPierreAndMiquelon.codeAlpha3.toString() -> SaintPierreAndMiquelon
-                    SaintVincentAndTheGrenadines.codeAlpha3.toString() -> SaintVincentAndTheGrenadines
-                    Samoa.codeAlpha3.toString() -> Samoa
-                    SaoTomeAndPrincipe.codeAlpha3.toString() -> SaoTomeAndPrincipe
-                    SaudiArabia.codeAlpha3.toString() -> SaudiArabia
-                    Senegal.codeAlpha3.toString() -> Senegal
-                    Serbia.codeAlpha3.toString() -> Serbia
-                    Seychelles.codeAlpha3.toString() -> Seychelles
-                    SierraLeone.codeAlpha3.toString() -> SierraLeone
-                    Singapore.codeAlpha3.toString() -> Singapore
-                    SintMaarten.codeAlpha3.toString() -> SintMaarten
-                    Slovakia.codeAlpha3.toString() -> Slovakia
-                    Slovenia.codeAlpha3.toString() -> Slovenia
-                    SolomonIslands.codeAlpha3.toString() -> SolomonIslands
-                    SouthAfrica.codeAlpha3.toString() -> SouthAfrica
-                    SouthGeorgiaAndTheSouthSandwichIslands.codeAlpha3.toString() -> SouthGeorgiaAndTheSouthSandwichIslands
-                    SouthSudan.codeAlpha3.toString() -> SouthSudan
-                    Spain.codeAlpha3.toString() -> Spain
-                    SriLanka.codeAlpha3.toString() -> SriLanka
-                    Sudan.codeAlpha3.toString() -> Sudan
-                    Suriname.codeAlpha3.toString() -> Suriname
-                    SvalbardAndJanMayen.codeAlpha3.toString() -> SvalbardAndJanMayen
-                    Sweden.codeAlpha3.toString() -> Sweden
-                    Switzerland.codeAlpha3.toString() -> Switzerland
-                    Syrian.codeAlpha3.toString() -> Syrian
-                    Taiwan.codeAlpha3.toString() -> Taiwan
-                    Tajikistan.codeAlpha3.toString() -> Tajikistan
-                    Tanzania.codeAlpha3.toString() -> Tanzania
-                    Thailand.codeAlpha3.toString() -> Thailand
-                    TimorLeste.codeAlpha3.toString() -> TimorLeste
-                    Togo.codeAlpha3.toString() -> Togo
-                    Tokelau.codeAlpha3.toString() -> Tokelau
-                    Tonga.codeAlpha3.toString() -> Tonga
-                    TrinidadAndTobago.codeAlpha3.toString() -> TrinidadAndTobago
-                    Tunisia.codeAlpha3.toString() -> Tunisia
-                    Turkmenistan.codeAlpha3.toString() -> Turkmenistan
-                    TurksAndCaicosIsland.codeAlpha3.toString() -> TurksAndCaicosIsland
-                    Tuvalu.codeAlpha3.toString() -> Tuvalu
-                    Türkiye.codeAlpha3.toString() -> Türkiye
-                    Uganda.codeAlpha3.toString() -> Uganda
-                    Ukraine.codeAlpha3.toString() -> Ukraine
-                    UnitedArabEmirates.codeAlpha3.toString() -> UnitedArabEmirates
-                    UnitedKingdomOfGreatBritainAndNorthernIreland.codeAlpha3.toString() -> UnitedKingdomOfGreatBritainAndNorthernIreland
-                    UnitedStatesMinorOutlyingIslands.codeAlpha3.toString() -> UnitedStatesMinorOutlyingIslands
-                    UnitedStatesOfAmerica.codeAlpha3.toString() -> UnitedStatesOfAmerica
-                    Uruguay.codeAlpha3.toString() -> Uruguay
-                    Uzbekistan.codeAlpha3.toString() -> Uzbekistan
-                    Vanuatu.codeAlpha3.toString() -> Vanuatu
-                    Venezuela.codeAlpha3.toString() -> Venezuela
-                    VietNam.codeAlpha3.toString() -> VietNam
-                    VirginIslandsBritish.codeAlpha3.toString() -> VirginIslandsBritish
-                    VirginIslandsUS.codeAlpha3.toString() -> VirginIslandsUS
-                    WallisAndFutuna.codeAlpha3.toString() -> WallisAndFutuna
-                    WesternSahara.codeAlpha3.toString() -> WesternSahara
-                    Yemen.codeAlpha3.toString() -> Yemen
-                    Zambia.codeAlpha3.toString() -> Zambia
-                    Zimbabwe.codeAlpha3.toString() -> Zimbabwe
+                val validCode = trimmedCode.takeIf(Code.Alpha3::isValidFormat)
+                return when {
+                    validCode == null -> null // make sure it doesn't check other types
+                    Afghanistan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Afghanistan
+                    Albania.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Albania
+                    Algeria.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Algeria
+                    AmericanSamoa.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> AmericanSamoa
+                    Andorra.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Andorra
+                    Angola.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Angola
+                    Anguilla.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Anguilla
+                    Antarctica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Antarctica
+                    AntiguaAndBarbuda.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> AntiguaAndBarbuda
+                    Argentina.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Argentina
+                    Armenia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Armenia
+                    Aruba.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Aruba
+                    Australia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Australia
+                    Austria.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Austria
+                    Azerbaijan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Azerbaijan
+                    Bahamas.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bahamas
+                    Bahrain.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bahrain
+                    Bangladesh.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bangladesh
+                    Barbados.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Barbados
+                    Belarus.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Belarus
+                    Belgium.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Belgium
+                    Belize.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Belize
+                    Benin.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Benin
+                    Bermuda.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bermuda
+                    ÅlandIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> ÅlandIslands
+                    Bhutan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bhutan
+                    Bolivia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bolivia
+                    Bonaire.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bonaire
+                    BosniaAndHerzegovina.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> BosniaAndHerzegovina
+                    Botswana.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Botswana
+                    BouvetIsland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> BouvetIsland
+                    Brazil.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Brazil
+                    BritishIndianOceanTerritory.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> BritishIndianOceanTerritory
+                    BruneiDarussalam.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> BruneiDarussalam
+                    Bulgaria.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Bulgaria
+                    BurkinaFaso.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> BurkinaFaso
+                    Burundi.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Burundi
+                    CaboVerde.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CaboVerde
+                    Cambodia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Cambodia
+                    Cameroon.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Cameroon
+                    Canada.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Canada
+                    CaymanIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CaymanIslands
+                    CentralAfricanRepublic.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CentralAfricanRepublic
+                    Chad.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Chad
+                    Chile.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Chile
+                    China.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> China
+                    ChristmasIsland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> ChristmasIsland
+                    CocosIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CocosIslands
+                    Colombia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Colombia
+                    Comoros.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Comoros
+                    DemocraticRepublicCongo.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> DemocraticRepublicCongo
+                    Congo.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Congo
+                    CookIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CookIslands
+                    CostaRica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> CostaRica
+                    Croatia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Croatia
+                    Cuba.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Cuba
+                    Curaçao.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Curaçao
+                    Cyprus.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Cyprus
+                    Czechia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Czechia
+                    IvoryCoast.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> IvoryCoast
+                    Denmark.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Denmark
+                    Djibouti.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Djibouti
+                    Dominica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Dominica
+                    DominicanRepublic.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> DominicanRepublic
+                    Ecuador.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Ecuador
+                    Egypt.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Egypt
+                    ElSalvador.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> ElSalvador
+                    EquatorialGuinea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> EquatorialGuinea
+                    Eritrea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Eritrea
+                    Estonia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Estonia
+                    Eswatini.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Eswatini
+                    Ethiopia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Ethiopia
+                    FalklandIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> FalklandIslands
+                    FaroeIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> FaroeIslands
+                    Fiji.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Fiji
+                    Finland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Finland
+                    France.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> France
+                    FrenchGuiana.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> FrenchGuiana
+                    FrenchPolynesia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> FrenchPolynesia
+                    FrenchSouthernTerritories.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> FrenchSouthernTerritories
+                    Gabon.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Gabon
+                    Gambia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Gambia
+                    Georgia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Georgia
+                    Germany.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Germany
+                    Ghana.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Ghana
+                    Gibraltar.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Gibraltar
+                    Greece.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Greece
+                    Greenland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Greenland
+                    Grenada.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Grenada
+                    Guadeloupe.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guadeloupe
+                    Guam.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guam
+                    Guatemala.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guatemala
+                    Guernsey.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guernsey
+                    Guinea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guinea
+                    GuineaBissau.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> GuineaBissau
+                    Guyana.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Guyana
+                    Haiti.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Haiti
+                    HeardIslandAndMcDonaldIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> HeardIslandAndMcDonaldIslands
+                    HolySee.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> HolySee
+                    Honduras.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Honduras
+                    HongKong.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> HongKong
+                    Hungary.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Hungary
+                    Iceland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Iceland
+                    India.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> India
+                    Indonesia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Indonesia
+                    Iran.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Iran
+                    Iraq.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Iraq
+                    Ireland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Ireland
+                    IsleOfMan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> IsleOfMan
+                    Israel.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Israel
+                    Italy.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Italy
+                    Jamaica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Jamaica
+                    Japan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Japan
+                    Jersey.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Jersey
+                    Jordan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Jordan
+                    Kazakhstan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Kazakhstan
+                    Kenya.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Kenya
+                    Kiribati.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Kiribati
+                    NorthKorea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NorthKorea
+                    SouthKorea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SouthKorea
+                    Kuwait.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Kuwait
+                    Kyrgyzstan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Kyrgyzstan
+                    Lao.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Lao
+                    Latvia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Latvia
+                    Lebanon.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Lebanon
+                    Lesotho.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Lesotho
+                    Liberia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Liberia
+                    Libya.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Libya
+                    Liechtenstein.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Liechtenstein
+                    Lithuania.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Lithuania
+                    Luxembourg.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Luxembourg
+                    Macao.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Macao
+                    Madagascar.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Madagascar
+                    Malawi.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Malawi
+                    Malaysia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Malaysia
+                    Maldives.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Maldives
+                    Mali.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mali
+                    Malta.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Malta
+                    MarshallIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> MarshallIslands
+                    Martinique.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Martinique
+                    Mauritania.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mauritania
+                    Mauritius.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mauritius
+                    Mayotte.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mayotte
+                    Mexico.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mexico
+                    Micronesia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Micronesia
+                    Moldova.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Moldova
+                    Monaco.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Monaco
+                    Mongolia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mongolia
+                    Montenegro.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Montenegro
+                    Montserrat.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Montserrat
+                    Morocco.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Morocco
+                    Mozambique.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Mozambique
+                    Myanmar.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Myanmar
+                    Namibia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Namibia
+                    Nauru.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Nauru
+                    Nepal.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Nepal
+                    Netherlands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Netherlands
+                    NewCaledonia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NewCaledonia
+                    NewZealand.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NewZealand
+                    Nicaragua.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Nicaragua
+                    Niger.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Niger
+                    Nigeria.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Nigeria
+                    Niue.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Niue
+                    NorfolkIsland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NorfolkIsland
+                    NorthMacedonia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NorthMacedonia
+                    NorthernMarianaIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> NorthernMarianaIslands
+                    Norway.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Norway
+                    Oman.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Oman
+                    Pakistan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Pakistan
+                    Palau.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Palau
+                    Palestine.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Palestine
+                    Panama.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Panama
+                    PapuaNewGuinea.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> PapuaNewGuinea
+                    Paraguay.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Paraguay
+                    Peru.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Peru
+                    Philippines.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Philippines
+                    Pitcairn.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Pitcairn
+                    Poland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Poland
+                    Portugal.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Portugal
+                    PuertoRico.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> PuertoRico
+                    Qatar.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Qatar
+                    Romania.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Romania
+                    RussianFederation.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> RussianFederation
+                    Rwanda.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Rwanda
+                    Réunion.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Réunion
+                    SaintBarthélemy.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintBarthélemy
+                    SaintHelena.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintHelena
+                    SaintKittsAndNevis.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintKittsAndNevis
+                    SaintLucia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintLucia
+                    SaintMartin.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintMartin
+                    SaintPierreAndMiquelon.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintPierreAndMiquelon
+                    SaintVincentAndTheGrenadines.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaintVincentAndTheGrenadines
+                    Samoa.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Samoa
+                    SaoTomeAndPrincipe.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaoTomeAndPrincipe
+                    SaudiArabia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SaudiArabia
+                    Senegal.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Senegal
+                    Serbia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Serbia
+                    Seychelles.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Seychelles
+                    SierraLeone.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SierraLeone
+                    Singapore.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Singapore
+                    SintMaarten.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SintMaarten
+                    Slovakia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Slovakia
+                    Slovenia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Slovenia
+                    SolomonIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SolomonIslands
+                    SouthAfrica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SouthAfrica
+                    SouthGeorgiaAndTheSouthSandwichIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SouthGeorgiaAndTheSouthSandwichIslands
+                    SouthSudan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SouthSudan
+                    Spain.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Spain
+                    SriLanka.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SriLanka
+                    Sudan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Sudan
+                    Suriname.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Suriname
+                    SvalbardAndJanMayen.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> SvalbardAndJanMayen
+                    Sweden.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Sweden
+                    Switzerland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Switzerland
+                    Syrian.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Syrian
+                    Taiwan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Taiwan
+                    Tajikistan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tajikistan
+                    Tanzania.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tanzania
+                    Thailand.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Thailand
+                    TimorLeste.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> TimorLeste
+                    Togo.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Togo
+                    Tokelau.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tokelau
+                    Tonga.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tonga
+                    TrinidadAndTobago.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> TrinidadAndTobago
+                    Tunisia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tunisia
+                    Turkmenistan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Turkmenistan
+                    TurksAndCaicosIsland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> TurksAndCaicosIsland
+                    Tuvalu.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Tuvalu
+                    Türkiye.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Türkiye
+                    Uganda.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Uganda
+                    Ukraine.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Ukraine
+                    UnitedArabEmirates.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> UnitedArabEmirates
+                    UnitedKingdomOfGreatBritainAndNorthernIreland.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> UnitedKingdomOfGreatBritainAndNorthernIreland
+                    UnitedStatesMinorOutlyingIslands.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> UnitedStatesMinorOutlyingIslands
+                    UnitedStatesOfAmerica.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> UnitedStatesOfAmerica
+                    Uruguay.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Uruguay
+                    Uzbekistan.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Uzbekistan
+                    Vanuatu.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Vanuatu
+                    Venezuela.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Venezuela
+                    VietNam.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> VietNam
+                    VirginIslandsBritish.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> VirginIslandsBritish
+                    VirginIslandsUS.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> VirginIslandsUS
+                    WallisAndFutuna.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> WallisAndFutuna
+                    WesternSahara.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> WesternSahara
+                    Yemen.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Yemen
+                    Zambia.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Zambia
+                    Zimbabwe.codeAlpha3.contentEquals(validCode, ignoreCase = true) -> Zimbabwe
                     else -> null
                 }
             }
