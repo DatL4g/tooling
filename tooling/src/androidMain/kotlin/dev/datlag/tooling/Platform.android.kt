@@ -2,6 +2,7 @@ package dev.datlag.tooling
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.os.Build
 
 actual object Platform {
     actual val isAndroid: Boolean = true
@@ -36,9 +37,15 @@ actual object Platform {
      */
     @Suppress("DEPRECATION")
     fun isTelevision(packageManager: PackageManager): Boolean {
+        val leanbackOnly = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK_ONLY)
+        } else {
+            false
+        }
+
         return packageManager.hasSystemFeature(PackageManager.FEATURE_TELEVISION)
                 || packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
-                || packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK_ONLY)
+                || leanbackOnly
     }
 
     /**

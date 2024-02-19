@@ -1,7 +1,10 @@
 package dev.datlag.tooling
 
 import org.apache.commons.lang3.SystemUtils
+import java.awt.Desktop
+import java.net.URI
 import java.util.*
+import kotlin.coroutines.cancellation.CancellationException
 
 actual data object Platform {
 
@@ -113,10 +116,106 @@ actual data object Platform {
             return arch ?: throw IllegalStateException("Could not get matching Arch: $osArch")
         }
 
+    /**
+     * Open URI in browser (or in system specified program).
+     *
+     * @param uri any String, make sure it's compatible with the program you want to open.
+     * @return [Boolean] whether opening worked or not.
+     */
+    fun openInBrowser(uri: String): Boolean {
+        fun openCommands(cmd: Array<Array<String>>): Boolean {
+            cmd.forEach { browser ->
+                try {
+                    val command = arrayOfNulls<String>(browser.size)
+                    for (i in browser.indices) {
+                        if (browser[i] == "$1") {
+                            command[i] = uri
+                        } else {
+                            command[i] = browser[i]
+                        }
+                    }
+                    if (Runtime.getRuntime().exec(command).waitFor() == 0) {
+                        return true
+                    }
+                } catch (e: Throwable) {
+                    if (e is CancellationException) {
+                        throw e
+                    }
+                }
+            }
+            return false
+        }
+
+        val osSpecific = scopeCatching {
+            if (openCommands(currentOs.supportedOpenCommands)) {
+                return@scopeCatching
+            }
+
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(URI.create(uri))
+            } else {
+                throw IllegalStateException()
+            }
+        }
+
+        if (osSpecific.isSuccess) {
+            return true
+        }
+
+        return scopeCatching {
+            openCommands(
+                arrayOf(
+                    *OS.LINUX.supportedOpenCommands,
+                    *OS.MACOSX.supportedOpenCommands,
+                    *OS.WINDOWS.supportedOpenCommands
+                )
+            )
+        }.isSuccess
+    }
+
     sealed class OS(open val name: String, private vararg val values: String) {
-        data class MACOSX(override val name: String) : OS(name, "mac", "darwin", "osx")
-        data class LINUX(override val name: String) : OS(name, "linux")
-        data class WINDOWS(override val name: String) : OS(name, "win", "windows")
+        data class MACOSX(override val name: String) : OS(name, "mac", "darwin", "osx") {
+
+            override val supportedOpenCommands: Array<Array<String>> = Companion.supportedOpenCommands
+
+            companion object : OpenCommands {
+                override val supportedOpenCommands: Array<Array<String>> = arrayOf(
+                    arrayOf("open", "$1")
+                )
+            }
+        }
+        data class LINUX(override val name: String) : OS(name, "linux") {
+
+            override val supportedOpenCommands: Array<Array<String>> = Companion.supportedOpenCommands
+
+            companion object : OpenCommands {
+                override val supportedOpenCommands: Array<Array<String>> = arrayOf(
+                    arrayOf("xdg-open", "$1"),
+                    arrayOf("gio", "open", "$1"),
+                    arrayOf("gvfs-open", "$1"),
+                    arrayOf("gnome-open", "$1"),
+                    arrayOf("mate-open", "$1"),
+                    arrayOf("exo-open", "$1"),
+                    arrayOf("enlightenment_open", "$1"),
+                    arrayOf(
+                        "gdbus", "call", "--session", "--dest", "org.freedesktop.portal.Desktop",
+                        "--object-path", "/org/freedesktop/portal/desktop",
+                        "--method", "org.freedesktop.portal.OpenURI.OpenURI",
+                        "", "$1", "{}"
+                    )
+                )
+            }
+        }
+        data class WINDOWS(override val name: String) : OS(name, "win", "windows") {
+
+            override val supportedOpenCommands: Array<Array<String>> = Companion.supportedOpenCommands
+
+            companion object : OpenCommands {
+                override val supportedOpenCommands: Array<Array<String>> = arrayOf(
+                    arrayOf("rundll32", "url.dll,FileProtocolHandler", "$1")
+                )
+            }
+        }
 
         internal fun matches(osName: String): Boolean {
             return this.values.any {
@@ -133,6 +232,8 @@ actual data object Platform {
         val isWindows: Boolean
             get() = this is WINDOWS
 
+        internal abstract val supportedOpenCommands: Array<Array<String>>
+
         override fun toString(): String {
             return when {
                 isMacOSX -> "MacOS"
@@ -140,6 +241,10 @@ actual data object Platform {
                 isWindows -> "Windows"
                 else -> "Unknown"
             }
+        }
+
+        internal interface OpenCommands {
+            val supportedOpenCommands: Array<Array<String>>
         }
 
         companion object {
