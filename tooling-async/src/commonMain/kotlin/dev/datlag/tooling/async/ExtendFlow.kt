@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.firstOrNull
  *
  * @param [collector] the [FlowCollector] where you want to receive values.
  */
-suspend fun <T> Flow<T>.collectSafe(catchTimeout: Boolean = false, collector: FlowCollector<T>) {
+suspend fun <T> Flow<T>.collectSafe(catchTimeout: Boolean, collector: FlowCollector<T>) {
     suspendCatching(catchTimeout) {
         this@collectSafe.collect(collector)
     }.getOrNull() ?: suspendCatching(catchTimeout) {
@@ -20,14 +20,18 @@ suspend fun <T> Flow<T>.collectSafe(catchTimeout: Boolean = false, collector: Fl
     }.getOrNull()?.let { collector.emit(it) }
 }
 
+suspend fun <T> Flow<T>.collectSafe(collector: FlowCollector<T>) = this.collectSafe(false, collector)
+
 /**
  * Collect [StateFlow] without throwing an exception, except [CancellationException] to cancel parent jobs.
  * Tries to emit a single value if [StateFlow.collect] can not be called.
  *
  * @param [collector] the [FlowCollector] where you want to receive values.
  */
-suspend fun <T> StateFlow<T>.collectSafe(catchTimeout: Boolean = false, collector: FlowCollector<T>) {
+suspend fun <T> StateFlow<T>.collectSafe(catchTimeout: Boolean, collector: FlowCollector<T>) {
     suspendCatching(catchTimeout) {
         this@collectSafe.collect(collector)
     }.getOrNull() ?: collector.emit(this.value)
 }
+
+suspend fun <T> StateFlow<T>.collectSafe(collector: FlowCollector<T>) = this.collectSafe(false, collector)
