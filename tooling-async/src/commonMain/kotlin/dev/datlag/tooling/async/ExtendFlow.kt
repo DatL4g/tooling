@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.firstOrNull
  *
  * @param [collector] the [FlowCollector] where you want to receive values.
  */
-suspend fun <T> Flow<T>.collectSafe(collector: FlowCollector<T>) {
-    suspendCatching {
+suspend fun <T> Flow<T>.collectSafe(catchTimeout: Boolean = false, collector: FlowCollector<T>) {
+    suspendCatching(catchTimeout) {
         this@collectSafe.collect(collector)
-    }.getOrNull() ?: suspendCatching {
+    }.getOrNull() ?: suspendCatching(catchTimeout) {
         this@collectSafe.firstOrNull()
     }.getOrNull()?.let { collector.emit(it) }
 }
@@ -26,8 +26,8 @@ suspend fun <T> Flow<T>.collectSafe(collector: FlowCollector<T>) {
  *
  * @param [collector] the [FlowCollector] where you want to receive values.
  */
-suspend fun <T> StateFlow<T>.collectSafe(collector: FlowCollector<T>) {
-    suspendCatching {
+suspend fun <T> StateFlow<T>.collectSafe(catchTimeout: Boolean = false, collector: FlowCollector<T>) {
+    suspendCatching(catchTimeout) {
         this@collectSafe.collect(collector)
     }.getOrNull() ?: collector.emit(this.value)
 }

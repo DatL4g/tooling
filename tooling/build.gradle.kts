@@ -91,6 +91,10 @@ kotlin {
             implementation(libs.lang)
             implementation(libs.appdirs)
         }
+
+        androidMain.dependencies {
+            implementation(libs.android)
+        }
     }
 }
 

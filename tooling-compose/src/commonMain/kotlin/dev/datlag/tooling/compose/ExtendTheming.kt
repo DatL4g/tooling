@@ -1,10 +1,5 @@
 package dev.datlag.tooling.compose
 
-import androidx.compose.material.Colors
-import androidx.compose.material.Shapes
-import androidx.compose.material.Typography
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -12,61 +7,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-
-/**
- * Get Material3 [ColorScheme] as Material [Colors].
- * Useful to commonize theming with old and new [Composable]s.
- *
- * @param [useDark] whether the provided [ColorScheme] should be converted to dark Material [Colors].
- * @return Material [Colors] from a provided [ColorScheme].
- */
-fun ColorScheme.toLegacyColors(useDark: Boolean): Colors {
-    return if (useDark) {
-        darkColors(
-            primary = this.primary,
-            primaryVariant = this.primaryContainer,
-            secondary = this.secondary,
-            secondaryVariant = this.secondaryContainer,
-            background = this.background,
-            surface = this.surface,
-            error = this.error,
-            onPrimary = this.onPrimary,
-            onSecondary = this.onSecondary,
-            onBackground = this.onBackground,
-            onSurface = this.onSurface,
-            onError = this.onError
-        )
-    } else {
-        lightColors(
-            primary = this.primary,
-            primaryVariant = this.primaryContainer,
-            secondary = this.secondary,
-            secondaryVariant = this.secondaryContainer,
-            background = this.background,
-            surface = this.surface,
-            error = this.error,
-            onPrimary = this.onPrimary,
-            onSecondary = this.onSecondary,
-            onBackground = this.onBackground,
-            onSurface = this.onSurface,
-            onError = this.onError
-        )
-    }
-}
-
-/**
- * Get Material3 [androidx.compose.material3.Shapes] as Material [Shapes].
- * Useful to commonize theming with old and new [Composable]s.
- *
- * @return Material [Shapes] of Material3 ones.
- */
-fun androidx.compose.material3.Shapes.toLegacyShapes(): Shapes {
-    return Shapes(
-        small = this.small,
-        medium = this.medium,
-        large = this.large
-    )
-}
 
 /**
  * Get Material3 [androidx.compose.material3.Typography] with default sizes.
@@ -182,20 +122,6 @@ fun FontFamily.toTypography(): androidx.compose.material3.Typography {
                 lineHeight = 16.0.sp,
                 letterSpacing = 0.5.sp
             )
-        )
-    }
-}
-
-/**
- * Get Material [Typography] with default sizes.
- *
- * @return Material [Typography] of a given [FontFamily]
- */
-@Composable
-fun FontFamily.toLegacyTypography(): Typography {
-    return remember(this) {
-        Typography(
-            defaultFontFamily = this
         )
     }
 }

@@ -1,8 +1,12 @@
 package dev.datlag.tooling
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 
 actual object Platform {
     actual val isAndroid: Boolean = true
@@ -57,4 +61,34 @@ actual object Platform {
     fun isTelevision(context: Context): Boolean {
         return isTelevision(context.packageManager ?: context.applicationContext.packageManager)
     }
+
+    /**
+     * Open a given [Uri] in browser.
+     *
+     * @param [context] the [Context] used to open the uri in browser.
+     * @return true if intent could be launched.
+     */
+    fun openInBrowser(uri: Uri, context: Context): Boolean {
+        val browserIntent = Intent(Intent.ACTION_VIEW, uri)
+
+        val firstResult = scopeCatching {
+            ContextCompat.startActivity(context, browserIntent, null)
+        }.isSuccess
+        if (firstResult) {
+            return true
+        }
+
+        val newIntent = browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        return scopeCatching {
+            ContextCompat.startActivity(context, newIntent, null)
+        }.isSuccess
+    }
+
+    /**
+     * Open a given [String] in browser.
+     *
+     * @param [context] the [Context] used to open the uri in browser.
+     * @return true if intent could be launched.
+     */
+    fun openInBrowser(uri: String, context: Context): Boolean = openInBrowser(uri.toUri(), context)
 }

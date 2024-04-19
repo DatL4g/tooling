@@ -39,3 +39,23 @@ inline fun <reified T> Any?.safeCast(): T? {
         }
     }
 }
+
+/**
+ * Runs [also] if the value is true.
+ */
+inline fun Boolean.alsoTrue(block: (Boolean) -> Unit): Boolean {
+    if (this) {
+        block(this)
+    }
+    return this
+}
+
+/**
+ * Runs [also] if the value is false.
+ */
+inline fun Boolean.alsoFalse(block: (Boolean) -> Unit): Boolean {
+    if (this) {
+        block(this)
+    }
+    return this
+}

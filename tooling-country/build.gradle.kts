@@ -83,6 +83,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.serialization)
+            api(project(":tooling"))
         }
 
         val javaMain by creating {
