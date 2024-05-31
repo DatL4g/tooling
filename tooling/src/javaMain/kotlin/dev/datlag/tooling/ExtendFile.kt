@@ -258,6 +258,8 @@ fun File.createAsFileSafely(default: Boolean = false): Boolean {
         return default
     }
 
+    this.parentExistsOrCreateSafely()
+
     return scopeCatching {
         Files.createFile(this.toPath())
     }.getOrNull()?.toFile()?.existsSafely() ?: scopeCatching {

@@ -52,7 +52,7 @@ val Collection<*>.lastIndex: Int
  * @return a [List] which only holds elements of the original [Collection] within it's provided bounds.
  */
 fun <T> Collection<T>.safeSubList(from: Int, to: Int): List<T> {
-    if (this.isEmpty()) {
+    if (this.isEmpty() || from > lastIndex) {
         return emptyList()
     }
 
