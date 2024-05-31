@@ -71,6 +71,14 @@ kotlin {
         jvmMain.get().dependencies {
             implementation(libs.coroutines.swing)
         }
+
+        val wasmJsMain by getting { }
+        val webMain by creating {
+            dependsOn(commonMain.get())
+
+            jsMain.orNull?.dependsOn(this)
+            wasmJsMain.dependsOn(this)
+        }
     }
 }
 
