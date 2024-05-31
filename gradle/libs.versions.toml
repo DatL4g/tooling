@@ -7,7 +7,7 @@ compose = "1.6.10"
 coroutines = "1.8.1"
 decompose = "3.0.0"
 dokka = "1.9.20"
-kotlin = "1.9.23"
+kotlin = "2.0.0"
 lang = "3.14.0"
 publish = "0.28.0"
 serialization = "1.6.3"
@@ -29,6 +29,7 @@ android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }

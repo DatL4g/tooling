@@ -1,4 +1,5 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnPlugin
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
@@ -8,6 +9,7 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.compose) apply false
+    alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.dokka)
     alias(libs.plugins.multiplatform) apply false
     alias(libs.plugins.publish) apply false
@@ -38,7 +40,9 @@ allprojects {
     }
 
     tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions.jvmTarget = CompileOptions.jvmTarget
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 
     plugins.withType<YarnPlugin> {
