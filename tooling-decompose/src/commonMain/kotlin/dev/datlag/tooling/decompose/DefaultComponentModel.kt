@@ -51,12 +51,6 @@ abstract class DefaultComponentModel : ComponentModel {
         this.closeables += closeables
     }
 
-    init {
-        doOnDestroy {
-            clear()
-        }
-    }
-
     final override fun clear() {
         if (isCleared) {
             if (!clearCallback) {
