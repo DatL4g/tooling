@@ -38,11 +38,12 @@ inline fun Modifier.ifFalse(predicate: Boolean, builder: Modifier.() -> Modifier
  *  @param [minScale] the minimum scale which is used while clicking.
  *  @return the [Modifier] which contains the scale on click changes.
  */
-fun Modifier.scaleClick(minScale: Float = 0.9F) = composed {
+@Composable
+fun Modifier.scaleClick(minScale: Float = 0.9F): Modifier {
     var buttonState by remember { mutableStateOf(false) }
     val scale by animateFloatAsState(if (buttonState) minScale else 1F)
 
-    graphicsLayer {
+    return graphicsLayer {
         scaleX = scale
         scaleY = scale
     }.pointerInput(buttonState) {
@@ -64,11 +65,12 @@ fun Modifier.scaleClick(minScale: Float = 0.9F) = composed {
  *  @param [maxTranslation] the maximum translation which is used while clicking.
  *  @return the [Modifier] which contains the scale on click changes.
  */
-fun Modifier.translateClick(maxTranslation: Float = 10F) = composed {
+@Composable
+fun Modifier.translateClick(maxTranslation: Float = 10F): Modifier {
     var buttonState by remember { mutableStateOf(false) }
     val translation by animateFloatAsState(if (buttonState) maxTranslation else 0F)
 
-    graphicsLayer {
+    return graphicsLayer {
         translationY = translation
     }.pointerInput(buttonState) {
         awaitPointerEventScope {
@@ -98,11 +100,11 @@ fun Modifier.isFocused(
     focusable: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     builder: Modifier.() -> Modifier
-): Modifier = composed {
+): Modifier {
     val isHovered by interactionSource.collectIsHoveredAsState()
     val isFocused by interactionSource.collectIsFocusedAsState()
 
-    this.ifTrue(isHovered || isFocused) {
+    return this.ifTrue(isHovered || isFocused) {
         builder()
     }.hoverable(
         interactionSource = interactionSource,
@@ -128,7 +130,7 @@ fun Modifier.onFocusChanged(
     focusable: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     onChanged: (Boolean) -> Unit
-): Modifier = composed {
+): Modifier {
     val isHovered by interactionSource.collectIsHoveredAsState()
     val isFocused by interactionSource.collectIsFocusedAsState()
 
@@ -138,7 +140,7 @@ fun Modifier.onFocusChanged(
         onChanged(latestValue)
     }
 
-    this.hoverable(
+    return this.hoverable(
         interactionSource = interactionSource,
         enabled = hoverable
     ).focusable(
@@ -162,8 +164,8 @@ fun Modifier.focusScale(
     hoverable: Boolean = true,
     focusable: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
-) = composed {
-    isFocused(
+): Modifier {
+    return isFocused(
         hoverable,
         focusable,
         interactionSource

@@ -80,6 +80,10 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     sourceSets {
+        commonMain.dependencies {
+            implementation(libs.immutable)
+        }
+
         val javaMain by creating {
             dependsOn(commonMain.get())
 

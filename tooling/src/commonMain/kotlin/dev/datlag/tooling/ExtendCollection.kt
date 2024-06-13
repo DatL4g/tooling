@@ -1,5 +1,10 @@
 package dev.datlag.tooling
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableSet
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.collections.contains as defaultContains
@@ -38,7 +43,7 @@ fun <T> mutableSetFrom(vararg list: Iterable<T>): MutableSet<T> {
  *
  * @return a [Set] of all provided items in iterables.
  */
-fun <T> setFrom(vararg list: Iterable<T>): Set<T> = mutableSetFrom(*list)
+fun <T> setFrom(vararg list: Iterable<T>): ImmutableSet<T> = mutableSetFrom(*list).toImmutableSet()
 
 /**
  * Provides the last existing index of any [Collection]
@@ -49,26 +54,26 @@ val Collection<*>.lastIndex: Int
 /**
  * Run [List.subList] on any [Collection] safely without throwing any exception if the provided start/end values do not exist.
  *
- * @return a [List] which only holds elements of the original [Collection] within it's provided bounds.
+ * @return a [ImmutableList] which only holds elements of the original [Collection] within it's provided bounds.
  */
-fun <T> Collection<T>.safeSubList(from: Int, to: Int): List<T> {
+fun <T> Collection<T>.safeSubList(from: Int, to: Int): ImmutableList<T> {
     if (this.isEmpty() || from > lastIndex) {
-        return emptyList()
+        return persistentListOf()
     }
 
     val safeFrom = max(min(from, lastIndex), 0)
     return this.toList().subList(
         safeFrom,
         max(safeFrom, min(to, size))
-    )
+    ).toImmutableList()
 }
 
 /**
  * Run [List.subList] on any [Collection] safely without throwing any exception if the provided start/end values do not exist.
  *
- * @return a [Set] which only holds elements of the original [Collection] within it's provided bounds.
+ * @return a [ImmutableSet] which only holds elements of the original [Collection] within it's provided bounds.
  */
-fun <T> Collection<T>.safeSubSet(from: Int, to: Int): Set<T> = toSet().safeSubList(from, to).toSet()
+fun <T> Collection<T>.safeSubSet(from: Int, to: Int): ImmutableSet<T> = toSet().safeSubList(from, to).toImmutableSet()
 
 /**
  * Check if a [String]-[Iterable] contains a specific element with the option to ignore case-sensitivity.

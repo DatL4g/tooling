@@ -1,5 +1,8 @@
 package dev.datlag.tooling
 
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.persistentSetOf
+import kotlinx.collections.immutable.toImmutableSet
 import java.io.File
 import java.nio.file.FileSystems
 
@@ -24,7 +27,7 @@ fun Tooling.homeDirectory(): File? {
  *
  * @return a [Set] of [File]s which are root directories.
  */
-fun Tooling.findSystemRoots(): Set<File> {
+fun Tooling.findSystemRoots(): ImmutableSet<File> {
     val windowsRoot = systemEnv("SystemDrive")
 
     val defaultRoots = Tooling.onSupportsNio {
@@ -38,12 +41,12 @@ fun Tooling.findSystemRoots(): Set<File> {
     }.getOrNull()?.ifEmpty { null }
 
 
-    val roots = (defaultRoots ?: emptyList()).normalize()
+    val roots = (defaultRoots ?: persistentSetOf()).normalize()
 
     return (if (!windowsRoot.isNullOrBlank()) {
         roots.sortedByDescending {
             it.canonicalPath.trim().equals(windowsRoot, true) || it.isSame(File(windowsRoot))
-        }.toSet()
+        }.toImmutableSet()
     } else {
         roots
     })

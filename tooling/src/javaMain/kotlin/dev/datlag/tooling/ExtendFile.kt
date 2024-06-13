@@ -1,5 +1,9 @@
 package dev.datlag.tooling
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableSet
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.LinkOption
@@ -152,7 +156,7 @@ fun File.isSame(file: File?, default: Boolean = false): Boolean {
  *
  * @return a [List] of [File]s available in provided parent.
  */
-fun File.listFilesSafely(): List<File> {
+fun File.listFilesSafely(): ImmutableList<File> {
     val nioFiles = Tooling.onSupportsNio {
         scopeCatching {
             Files.list(this.toPath()).collect(Collectors.toList()).mapNotNull { path ->
@@ -160,11 +164,12 @@ fun File.listFilesSafely(): List<File> {
             }
         }.getOrNull()
     } ?: emptyList()
+
     return nioFiles.ifEmpty {
         scopeCatching {
             this.listFiles()
         }.getOrNull()?.filterNotNull() ?: emptyList()
-    }
+    }.toImmutableList()
 }
 
 /**
@@ -188,7 +193,7 @@ fun File.deleteSafely(default: Boolean = false): Boolean {
  *
  * @return a [Set] of unique [File]s.
  */
-fun Iterable<File>.normalize(): Set<File> {
+fun Iterable<File>.normalize(): ImmutableSet<File> {
     val list = mutableSetOf<File>()
     this.forEach { file ->
         var realFile = file.getOriginalFile()
@@ -203,7 +208,7 @@ fun Iterable<File>.normalize(): Set<File> {
             list.add(realFile)
         }
     }
-    return list
+    return list.toImmutableSet()
 }
 
 /**
