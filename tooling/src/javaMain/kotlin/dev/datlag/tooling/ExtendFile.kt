@@ -1,32 +1,10 @@
 package dev.datlag.tooling
 
 import java.io.File
-import java.io.RandomAccessFile
-import java.nio.channels.FileChannel
 import java.nio.file.Files
 import java.nio.file.LinkOption
 import java.util.stream.Collectors
 import kotlin.coroutines.cancellation.CancellationException
-
-/**
- * Extension method to read a file as is without converting it to UTF-8 or anything else.
- * Useful for reading files on a byte level.
- */
-fun File.readChannel(block: (FileChannel) -> Unit) {
-    val reader = RandomAccessFile(this, "r")
-    block(reader.channel)
-    reader.close()
-}
-
-/**
- * Extension method to write a file as is without converting it to UTF-8 or anything else.
- * Useful for writing files on a byte level.
- */
-fun File.writeChannel(block: (FileChannel) -> Unit) {
-    val writer = RandomAccessFile(this, "rw")
-    block(writer.channel)
-    writer.close()
-}
 
 /**
  * Extension method to check if a file exists without throwing an exception, except [CancellationException] to cancel parent jobs.
@@ -39,9 +17,11 @@ fun File?.existsSafely(default: Boolean = false): Boolean {
         return false
     }
 
-    return scopeCatching {
-        Files.exists(this.toPath())
-    }.getOrNull() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.exists(this.toPath())
+        }.getOrNull()
+    } ?: scopeCatching {
         this.exists()
     }.getOrNull() ?: default
 }
@@ -53,9 +33,11 @@ fun File?.existsSafely(default: Boolean = false): Boolean {
  */
 @JvmOverloads
 fun File.canReadSafely(default: Boolean = false): Boolean {
-    return scopeCatching {
-        Files.isReadable(this.toPath())
-    }.getOrNull() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.isReadable(this.toPath())
+        }.getOrNull()
+    } ?: scopeCatching {
         this.canRead()
     }.getOrNull() ?: default
 }
@@ -67,9 +49,11 @@ fun File.canReadSafely(default: Boolean = false): Boolean {
  */
 @JvmOverloads
 fun File.canWriteSafely(default: Boolean = false): Boolean {
-    return scopeCatching {
-        Files.isWritable(this.toPath())
-    }.getOrNull() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.isWritable(this.toPath())
+        }.getOrNull()
+    } ?: scopeCatching {
         this.canWrite()
     }.getOrNull() ?: default
 }
@@ -109,11 +93,15 @@ fun File?.existsRWSafely(default: Boolean = false): Boolean {
  */
 @JvmOverloads
 fun File.isSymlinkSafely(default: Boolean = false): Boolean {
-    return scopeCatching {
-        Files.isSymbolicLink(this.toPath())
-    }.getOrNull() ?: scopeCatching {
-        !Files.isRegularFile(this.toPath(), LinkOption.NOFOLLOW_LINKS)
-    }.getOrNull() ?: default
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.isSymbolicLink(this.toPath())
+        }.getOrNull()
+    } ?: Tooling.onSupportsNio {
+        scopeCatching {
+            !Files.isRegularFile(this.toPath(), LinkOption.NOFOLLOW_LINKS)
+        }.getOrNull()
+    } ?: default
 }
 
 /**
@@ -122,9 +110,13 @@ fun File.isSymlinkSafely(default: Boolean = false): Boolean {
  * @return the real [File] of a symlink or itself.
  */
 fun File.getOriginalFile(): File {
-    return if (isSymlinkSafely()) scopeCatching {
-        Files.readSymbolicLink(this.toPath()).toFile()
-    }.getOrNull() ?: this else this
+    return if (isSymlinkSafely()) {
+        Tooling.onSupportsNio {
+            scopeCatching {
+                Files.readSymbolicLink(this.toPath()).toFile()
+            }.getOrNull()
+        } ?: this
+    } else this
 }
 
 /**
@@ -148,7 +140,9 @@ fun File.isSame(file: File?, default: Boolean = false): Boolean {
         false
     } else {
         this == targetFile || scopeCatching {
-            sourceFile.canonicalFile == targetFile.canonicalFile || Files.isSameFile(sourceFile.toPath(), targetFile.toPath())
+            sourceFile.canonicalFile == targetFile.canonicalFile || Tooling.onSupportsNio {
+                Files.isSameFile(sourceFile.toPath(), targetFile.toPath())
+            } ?: default
         }.getOrNull() ?: default
     }
 }
@@ -159,11 +153,14 @@ fun File.isSame(file: File?, default: Boolean = false): Boolean {
  * @return a [List] of [File]s available in provided parent.
  */
 fun File.listFilesSafely(): List<File> {
-    return (scopeCatching {
-        Files.list(this.toPath()).collect(Collectors.toList()).mapNotNull { path ->
-            path?.toFile()
-        }
-    }.getOrNull() ?: emptyList()).ifEmpty {
+    val nioFiles = Tooling.onSupportsNio {
+        scopeCatching {
+            Files.list(this.toPath()).collect(Collectors.toList()).mapNotNull { path ->
+                path?.toFile()
+            }
+        }.getOrNull()
+    } ?: emptyList()
+    return nioFiles.ifEmpty {
         scopeCatching {
             this.listFiles()
         }.getOrNull()?.filterNotNull() ?: emptyList()
@@ -175,12 +172,15 @@ fun File.listFilesSafely(): List<File> {
  *
  * @return whether the file could be deleted or not.
  */
-fun File.deleteSafely(): Boolean {
-    return scopeCatching {
-        Files.delete(this.toPath())
-    }.isSuccess || scopeCatching {
+@JvmOverloads
+fun File.deleteSafely(default: Boolean = false): Boolean {
+    return (Tooling.onSupportsNio {
+        scopeCatching {
+            Files.delete(this.toPath())
+        }.isSuccess
+    } ?: default) || scopeCatching {
         this.delete()
-    }.getOrNull() ?: false
+    }.getOrNull() ?: default
 }
 
 /**
@@ -213,10 +213,12 @@ fun Iterable<File>.normalize(): Set<File> {
  */
 @JvmOverloads
 fun File.isDirectorySafely(default: Boolean = false): Boolean {
-    return scopeCatching {
-        Files.isDirectory(this.toPath())
-    }.getOrNull() ?: scopeCatching {
-        Files.isDirectory(this.toPath())
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.isDirectory(this.toPath())
+        }.getOrNull()
+    } ?: scopeCatching {
+        this.isDirectory
     }.getOrNull() ?: default
 }
 
@@ -226,9 +228,11 @@ fun File.isDirectorySafely(default: Boolean = false): Boolean {
  * @return the parent [File] or null.
  */
 fun File.parentSafely(): File? {
-    return scopeCatching {
-        this.toPath().parent?.toFile()
-    }.getOrNull() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            this.toPath().parent?.toFile()
+        }.getOrNull()
+    } ?: scopeCatching {
         this.parentFile
     }.getOrNull()
 }
@@ -240,9 +244,11 @@ fun File.parentSafely(): File? {
  */
 @JvmOverloads
 fun File.mkdirsSafely(default: Boolean = false): Boolean {
-    return scopeCatching {
-        Files.createDirectories(this.toPath())
-    }.getOrNull()?.toFile()?.existsSafely() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.createDirectories(this.toPath())
+        }.getOrNull()?.toFile()?.existsSafely()
+    } ?: scopeCatching {
         this.mkdirs()
     }.getOrNull() ?: default
 }
@@ -260,9 +266,11 @@ fun File.createAsFileSafely(default: Boolean = false): Boolean {
 
     this.parentExistsOrCreateSafely()
 
-    return scopeCatching {
-        Files.createFile(this.toPath())
-    }.getOrNull()?.toFile()?.existsSafely() ?: scopeCatching {
+    return Tooling.onSupportsNio {
+        scopeCatching {
+            Files.createFile(this.toPath())
+        }.getOrNull()?.toFile()?.existsSafely()
+    } ?: scopeCatching {
         this.createNewFile()
     }.getOrNull() ?: default
 }

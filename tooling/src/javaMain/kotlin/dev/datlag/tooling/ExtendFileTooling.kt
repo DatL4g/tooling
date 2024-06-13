@@ -26,13 +26,19 @@ fun Tooling.homeDirectory(): File? {
  */
 fun Tooling.findSystemRoots(): Set<File> {
     val windowsRoot = systemEnv("SystemDrive")
-    val roots = (scopeCatching {
-        FileSystems.getDefault()?.rootDirectories?.mapNotNull {
-            it?.toFile()
-        }
-    }.getOrNull()?.ifEmpty { null } ?: scopeCatching {
+
+    val defaultRoots = Tooling.onSupportsNio {
+        scopeCatching {
+            FileSystems.getDefault()?.rootDirectories?.mapNotNull {
+                it?.toFile()
+            }
+        }.getOrNull()?.ifEmpty { null }
+    } ?: scopeCatching {
         File.listRoots().filterNotNull()
-    }.getOrNull()?.ifEmpty { null } ?: emptyList()).normalize()
+    }.getOrNull()?.ifEmpty { null }
+
+
+    val roots = (defaultRoots ?: emptyList()).normalize()
 
     return (if (!windowsRoot.isNullOrBlank()) {
         roots.sortedByDescending {
@@ -41,4 +47,14 @@ fun Tooling.findSystemRoots(): Set<File> {
     } else {
         roots
     })
+}
+
+expect fun Tooling.supportsNio(): Boolean
+
+internal fun <T> Tooling.onSupportsNio(block: () -> T): T? {
+    return if (supportsNio()) {
+        block()
+    } else {
+        null
+    }
 }
