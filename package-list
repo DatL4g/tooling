@@ -7,6 +7,7 @@ module:tooling-async
 dev.datlag.tooling.async
 module:tooling-compose
 dev.datlag.tooling.compose
+dev.datlag.tooling.compose.platform
 module:tooling-country
 dev.datlag.tooling.country
 dev.datlag.tooling.country.serializer
