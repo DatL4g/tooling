@@ -5,18 +5,22 @@ android-core = "1.13.1"
 appdirs = "1.2.2"
 compose = "1.6.11"
 coroutines = "1.8.1"
-decompose = "3.0.0"
+decompose = "3.1.0"
 dokka = "1.9.20"
 immutable = "0.3.7"
 kotlin = "2.0.0"
 lang = "3.14.0"
 publish = "0.28.0"
 serialization = "1.7.0"
+tvComposeFoundation = "1.0.0-alpha10"
+tvComposeMaterial = "1.0.0-beta01"
 versions = "0.51.0"
 
 [libraries]
 android = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
 appdirs = { group = "net.harawata", name = "appdirs", version.ref = "appdirs" }
+tv-compose-foundation = { group = "androidx.tv", name = "tv-foundation", version.ref = "tvComposeFoundation" }
+tv-compose-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvComposeMaterial" }
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines" }

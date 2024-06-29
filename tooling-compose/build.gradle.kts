@@ -68,9 +68,21 @@ kotlin {
         androidMain.get().dependencies {
             implementation(libs.android)
             implementation(libs.coroutines.android)
+
+            implementation(libs.tv.compose.foundation)
+            implementation(libs.tv.compose.material)
         }
         jvmMain.get().dependencies {
             implementation(libs.coroutines.swing)
+        }
+
+        val nonAndroidMain by creating {
+            dependsOn(commonMain.get())
+
+            jvmMain.orNull?.dependsOn(this)
+            nativeMain.orNull?.dependsOn(this)
+            jsMain.orNull?.dependsOn(this)
+            wasmJsMain.orNull?.dependsOn(this)
         }
     }
 }

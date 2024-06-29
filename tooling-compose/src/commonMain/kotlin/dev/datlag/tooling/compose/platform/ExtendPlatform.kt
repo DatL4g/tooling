@@ -1,0 +1,27 @@
+package dev.datlag.tooling.compose.platform
+
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import dev.datlag.tooling.Platform
+
+@Composable
+expect fun Platform.rememberIsTv(): Boolean
+
+@Composable
+expect fun Platform.localContentColor(): Color
+
+@Composable
+expect fun Platform.localTextStyle(): TextStyle
+
+@Composable
+expect fun Platform.colorScheme(): ColorScheme
+
+@Composable
+expect fun Platform.shapes(): Shapes
+
+@Composable
+expect fun Platform.typography(): Typography
