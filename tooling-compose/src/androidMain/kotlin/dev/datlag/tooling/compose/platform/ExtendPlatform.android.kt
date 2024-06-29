@@ -17,6 +17,8 @@ import androidx.compose.material3.LocalTextStyle as DefaultTextStyle
 import androidx.tv.material3.LocalTextStyle as TvTextStyle
 import androidx.compose.material3.MaterialTheme as DefaultTheme
 import androidx.tv.material3.MaterialTheme as TvTheme
+import androidx.compose.material3.ProvideTextStyle as DefaultProvideTextStyle
+import androidx.tv.material3.ProvideTextStyle as TvProvideTextStyle
 import dev.datlag.tooling.Platform
 
 @Composable
@@ -196,4 +198,26 @@ fun DefaultTypography.asTv(): TvTypography {
         labelMedium = this.labelMedium,
         labelSmall = this.labelSmall
     )
+}
+
+@Composable
+actual fun PlatformProvideTextStyle(
+    value: TextStyle,
+    content: @Composable () -> Unit
+) {
+    if (Platform.rememberIsTv()) {
+        TvProvideTextStyle(value, content)
+    } else {
+        DefaultProvideTextStyle(value, content)
+    }
+}
+
+@Composable
+actual fun CombinedPlatformProvideTextStyle(
+    value: TextStyle,
+    content: @Composable () -> Unit
+) {
+    DefaultProvideTextStyle(value) {
+        TvProvideTextStyle(value, content)
+    }
 }

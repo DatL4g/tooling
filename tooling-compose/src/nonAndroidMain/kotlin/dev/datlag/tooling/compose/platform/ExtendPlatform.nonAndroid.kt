@@ -4,6 +4,7 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
@@ -41,3 +42,17 @@ actual fun Platform.shapes(): Shapes {
 actual fun Platform.typography(): Typography {
     return MaterialTheme.typography
 }
+
+@Composable
+actual fun PlatformProvideTextStyle(
+    value: TextStyle,
+    content: @Composable () -> Unit
+) {
+    ProvideTextStyle(value, content)
+}
+
+@Composable
+actual fun CombinedPlatformProvideTextStyle(
+    value: TextStyle,
+    content: @Composable () -> Unit
+) = PlatformProvideTextStyle(value, content)

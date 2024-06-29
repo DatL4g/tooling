@@ -25,3 +25,9 @@ expect fun Platform.shapes(): Shapes
 
 @Composable
 expect fun Platform.typography(): Typography
+
+@Composable
+expect fun PlatformProvideTextStyle(value: TextStyle, content: @Composable () -> Unit)
+
+@Composable
+expect fun CombinedPlatformProvideTextStyle(value: TextStyle, content: @Composable () -> Unit)
