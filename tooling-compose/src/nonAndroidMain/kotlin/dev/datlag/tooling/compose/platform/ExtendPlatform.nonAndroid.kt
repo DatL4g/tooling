@@ -1,5 +1,7 @@
 package dev.datlag.tooling.compose.platform
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
@@ -56,3 +58,8 @@ actual fun CombinedPlatformProvideTextStyle(
     value: TextStyle,
     content: @Composable () -> Unit
 ) = PlatformProvideTextStyle(value, content)
+
+@Composable
+actual fun Platform.buttonPadding(): PaddingValues {
+    return ButtonDefaults.ContentPadding
+}

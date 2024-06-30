@@ -1,5 +1,6 @@
 package dev.datlag.tooling.compose.platform
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.Typography as DefaultTypography
 import androidx.tv.material3.Typography as TvTypography
 import androidx.compose.material3.ColorScheme as DefaultColorScheme
@@ -13,6 +14,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.material3.ButtonDefaults as DefaultButton
+import androidx.tv.material3.ButtonDefaults as TvButton
 import androidx.compose.material3.LocalTextStyle as DefaultTextStyle
 import androidx.tv.material3.LocalTextStyle as TvTextStyle
 import androidx.compose.material3.MaterialTheme as DefaultTheme
@@ -219,5 +222,14 @@ actual fun CombinedPlatformProvideTextStyle(
 ) {
     DefaultProvideTextStyle(value) {
         TvProvideTextStyle(value, content)
+    }
+}
+
+@Composable
+actual fun Platform.buttonPadding(): PaddingValues {
+    return if (rememberIsTv()) {
+        TvButton.ContentPadding
+    } else {
+        DefaultButton.ContentPadding
     }
 }

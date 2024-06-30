@@ -1,5 +1,6 @@
 package dev.datlag.tooling.compose.platform
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
@@ -25,6 +26,9 @@ expect fun Platform.shapes(): Shapes
 
 @Composable
 expect fun Platform.typography(): Typography
+
+@Composable
+expect fun Platform.buttonPadding(): PaddingValues
 
 @Composable
 expect fun PlatformProvideTextStyle(value: TextStyle, content: @Composable () -> Unit)
