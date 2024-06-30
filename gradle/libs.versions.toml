@@ -1,5 +1,5 @@
 [versions]
-library = "1.5.2"
+library = "1.6.0"
 android = "8.2.2"
 android-core = "1.13.1"
 appdirs = "1.2.2"
