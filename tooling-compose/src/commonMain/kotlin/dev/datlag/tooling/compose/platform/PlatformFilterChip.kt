@@ -5,17 +5,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-expect fun PlatformAssistChip(
+expect fun PlatformFilterChip(
+    selected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     leadingIcon: (@Composable () -> Unit)? = null,
     trailingIcon: (@Composable () -> Unit)? = null,
-    shape: PlatformClickableChipShape = PlatformClickableChipShape.assist(),
-    colors: PlatformClickableChipColors = PlatformClickableChipColors.assist(),
-    scale: PlatformClickableChipScale = PlatformClickableChipScale.assist(),
-    border: PlatformClickableChipBorder = PlatformClickableChipBorder.assist(),
-    glow: PlatformClickableChipGlow = PlatformClickableChipGlow.assist(),
+    shape: PlatformSelectableChipShape = PlatformSelectableChipShape.filter(),
+    colors: PlatformSelectableChipColors = PlatformSelectableChipColors.filter(),
+    scale: PlatformSelectableChipScale = PlatformSelectableChipScale.filter(),
+    border: PlatformSelectableChipBorder = PlatformSelectableChipBorder.filter(),
+    glow: PlatformSelectableChipGlow = PlatformSelectableChipGlow.filter(),
     interactionSource: MutableInteractionSource? = null,
     content: @Composable () -> Unit
 )

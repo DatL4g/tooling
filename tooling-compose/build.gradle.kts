@@ -69,7 +69,6 @@ kotlin {
             implementation(libs.android)
             implementation(libs.coroutines.android)
 
-            implementation(libs.tv.compose.foundation)
             implementation(libs.tv.compose.material)
         }
         jvmMain.get().dependencies {

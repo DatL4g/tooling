@@ -12,14 +12,12 @@ kotlin = "2.0.0"
 lang = "3.14.0"
 publish = "0.28.0"
 serialization = "1.7.0"
-tvComposeFoundation = "1.0.0-alpha10"
 tvComposeMaterial = "1.0.0-beta01"
 versions = "0.51.0"
 
 [libraries]
 android = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
 appdirs = { group = "net.harawata", name = "appdirs", version.ref = "appdirs" }
-tv-compose-foundation = { group = "androidx.tv", name = "tv-foundation", version.ref = "tvComposeFoundation" }
 tv-compose-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvComposeMaterial" }
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
