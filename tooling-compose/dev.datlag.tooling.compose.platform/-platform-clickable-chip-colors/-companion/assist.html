@@ -70,19 +70,19 @@
             }<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
-                Color.Transparent
+                containerColor
             }<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().inverseOnSurface
             } else {
-                Platform.colorScheme().onSurface
+                contentColor
             }<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurfaceVariant
             } else {
-                Color.Transparent
+                containerColor
             }<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surface
             } else {
-                Platform.colorScheme().onSurface
+                contentColor
             }<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(
                     alpha = DisabledBackgroundColorOpacity

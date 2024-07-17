@@ -74,11 +74,11 @@
             }<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
-                Platform.colorScheme().primary
+                containerColor
             }<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().inverseOnSurface
             } else {
-                Platform.colorScheme().onPrimary
+                contentColor
             }<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>focusedContainerColor<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>focusedContentColor<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(alpha = 0.4f)
             } else {
