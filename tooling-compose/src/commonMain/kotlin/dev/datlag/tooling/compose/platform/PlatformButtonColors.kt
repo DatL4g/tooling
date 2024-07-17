@@ -99,14 +99,38 @@ class PlatformButtonColors(
     companion object {
         @Composable
         fun default(
-            containerColor: Color = Platform.colorScheme().surfaceVariant.copy(alpha = 0.8f),
-            contentColor: Color = Platform.colorScheme().onSurface.copy(alpha = 0.8f),
-            focusedContainerColor: Color = Platform.colorScheme().onSurface,
-            focusedContentColor: Color = Platform.colorScheme().inverseOnSurface,
+            containerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(alpha = 0.8f)
+            } else {
+                Platform.colorScheme().primary
+            },
+            contentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface.copy(alpha = 0.8f)
+            } else {
+                Platform.colorScheme().onPrimary
+            },
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Platform.colorScheme().primary
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                Platform.colorScheme().onPrimary
+            },
             pressedContainerColor: Color = focusedContainerColor,
             pressedContentColor: Color = focusedContentColor,
-            disabledContainerColor: Color = Platform.colorScheme().surfaceVariant.copy(alpha = 0.4f),
-            disabledContentColor: Color = Platform.colorScheme().onSurface.copy(alpha = 0.4f),
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(alpha = 0.4f)
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.12f)
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface.copy(alpha = 0.4f)
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            },
         ) = PlatformButtonColors(
             containerColor = containerColor,
             contentColor = contentColor,
