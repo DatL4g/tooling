@@ -10,9 +10,9 @@ dokka = "1.9.20"
 immutable = "0.3.7"
 kotlin = "2.0.0"
 lang = "3.14.0"
-publish = "0.28.0"
-serialization = "1.7.0"
-tvComposeMaterial = "1.0.0-beta01"
+publish = "0.29.0"
+serialization = "1.7.1"
+tvComposeMaterial = "1.0.0-rc01"
 versions = "0.51.0"
 
 [libraries]
