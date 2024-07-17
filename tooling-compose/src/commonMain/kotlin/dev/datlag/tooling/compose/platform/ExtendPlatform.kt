@@ -2,6 +2,7 @@ package dev.datlag.tooling.compose.platform
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
@@ -35,3 +36,9 @@ expect fun PlatformProvideTextStyle(value: TextStyle, content: @Composable () ->
 
 @Composable
 expect fun CombinedPlatformProvideTextStyle(value: TextStyle, content: @Composable () -> Unit)
+
+@Composable
+fun ProvideNonTvTextStyle(
+    value: TextStyle = LocalTextStyle.current,
+    content: @Composable () -> Unit
+) = CombinedPlatformProvideTextStyle(value, content)

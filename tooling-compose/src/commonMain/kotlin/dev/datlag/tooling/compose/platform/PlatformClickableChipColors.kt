@@ -3,7 +3,9 @@ package dev.datlag.tooling.compose.platform
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.ChipColors
+import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
@@ -106,17 +108,45 @@ class PlatformClickableChipColors(
         @Composable
         fun assist(
             containerColor: Color = Color.Transparent,
-            contentColor: Color = Platform.colorScheme().onSurfaceVariant,
-            focusedContainerColor: Color = Platform.colorScheme().onSurface,
-            focusedContentColor: Color = Platform.colorScheme().inverseOnSurface,
-            pressedContainerColor: Color = Platform.colorScheme().onSurfaceVariant,
-            pressedContentColor: Color = Platform.colorScheme().surface,
-            disabledContainerColor: Color = Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            ),
-            disabledContentColor: Color = Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            )
+            contentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Platform.colorScheme().onSurface
+            },
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Color.Transparent
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                Platform.colorScheme().onSurface
+            },
+            pressedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Color.Transparent
+            },
+            pressedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                Platform.colorScheme().onSurface
+            },
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Color.Transparent
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            }
         ) = PlatformClickableChipColors(
             containerColor = containerColor,
             contentColor = contentColor,
@@ -132,16 +162,40 @@ class PlatformClickableChipColors(
         fun suggestion(
             containerColor: Color = Color.Transparent,
             contentColor: Color = Platform.colorScheme().onSurfaceVariant,
-            focusedContainerColor: Color = Platform.colorScheme().onSurface,
-            focusedContentColor: Color = Platform.colorScheme().inverseOnSurface,
-            pressedContainerColor: Color = Platform.colorScheme().onSurfaceVariant,
-            pressedContentColor: Color = Platform.colorScheme().surface,
-            disabledContainerColor: Color = Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            ),
-            disabledContentColor: Color = Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            )
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Color.Transparent
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                Platform.colorScheme().onSurfaceVariant
+            },
+            pressedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Color.Transparent
+            },
+            pressedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                Platform.colorScheme().onSurfaceVariant
+            },
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Color.Transparent
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            }
         ) = PlatformClickableChipColors(
             containerColor = containerColor,
             contentColor = contentColor,
