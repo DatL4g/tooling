@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">tooling-compose</a><span class="delimiter">/</span><a href="../../index.html">dev.datlag.tooling.compose.platform</a><span class="delimiter">/</span><a href="../index.html">PlatformClickableChipColors</a><span class="delimiter">/</span><span class="current">Companion</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Companion</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">Companion</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformClickableChipColors.kt#L101">source</a>)</span></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">Companion</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformClickableChipColors.kt#L103">source</a>)</span></span></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -79,11 +79,39 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="assist.html"><span class="token function">assist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.Transparent<span class="token punctuation">, </span></span><span class="parameter ">contentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurfaceVariant<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurface<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().inverseOnSurface<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurfaceVariant<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().surface<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            )<span class="token punctuation">, </span></span><span class="parameter ">disabledContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            )</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformClickableChipColors</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="assist.html"><span class="token function">assist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.Transparent<span class="token punctuation">, </span></span><span class="parameter ">contentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Platform.colorScheme().onSurface
+            }<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                Platform.colorScheme().onSurface
+            }<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                Platform.colorScheme().onSurface
+            }<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">disabledContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformClickableChipColors</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -98,11 +126,35 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="suggestion.html"><span class="token function">suggestion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.Transparent<span class="token punctuation">, </span></span><span class="parameter ">contentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurfaceVariant<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurface<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().inverseOnSurface<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurfaceVariant<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().surface<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            )<span class="token punctuation">, </span></span><span class="parameter ">disabledContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            )</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformClickableChipColors</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="suggestion.html"><span class="token function">suggestion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.Transparent<span class="token punctuation">, </span></span><span class="parameter ">contentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Platform.colorScheme().onSurfaceVariant<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">focusedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                Platform.colorScheme().onSurfaceVariant
+            }<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                Platform.colorScheme().onSurfaceVariant
+            }<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Color.Transparent
+            }<span class="token punctuation">, </span></span><span class="parameter ">disabledContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformClickableChipColors</a></div></div></div>
                 </div>
               </div>
             </div>
