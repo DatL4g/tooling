@@ -152,24 +152,68 @@ class PlatformSelectableChipColors(
         fun filter(
             containerColor: Color = Color.Transparent,
             contentColor: Color = Platform.colorScheme().onSurfaceVariant,
-            focusedContainerColor: Color = Platform.colorScheme().onSurface,
-            focusedContentColor: Color = Platform.colorScheme().inverseOnSurface,
-            pressedContainerColor: Color = Platform.colorScheme().onSurfaceVariant,
-            pressedContentColor: Color = Platform.colorScheme().surface,
-            selectedContainerColor: Color = Platform.colorScheme().secondaryContainer.copy(
-                alpha = SelectedBackgroundColorOpacity
-            ),
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                containerColor
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                contentColor
+            },
+            pressedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                containerColor
+            },
+            pressedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                contentColor
+            },
+            selectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().secondaryContainer.copy(
+                    alpha = SelectedBackgroundColorOpacity
+                )
+            } else {
+                Platform.colorScheme().secondaryContainer
+            },
             selectedContentColor: Color = Platform.colorScheme().onSecondaryContainer,
-            disabledContainerColor: Color = Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            ),
-            disabledContentColor: Color = Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            ),
-            focusedSelectedContainerColor: Color = Platform.colorScheme().onPrimaryContainer,
-            focusedSelectedContentColor: Color = Platform.colorScheme().onPrimary,
-            pressedSelectedContainerColor: Color = Platform.colorScheme().secondary,
-            pressedSelectedContentColor: Color = Platform.colorScheme().onSecondary,
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Color.Transparent
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            },
+            focusedSelectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onPrimaryContainer
+            } else {
+                selectedContainerColor
+            },
+            focusedSelectedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onPrimary
+            } else {
+                selectedContentColor
+            },
+            pressedSelectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().secondary
+            } else {
+                selectedContainerColor
+            },
+            pressedSelectedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSecondary
+            } else {
+                selectedContentColor
+            },
         ) = PlatformSelectableChipColors(
             containerColor = containerColor,
             contentColor = contentColor,
@@ -191,24 +235,68 @@ class PlatformSelectableChipColors(
         fun input(
             containerColor: Color = Color.Transparent,
             contentColor: Color = Platform.colorScheme().onSurfaceVariant,
-            focusedContainerColor: Color = Platform.colorScheme().onSurface,
-            focusedContentColor: Color = Platform.colorScheme().inverseOnSurface,
-            pressedContainerColor: Color = Platform.colorScheme().onSurfaceVariant,
-            pressedContentColor: Color = Platform.colorScheme().surface,
-            selectedContainerColor: Color = Platform.colorScheme().secondaryContainer.copy(
-                alpha = SelectedBackgroundColorOpacity
-            ),
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                containerColor
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                contentColor
+            },
+            pressedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurfaceVariant
+            } else {
+                containerColor
+            },
+            pressedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surface
+            } else {
+                contentColor
+            },
+            selectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().secondaryContainer.copy(
+                    alpha = SelectedBackgroundColorOpacity
+                )
+            } else {
+                Platform.colorScheme().secondaryContainer
+            },
             selectedContentColor: Color = Platform.colorScheme().onSecondaryContainer,
-            disabledContainerColor: Color = Platform.colorScheme().surfaceVariant.copy(
-                alpha = DisabledBackgroundColorOpacity
-            ),
-            disabledContentColor: Color = Platform.colorScheme().outline.copy(
-                alpha = DisabledContentColorOpacity
-            ),
-            focusedSelectedContainerColor: Color = Platform.colorScheme().onPrimaryContainer,
-            focusedSelectedContentColor: Color = Platform.colorScheme().onPrimary,
-            pressedSelectedContainerColor: Color = Platform.colorScheme().secondary,
-            pressedSelectedContentColor: Color = Platform.colorScheme().onSecondary,
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(
+                    alpha = DisabledBackgroundColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.12f)
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().outline.copy(
+                    alpha = DisabledContentColorOpacity
+                )
+            } else {
+                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            },
+            focusedSelectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onPrimaryContainer
+            } else {
+                selectedContainerColor
+            },
+            focusedSelectedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onPrimary
+            } else {
+                selectedContentColor
+            },
+            pressedSelectedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().secondary
+            } else {
+                selectedContainerColor
+            },
+            pressedSelectedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSecondary
+            } else {
+                selectedContentColor
+            },
         ) = PlatformSelectableChipColors(
             containerColor = containerColor,
             contentColor = contentColor,

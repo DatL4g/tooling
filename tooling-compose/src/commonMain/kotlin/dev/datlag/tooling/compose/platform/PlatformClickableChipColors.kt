@@ -116,22 +116,22 @@ class PlatformClickableChipColors(
             focusedContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
-                Color.Transparent
+                containerColor
             },
             focusedContentColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().inverseOnSurface
             } else {
-                Platform.colorScheme().onSurface
+                contentColor
             },
             pressedContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurfaceVariant
             } else {
-                Color.Transparent
+                containerColor
             },
             pressedContentColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surface
             } else {
-                Platform.colorScheme().onSurface
+                contentColor
             },
             disabledContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(
@@ -165,22 +165,22 @@ class PlatformClickableChipColors(
             focusedContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
-                Color.Transparent
+                containerColor
             },
             focusedContentColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().inverseOnSurface
             } else {
-                Platform.colorScheme().onSurfaceVariant
+                contentColor
             },
             pressedContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurfaceVariant
             } else {
-                Color.Transparent
+                containerColor
             },
             pressedContentColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surface
             } else {
-                Platform.colorScheme().onSurfaceVariant
+                contentColor
             },
             disabledContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(

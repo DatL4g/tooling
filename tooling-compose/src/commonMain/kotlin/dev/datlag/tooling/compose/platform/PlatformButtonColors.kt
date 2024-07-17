@@ -112,12 +112,12 @@ class PlatformButtonColors(
             focusedContainerColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
-                Platform.colorScheme().primary
+                containerColor
             },
             focusedContentColor: Color = if (Platform.rememberIsTv()) {
                 Platform.colorScheme().inverseOnSurface
             } else {
-                Platform.colorScheme().onPrimary
+                contentColor
             },
             pressedContainerColor: Color = focusedContainerColor,
             pressedContentColor: Color = focusedContentColor,
