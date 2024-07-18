@@ -11,26 +11,28 @@ import dev.datlag.tooling.compose.glow
 @Composable
 actual fun PlatformSuggestionChip(
     onClick: () -> Unit,
+    label: @Composable () -> Unit,
     modifier: Modifier,
     enabled: Boolean,
+    icon: (@Composable () -> Unit)?,
     shape: PlatformClickableChipShape,
     colors: PlatformClickableChipColors,
     scale: PlatformClickableChipScale,
     border: PlatformClickableChipBorder,
     glow: PlatformClickableChipGlow,
     interactionSource: MutableInteractionSource?,
-    content: @Composable () -> Unit
 ) {
     val source = interactionSource ?: remember { MutableInteractionSource() }
     val targetShape = shape.shape(enabled, source)
 
     SuggestionChip(
         onClick = onClick,
-        label = content,
+        label = label,
         modifier = modifier
             .animatedScale(scale.scale(enabled, source), source)
             .glow(targetShape, glow.glow(source)),
         enabled = enabled,
+        icon = icon,
         shape = targetShape,
         colors = colors.colors(source),
         border = border.borderStrokeOrNull(enabled, source),
