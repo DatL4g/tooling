@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.InputChipDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
@@ -96,40 +98,88 @@ class PlatformSelectableChipBorder internal constructor(
     companion object {
         @Composable
         fun filter(
-            border: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().outline
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedBorder: PlatformBorder = PlatformBorder.None,
+            border: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().outline
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = FilterChipDefaults.filterChipBorder(enabled = true, selected = false),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                border
+            },
             pressedBorder: PlatformBorder = focusedBorder,
-            selectedBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().secondary
-                ),
-                shape = Platform.shapes().small
-            ),
-            disabledBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().surfaceVariant
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedSelectedBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.1.dp,
-                    color = Platform.colorScheme().onPrimaryContainer
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedDisabledBorder: PlatformBorder = border,
-            pressedSelectedBorder: PlatformBorder = PlatformBorder.None,
-            selectedDisabledBorder: PlatformBorder = PlatformBorder.None,
-            focusedSelectedDisabledBorder: PlatformBorder = border
+            selectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().secondary
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = FilterChipDefaults.filterChipBorder(enabled = true, selected = true),
+                    shape = Platform.shapes().small
+                )
+            },
+            disabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().surfaceVariant
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = FilterChipDefaults.filterChipBorder(enabled = false, selected = false),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedSelectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.1.dp,
+                        color = Platform.colorScheme().onPrimaryContainer
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                selectedBorder
+            },
+            focusedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                disabledBorder
+            },
+            pressedSelectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                selectedBorder
+            },
+            selectedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                PlatformBorder(
+                    border = FilterChipDefaults.filterChipBorder(enabled = false, selected = true),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedSelectedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                selectedDisabledBorder
+            }
         ) = PlatformSelectableChipBorder(
             border = border,
             focusedBorder = focusedBorder,
@@ -146,40 +196,88 @@ class PlatformSelectableChipBorder internal constructor(
         @Composable
         fun input(
             hasAvatar: Boolean,
-            border: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().outline
-                ),
-                shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
-            ),
-            focusedBorder: PlatformBorder = PlatformBorder.None,
+            border: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().outline
+                    ),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = InputChipDefaults.inputChipBorder(enabled = true, selected = false),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            },
+            focusedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                border
+            },
             pressedBorder: PlatformBorder = focusedBorder,
-            selectedBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().secondary
-                ),
-                shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
-            ),
-            disabledBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().surfaceVariant
-                ),
-                shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
-            ),
-            focusedSelectedBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.1.dp,
-                    color = Platform.colorScheme().onPrimaryContainer
-                ),
-                shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
-            ),
-            focusedDisabledBorder: PlatformBorder = border,
-            pressedSelectedBorder: PlatformBorder = PlatformBorder.None,
-            selectedDisabledBorder: PlatformBorder = PlatformBorder.None,
-            focusedSelectedDisabledBorder: PlatformBorder = border
+            selectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().secondary
+                    ),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = InputChipDefaults.inputChipBorder(enabled = true, selected = true),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            },
+            disabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().surfaceVariant
+                    ),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = InputChipDefaults.inputChipBorder(enabled = false, selected = false),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            },
+            focusedSelectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.1.dp,
+                        color = Platform.colorScheme().onPrimaryContainer
+                    ),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            } else {
+                selectedBorder
+            },
+            focusedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                disabledBorder
+            },
+            pressedSelectedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                selectedBorder
+            },
+            selectedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                PlatformBorder(
+                    border = InputChipDefaults.inputChipBorder(enabled = false, selected = true),
+                    shape = if (hasAvatar) Platform.shapes().medium else Platform.shapes().small
+                )
+            },
+            focusedSelectedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                selectedDisabledBorder
+            }
         ) = PlatformSelectableChipBorder(
             border = border,
             focusedBorder = focusedBorder,

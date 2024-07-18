@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.material3.AssistChipDefaults
+import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
@@ -80,23 +82,45 @@ class PlatformClickableChipBorder(
     companion object {
         @Composable
         fun assist(
-            border: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().outline
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedBorder: PlatformBorder = PlatformBorder.None,
+            border: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().outline
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = AssistChipDefaults.assistChipBorder(enabled = true),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                border
+            },
             pressedBorder: PlatformBorder = focusedBorder,
-            disabledBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().surfaceVariant
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedDisabledBorder: PlatformBorder = border
+            disabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().surfaceVariant
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = AssistChipDefaults.assistChipBorder(enabled = false),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                disabledBorder
+            }
         ) = PlatformClickableChipBorder(
             border = border,
             focusedBorder = focusedBorder,
@@ -107,23 +131,45 @@ class PlatformClickableChipBorder(
 
         @Composable
         fun suggestion(
-            border: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().outline
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedBorder: PlatformBorder = PlatformBorder.None,
+            border: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().outline
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = SuggestionChipDefaults.suggestionChipBorder(enabled = true),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder.None
+            } else {
+                border
+            },
             pressedBorder: PlatformBorder = focusedBorder,
-            disabledBorder: PlatformBorder = PlatformBorder(
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = Platform.colorScheme().surfaceVariant
-                ),
-                shape = Platform.shapes().small
-            ),
-            focusedDisabledBorder: PlatformBorder = border
+            disabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                PlatformBorder(
+                    border = BorderStroke(
+                        width = 1.dp,
+                        color = Platform.colorScheme().surfaceVariant
+                    ),
+                    shape = Platform.shapes().small
+                )
+            } else {
+                PlatformBorder(
+                    border = SuggestionChipDefaults.suggestionChipBorder(enabled = false),
+                    shape = Platform.shapes().small
+                )
+            },
+            focusedDisabledBorder: PlatformBorder = if (Platform.rememberIsTv()) {
+                border
+            } else {
+                disabledBorder
+            }
         ) = PlatformClickableChipBorder(
             border = border,
             focusedBorder = focusedBorder,
