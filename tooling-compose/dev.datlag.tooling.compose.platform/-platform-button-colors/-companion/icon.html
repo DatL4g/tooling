@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>default</title>
+    <title>icon</title>
 <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -58,19 +58,19 @@
                 <div class="sidebar--inner" id="sideMenu"></div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="tooling-compose::dev.datlag.tooling.compose.platform/PlatformButtonColors.Companion/default/#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color/PointingToDeclaration//-833044042">
-  <div class="breadcrumbs"><a href="../../../index.html">tooling-compose</a><span class="delimiter">/</span><a href="../../index.html">dev.datlag.tooling.compose.platform</a><span class="delimiter">/</span><a href="../index.html">PlatformButtonColors</a><span class="delimiter">/</span><a href="index.html">Companion</a><span class="delimiter">/</span><span class="current">default</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="tooling-compose::dev.datlag.tooling.compose.platform/PlatformButtonColors.Companion/icon/#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color/PointingToDeclaration//-833044042">
+  <div class="breadcrumbs"><a href="../../../index.html">tooling-compose</a><span class="delimiter">/</span><a href="../../index.html">dev.datlag.tooling.compose.platform</a><span class="delimiter">/</span><a href="../index.html">PlatformButtonColors</a><span class="delimiter">/</span><a href="index.html">Companion</a><span class="delimiter">/</span><span class="current">icon</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>default</span></span></h1>
+    <h1 class="cover"><span><span>icon</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="default.html"><span class="token function">default</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="icon.html"><span class="token function">icon</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">containerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(alpha = 0.8f)
             } else {
-                Platform.colorScheme().primary
+                Color.Transparent
             }<span class="token punctuation">, </span></span><span class="parameter ">contentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
-                Platform.colorScheme().onSurface.copy(alpha = 0.8f)
+                Platform.colorScheme().onSurface
             } else {
-                Platform.colorScheme().onPrimary
+                Platform.localContentColor()
             }<span class="token punctuation">, </span></span><span class="parameter ">focusedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().onSurface
             } else {
@@ -82,12 +82,12 @@
             }<span class="token punctuation">, </span></span><span class="parameter ">pressedContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>focusedContainerColor<span class="token punctuation">, </span></span><span class="parameter ">pressedContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>focusedContentColor<span class="token punctuation">, </span></span><span class="parameter ">disabledContainerColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
                 Platform.colorScheme().surfaceVariant.copy(alpha = 0.4f)
             } else {
-                Platform.colorScheme().onSurface.copy(alpha = 0.12f)
+                Color.Transparent
             }<span class="token punctuation">, </span></span><span class="parameter ">disabledContentColor<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>if (Platform.rememberIsTv()) {
-                Platform.colorScheme().onSurface.copy(alpha = 0.4f)
+                contentColor
             } else {
-                Platform.colorScheme().onSurface.copy(alpha = 0.38f)
-            }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformButtonColors</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformButtonColors.kt#L149">source</a>)</span></span></div></div></div>
+                Platform.localContentColor().copy(alpha = 0.38f)
+            }</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">PlatformButtonColors</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformButtonColors.kt#L194">source</a>)</span></span></div></div></div>
 </div>
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
