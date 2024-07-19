@@ -1,6 +1,7 @@
 package dev.datlag.tooling.compose.platform
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Typography as DefaultTypography
 import androidx.tv.material3.Typography as TvTypography
 import androidx.compose.material3.ColorScheme as DefaultColorScheme
@@ -10,6 +11,7 @@ import androidx.tv.material3.Shapes as TvShapes
 import androidx.compose.material3.LocalContentColor as DefaultContentColor
 import androidx.tv.material3.LocalContentColor as TvContentColor
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -233,3 +235,13 @@ actual fun Platform.buttonPadding(): PaddingValues {
         DefaultButton.ContentPadding
     }
 }
+
+@Composable
+actual fun CombinedPlatformProvideContentColor(
+    value: Color,
+    content: @Composable () -> Unit
+) = CompositionLocalProvider(
+    androidx.tv.material3.LocalContentColor provides value,
+    LocalContentColor provides value,
+    content = content
+)

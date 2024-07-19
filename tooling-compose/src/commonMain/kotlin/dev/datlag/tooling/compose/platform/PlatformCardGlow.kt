@@ -8,7 +8,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 
 @Immutable
-class PlatformButtonGlow(
+class PlatformCardGlow(
     val glow: PlatformGlow,
     val focusedGlow: PlatformGlow,
     val pressedGlow: PlatformGlow
@@ -42,7 +42,7 @@ class PlatformButtonGlow(
             glow: PlatformGlow = PlatformGlow.None,
             focusedGlow: PlatformGlow = glow,
             pressedGlow: PlatformGlow = glow
-        ) = PlatformButtonGlow(
+        ) = PlatformCardGlow(
             glow = glow,
             focusedGlow = focusedGlow,
             pressedGlow = pressedGlow

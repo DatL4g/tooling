@@ -10,6 +10,7 @@ import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -63,3 +64,12 @@ actual fun CombinedPlatformProvideTextStyle(
 actual fun Platform.buttonPadding(): PaddingValues {
     return ButtonDefaults.ContentPadding
 }
+
+@Composable
+actual fun CombinedPlatformProvideContentColor(
+    value: Color,
+    content: @Composable () -> Unit
+) = CompositionLocalProvider(
+    LocalContentColor provides value,
+    content = content
+)
