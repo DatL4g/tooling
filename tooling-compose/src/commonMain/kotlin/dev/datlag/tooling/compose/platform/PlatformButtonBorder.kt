@@ -100,5 +100,26 @@ class PlatformButtonBorder(
             disabledBorder = disabledBorder,
             focusedDisabledBorder = focusedDisabledBorder
         )
+
+        @Composable
+        fun icon(
+            border: PlatformBorder = PlatformBorder.None,
+            focusedBorder: PlatformBorder = border,
+            pressedBorder: PlatformBorder = focusedBorder,
+            disabledBorder: PlatformBorder = border,
+            focusedDisabledBorder: PlatformBorder = PlatformBorder(
+                border = BorderStroke(
+                    width = 2.dp,
+                    color = Platform.colorScheme().outline.copy(alpha = 0.2f)
+                ),
+                shape = CircleShape
+            )
+        ) = PlatformButtonBorder(
+            border = border,
+            focusedBorder = focusedBorder,
+            pressedBorder = pressedBorder,
+            disabledBorder = disabledBorder,
+            focusedDisabledBorder = focusedDisabledBorder
+        )
     }
 }

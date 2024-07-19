@@ -47,5 +47,15 @@ class PlatformButtonGlow(
             focusedGlow = focusedGlow,
             pressedGlow = pressedGlow
         )
+
+        fun icon(
+            glow: PlatformGlow = PlatformGlow.None,
+            focusedGlow: PlatformGlow = glow,
+            pressedGlow: PlatformGlow = glow
+        ) = PlatformButtonGlow(
+            glow = glow,
+            focusedGlow = focusedGlow,
+            pressedGlow = pressedGlow
+        )
     }
 }

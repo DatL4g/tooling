@@ -61,5 +61,19 @@ class PlatformButtonShape(
             disabledShape = disabledShape,
             focusedDisabledShape = focusedDisabledShape
         )
+
+        fun icon(
+            shape: Shape = CircleShape,
+            focusedShape: Shape = shape,
+            pressedShape: Shape = shape,
+            disabledShape: Shape = shape,
+            focusedDisabledShape: Shape = disabledShape
+        ) = PlatformButtonShape(
+            shape = shape,
+            focusedShape = focusedShape,
+            pressedShape = pressedShape,
+            disabledShape = disabledShape,
+            focusedDisabledShape = focusedDisabledShape
+        )
     }
 }

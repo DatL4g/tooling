@@ -5,6 +5,7 @@ import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ChipColors
+import androidx.compose.material3.IconButtonColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
@@ -83,6 +84,40 @@ class PlatformButtonColors(
         )
     }
 
+    fun iconColors(
+        focused: Boolean,
+        pressed: Boolean
+    ): IconButtonColors {
+        val enabledContainerColor = containerColor(
+            enabled = true,
+            focused = focused,
+            pressed = pressed
+        )
+        val enabledContentColor = contentColor(
+            enabled = true,
+            focused = focused,
+            pressed = pressed
+        )
+
+        val disabledContainerColor = containerColor(
+            enabled = false,
+            focused = focused,
+            pressed = pressed
+        )
+        val disabledContentColor = contentColor(
+            enabled = false,
+            focused = focused,
+            pressed = pressed
+        )
+
+        return IconButtonColors(
+            containerColor = enabledContainerColor,
+            contentColor = enabledContentColor,
+            disabledContainerColor = disabledContainerColor,
+            disabledContentColor = disabledContentColor
+        )
+    }
+
     @Composable
     fun colors(
         interactionSource: MutableInteractionSource
@@ -91,6 +126,19 @@ class PlatformButtonColors(
         val pressed by interactionSource.collectIsPressedAsState()
 
         return colors(
+            focused = focused,
+            pressed = pressed
+        )
+    }
+
+    @Composable
+    fun iconColors(
+        interactionSource: MutableInteractionSource
+    ): IconButtonColors {
+        val focused by interactionSource.collectIsFocusedAsState()
+        val pressed by interactionSource.collectIsPressedAsState()
+
+        return iconColors(
             focused = focused,
             pressed = pressed
         )
@@ -130,6 +178,51 @@ class PlatformButtonColors(
                 Platform.colorScheme().onSurface.copy(alpha = 0.4f)
             } else {
                 Platform.colorScheme().onSurface.copy(alpha = 0.38f)
+            },
+        ) = PlatformButtonColors(
+            containerColor = containerColor,
+            contentColor = contentColor,
+            focusedContainerColor = focusedContainerColor,
+            focusedContentColor = focusedContentColor,
+            pressedContainerColor = pressedContainerColor,
+            pressedContentColor = pressedContentColor,
+            disabledContainerColor = disabledContainerColor,
+            disabledContentColor = disabledContentColor,
+        )
+
+        @Composable
+        fun icon(
+            containerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(alpha = 0.8f)
+            } else {
+                Color.Transparent
+            },
+            contentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                Platform.localContentColor()
+            },
+            focusedContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().onSurface
+            } else {
+                containerColor
+            },
+            focusedContentColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().inverseOnSurface
+            } else {
+                contentColor
+            },
+            pressedContainerColor: Color = focusedContainerColor,
+            pressedContentColor: Color = focusedContentColor,
+            disabledContainerColor: Color = if (Platform.rememberIsTv()) {
+                Platform.colorScheme().surfaceVariant.copy(alpha = 0.4f)
+            } else {
+                Color.Transparent
+            },
+            disabledContentColor: Color = if (Platform.rememberIsTv()) {
+                contentColor
+            } else {
+                Platform.localContentColor().copy(alpha = 0.38f)
             },
         ) = PlatformButtonColors(
             containerColor = containerColor,

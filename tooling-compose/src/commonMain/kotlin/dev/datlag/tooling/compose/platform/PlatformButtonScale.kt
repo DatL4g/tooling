@@ -60,5 +60,19 @@ class PlatformButtonScale(
             disabledScale = disabledScale,
             focusedDisabledScale = focusedDisabledScale
         )
+
+        fun icon(
+            scale: Float = 1F,
+            focusedScale: Float = 1.1F,
+            pressedScale: Float = scale,
+            disabledScale: Float = scale,
+            focusedDisabledScale: Float = disabledScale
+        ) = PlatformButtonScale(
+            scale = scale,
+            focusedScale = focusedScale,
+            pressedScale = pressedScale,
+            disabledScale = disabledScale,
+            focusedDisabledScale = focusedDisabledScale
+        )
     }
 }
