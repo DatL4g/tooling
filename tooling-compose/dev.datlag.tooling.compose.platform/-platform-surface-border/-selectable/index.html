@@ -1,0 +1,306 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Selectable</title>
+<link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../../index.html">
+                            tooling
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling-compose:dokkaHtmlPartial/androidMain">android</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling-compose:dokkaHtmlPartial/commonMain">common</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="tooling-compose::dev.datlag.tooling.compose.platform/PlatformSurfaceBorder.Selectable///PointingToDeclaration//-833044042">
+  <div class="breadcrumbs"><a href="../../../index.html">tooling-compose</a><span class="delimiter">/</span><a href="../../index.html">dev.datlag.tooling.compose.platform</a><span class="delimiter">/</span><a href="../index.html">PlatformSurfaceBorder</a><span class="delimiter">/</span><span class="current">Selectable</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Selectable</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Immutable.html"><span class="token annotation builtin">Immutable</span></a></div></div><span class="token keyword">class </span><a href="index.html">Selectable</a> : <a href="../index.html">PlatformSurfaceBorder</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformSurfaceBorder.kt#L112">source</a>)</span></span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="749053747%2FClasslikes%2F-833044042" anchor-label="Companion" id="749053747%2FClasslikes%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="749053747%2FClasslikes%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="442273090%2FProperties%2F-833044042" anchor-label="border" id="442273090%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="border.html"><span><span>border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="442273090%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="border.html">border</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1937390118%2FProperties%2F-833044042" anchor-label="disabledBorder" id="1937390118%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disabled-border.html"><span>disabled</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1937390118%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="disabled-border.html">disabledBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-48088759%2FProperties%2F-833044042" anchor-label="focusedBorder" id="-48088759%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focused-border.html"><span>focused</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-48088759%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-border.html">focusedBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-911020243%2FProperties%2F-833044042" anchor-label="focusedDisabledBorder" id="-911020243%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focused-disabled-border.html"><span>focused</span><wbr><span>Disabled</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-911020243%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-disabled-border.html">focusedDisabledBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1565265106%2FProperties%2F-833044042" anchor-label="focusedSelectedBorder" id="-1565265106%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focused-selected-border.html"><span>focused</span><wbr><span>Selected</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1565265106%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-selected-border.html">focusedSelectedBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1672672274%2FProperties%2F-833044042" anchor-label="focusedSelectedDisabledBorder" id="1672672274%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="focused-selected-disabled-border.html"><span>focused</span><wbr><span>Selected</span><wbr><span>Disabled</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1672672274%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-selected-disabled-border.html">focusedSelectedDisabledBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="539018046%2FProperties%2F-833044042" anchor-label="pressedBorder" id="539018046%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pressed-border.html"><span>pressed</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="539018046%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="pressed-border.html">pressedBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1821882403%2FProperties%2F-833044042" anchor-label="pressedSelectedBorder" id="1821882403%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pressed-selected-border.html"><span>pressed</span><wbr><span>Selected</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1821882403%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="pressed-selected-border.html">pressedSelectedBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1283145255%2FProperties%2F-833044042" anchor-label="selectedBorder" id="1283145255%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="selected-border.html"><span>selected</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1283145255%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="selected-border.html">selectedBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1428174347%2FProperties%2F-833044042" anchor-label="selectedDisabledBorder" id="1428174347%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="selected-disabled-border.html"><span>selected</span><wbr><span>Disabled</span><wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1428174347%2FProperties%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="selected-disabled-border.html">selectedDisabledBorder</a><span class="token operator">: </span><a href="../../-platform-border/index.html">PlatformBorder</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1758100763%2FFunctions%2F-1401319068" anchor-label="asTv" id="1758100763%2FFunctions%2F-1401319068" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-compose:dokkaHtmlPartial/androidMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../as-tv.html"><span>as</span><wbr><span><span>Tv</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1758100763%2FFunctions%2F-1401319068"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-compose:dokkaHtmlPartial/androidMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain" data-active="" data-toggle=":tooling-compose:dokkaHtmlPartial/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/androidMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">PlatformSurfaceBorder.Selectable</a><span class="token punctuation">.</span><a href="../../as-tv.html"><span class="token function">asTv</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/tv/material3/SelectableSurfaceBorder.html">SelectableSurfaceBorder</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1155291692%2FFunctions%2F-833044042" anchor-label="borderStroke" id="-1155291692%2FFunctions%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="border-stroke.html"><span>border</span><wbr><span><span>Stroke</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1155291692%2FFunctions%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="border-stroke.html"><span class="token function">borderStroke</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">selected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">interactionSource<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/interaction/MutableInteractionSource.html">MutableInteractionSource</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/BorderStroke.html">BorderStroke</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="border-stroke.html"><span class="token function">borderStroke</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">focused<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">pressed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">selected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/BorderStroke.html">BorderStroke</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="327326824%2FFunctions%2F-833044042" anchor-label="borderStrokeOrNull" id="327326824%2FFunctions%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="border-stroke-or-null.html"><span>border</span><wbr><span>Stroke</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="327326824%2FFunctions%2F-833044042"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="border-stroke-or-null.html"><span class="token function">borderStrokeOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">selected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">interactionSource<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/interaction/MutableInteractionSource.html">MutableInteractionSource</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/BorderStroke.html">BorderStroke</a><span class="token operator">?</span></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="border-stroke-or-null.html"><span class="token function">borderStrokeOrNull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">focused<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">pressed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">selected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/BorderStroke.html">BorderStroke</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
