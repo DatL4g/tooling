@@ -12,9 +12,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.takeOrElse
 import androidx.compose.ui.text.TextStyle
 import dev.datlag.tooling.Platform
+import kotlin.jvm.JvmOverloads
 
 @Composable
-expect fun Platform.rememberIsTv(): Boolean
+@JvmOverloads
+expect fun Platform.rememberIsTv(anyOS: Boolean = false): Boolean
+
+@Composable
+@JvmOverloads
+expect fun Platform.rememberIsWatch(anyOS: Boolean = false): Boolean
 
 @Composable
 expect fun Platform.localContentColor(): Color

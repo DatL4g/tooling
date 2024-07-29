@@ -27,9 +27,17 @@ import androidx.tv.material3.ProvideTextStyle as TvProvideTextStyle
 import dev.datlag.tooling.Platform
 
 @Composable
-actual fun Platform.rememberIsTv(): Boolean {
+@JvmOverloads
+actual fun Platform.rememberIsTv(anyOS: Boolean): Boolean {
     val context = LocalContext.current
     return remember(context) { isTelevision(context) }
+}
+
+@Composable
+@JvmOverloads
+actual fun Platform.rememberIsWatch(anyOS: Boolean): Boolean {
+    val context = LocalContext.current
+    return remember(context) { isWatch(context) }
 }
 
 @Composable

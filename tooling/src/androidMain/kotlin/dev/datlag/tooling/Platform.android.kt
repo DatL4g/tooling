@@ -3,9 +3,11 @@ package dev.datlag.tooling
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import androidx.core.content.ContextCompat
+import androidx.core.content.PackageManagerCompat
 import androidx.core.net.toUri
 
 actual object Platform {
@@ -55,11 +57,55 @@ actual object Platform {
     /**
      * Check if the current platform is an AndroidTV.
      *
-     * @param [context] the [Context] to get the required PackageManager to check if the current platform has TV system features.
+     * @param [configuration] the required Configuration to check if the current platform uses TV UI mode.
+     * @return whether the current platform is and AndroidTV
+     */
+    fun isTelevision(configuration: Configuration): Boolean {
+        return (configuration.uiMode and Configuration.UI_MODE_TYPE_MASK) == Configuration.UI_MODE_TYPE_TELEVISION
+    }
+
+    /**
+     * Check if the current platform is an AndroidTV.
+     *
+     * @param [context] the [Context] to get the required PackageManager or Configuration to check if the current platform has TV system features.
      * @return whether the current platform is an AndroidTV.
      */
     fun isTelevision(context: Context): Boolean {
-        return isTelevision(context.packageManager ?: context.applicationContext.packageManager)
+        return isTelevision(
+            context.packageManager ?: context.applicationContext.packageManager
+        ) || context.resources.configuration?.let(::isTelevision) ?: false
+    }
+
+    /**
+     * Check if the current platform is an AndroidWatch.
+     *
+     * @param [packageManager] the required PackageManager to check if the current platform has Watch system features.
+     * @return whether the current platform is an AndroidWatch.
+     */
+    fun isWatch(packageManager: PackageManager): Boolean {
+        return packageManager.hasSystemFeature(PackageManager.FEATURE_WATCH)
+    }
+
+    /**
+     * Check if the current platform is an AndroidWatch.
+     *
+     * @param [configuration] the required Configuration to check if the current platform uses Watch UI mode.
+     * @return whether the current platform is and AndroidWatch
+     */
+    fun isWatch(configuration: Configuration): Boolean {
+        return (configuration.uiMode and Configuration.UI_MODE_TYPE_MASK) == Configuration.UI_MODE_TYPE_WATCH
+    }
+
+    /**
+     * Check if the current platform is an AndroidWatch.
+     *
+     * @param [context] the [Context] to get the required PackageManager or Configuration to check if the current platform has Watch system features.
+     * @return whether the current platform is an AndroidWatch.
+     */
+    fun isWatch(context: Context): Boolean {
+        return isWatch(
+            context.packageManager ?: context.applicationContext.packageManager
+        ) || context.resources.configuration?.let(::isWatch) ?: false
     }
 
     /**

@@ -15,10 +15,30 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import dev.datlag.tooling.Platform
+import kotlin.jvm.JvmOverloads
 
 @Composable
-actual fun Platform.rememberIsTv(): Boolean {
-    return remember { isTVOS }
+@JvmOverloads
+actual fun Platform.rememberIsTv(anyOS: Boolean): Boolean {
+    return remember(anyOS) {
+        if (anyOS) {
+            isTVOS
+        } else {
+            false
+        }
+    }
+}
+
+@Composable
+@JvmOverloads
+actual fun Platform.rememberIsWatch(anyOS: Boolean): Boolean {
+    return remember(anyOS) {
+        if (anyOS) {
+            isWatchOS
+        } else {
+            false
+        }
+    }
 }
 
 @Composable
