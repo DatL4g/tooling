@@ -29,11 +29,11 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Generate Wiki
-        run: ./gradlew dokkaHtmlMultiModule
+        run: ./gradlew dokkaGenerate
 
       - name: Upload Wiki
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./build/dokka/htmlMultiModule
+          folder: ./build/dokka/html
           branch: gh-pages
           force: true

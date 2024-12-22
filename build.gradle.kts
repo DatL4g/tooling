@@ -50,6 +50,14 @@ allprojects {
     }
 }
 
+dependencies {
+    dokka(project(":tooling"))
+    dokka(project(":tooling-async"))
+    dokka(project(":tooling-compose"))
+    dokka(project(":tooling-country"))
+    dokka(project(":tooling-decompose"))
+}
+
 tasks.withType<DependencyUpdatesTask> {
     outputFormatter {
         val updatable = this.outdated.dependencies

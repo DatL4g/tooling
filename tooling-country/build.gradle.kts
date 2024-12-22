@@ -18,11 +18,11 @@ val artifact = "dev.datlag.tooling"
 group = artifact
 version = libraryVersion
 
-tasks.dokkaHtmlPartial {
+dokka {
     dokkaSourceSets.configureEach {
         sourceLink {
             localDirectory.set(file("src"))
-            remoteUrl.set(URL("https://github.com/DatL4g/tooling/tree/master/tooling-country/src"))
+            remoteUrl("https://github.com/DatL4g/tooling/tree/master/tooling-country/src")
         }
     }
 }
