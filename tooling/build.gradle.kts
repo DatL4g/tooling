@@ -1,5 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import java.net.URL
 
 plugins {
@@ -98,6 +98,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.android)
+            implementation(libs.car)
         }
     }
 }

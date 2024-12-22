@@ -1,24 +1,26 @@
 [versions]
 library = "1.6.5"
 android = "8.2.2"
-android-core = "1.13.1"
+android-core = "1.15.0"
 appdirs = "1.2.2"
-compose = "1.6.11"
-coroutines = "1.8.1"
-decompose = "3.1.0"
-dokka = "1.9.20"
-immutable = "0.3.7"
-kotlin = "2.0.0"
+car = "1.4.0"
+compose = "1.7.3"
+coroutines = "1.9.0"
+decompose = "3.2.2"
+dokka = "2.0.0"
+immutable = "0.3.8"
+kotlin = "2.1.0"
 lang = "3.15.0"
 publish = "0.29.0"
-serialization = "1.7.1"
-tvComposeMaterial = "1.0.0-rc01"
+serialization = "1.7.3"
+tv-compose-material = "1.0.0"
 versions = "0.51.0"
 
 [libraries]
 android = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
 appdirs = { group = "net.harawata", name = "appdirs", version.ref = "appdirs" }
-tv-compose-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvComposeMaterial" }
+car = { group = "androidx.car.app", name = "app", version.ref = "car" }
+tv-compose-material = { group = "androidx.tv", name = "tv-material", version.ref = "tv-compose-material" }
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines" }

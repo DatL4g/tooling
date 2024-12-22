@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
+import androidx.car.app.connection.CarConnection
 import androidx.core.content.ContextCompat
 import androidx.core.content.PackageManagerCompat
 import androidx.core.net.toUri
@@ -109,6 +110,58 @@ actual object Platform {
     }
 
     /**
+     * Check if the current platform is an Android Automotive.
+     *
+     * @param packageManager the required PackageManager to check if the current platform has Automotive system features.
+     * @return whether the current platform is an Android Automotive.
+     */
+    fun isCar(packageManager: PackageManager): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            packageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)
+        } else {
+            false
+        }
+    }
+
+    /**
+     * **!!! Fails on Android 12+ !!!**
+     *
+     * Check if the current platform is an Android Automotive.
+     *
+     * @param configuration the required Configuration to check if the current platform uses Car UI mode.
+     * @return whether the current platform is an Android Automotive.
+     */
+    fun isCar(configuration: Configuration): Boolean {
+        return (configuration.uiMode and Configuration.UI_MODE_TYPE_MASK) == Configuration.UI_MODE_TYPE_CAR
+    }
+
+    /**
+     * Check if the current platform is an Android Auto(motive).
+     *
+     * @param context the Context to get the required PackageManager or Configuration to check if the current platform has Automotive system features.
+     * @param connection the current CarConnection to detect all types like projection. You should provide a singleton to ensure up-to-date data or handle the connection yourself.
+     * @param detectProjection whether or not Android Auto (projection to car head unit) should be detected.
+     * @return whether the current platform is an Android Auto(motive).
+     */
+    @JvmOverloads
+    fun isCar(
+        context: Context,
+        connection: CarConnection = CarConnection(context),
+        detectProjection: Boolean = false
+    ): Boolean {
+        fun checkConnection() = when (connection.type.value) {
+            CarConnection.CONNECTION_TYPE_NOT_CONNECTED -> false
+            CarConnection.CONNECTION_TYPE_NATIVE -> true
+            CarConnection.CONNECTION_TYPE_PROJECTION -> detectProjection
+            else -> false
+        }
+
+        return isCar(
+            context.packageManager ?: context.applicationContext.packageManager
+        ) || (context.resources.configuration?.let(::isCar) ?: false) || checkConnection()
+    }
+
+    /**
      * Open a given [Uri] in browser.
      *
      * @param [context] the [Context] used to open the uri in browser.
@@ -118,7 +171,7 @@ actual object Platform {
         val browserIntent = Intent(Intent.ACTION_VIEW, uri)
 
         val firstResult = scopeCatching {
-            ContextCompat.startActivity(context, browserIntent, null)
+            context.startActivity(browserIntent, null)
         }.isSuccess
         if (firstResult) {
             return true
@@ -126,7 +179,7 @@ actual object Platform {
 
         val newIntent = browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         return scopeCatching {
-            ContextCompat.startActivity(context, newIntent, null)
+            context.startActivity(newIntent, null)
         }.isSuccess
     }
 
