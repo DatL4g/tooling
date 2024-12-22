@@ -25,62 +25,101 @@
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
 <link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script>
 <script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
     <div class="root">
-<nav class="navigation" id="navigation-wrapper">
-    <div class="navigation--inner">
-        <div class="navigation-title">
-            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
-            <div class="library-name">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
 <a class="library-name--link" href="../../../index.html">
-                            tooling
-                    </a>            </div>
-            <div class="library-version">
+                    tooling
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling-compose/androidMain">android</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling-compose/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-compose/androidMain" data-filter=":tooling-compose/androidMain">
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-compose/commonMain" data-filter=":tooling-compose/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
         </div>
-        <div class="filter-section" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling-compose:dokkaHtmlPartial/androidMain">android</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling-compose:dokkaHtmlPartial/commonMain">common</button>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
         </div>
-    </div>
-    <div class="navigation-controls">
-        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
-        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
-    </div>
-</nav>
+    </nav>
         <div id="container">
             <div class="sidebar" id="leftColumn">
-                <div class="sidebar--inner" id="sideMenu"></div>
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    tooling
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="tooling-compose::dev.datlag.tooling.compose.platform/PlatformCardScale///PointingToDeclaration//-833044042">
+<div class="main-content" data-page-type="classlike" id="content" pageids="tooling-compose::dev.datlag.tooling.compose.platform/PlatformCardScale///PointingToDeclaration//2105806472">
   <div class="breadcrumbs"><a href="../../index.html">tooling-compose</a><span class="delimiter">/</span><a href="../index.html">dev.datlag.tooling.compose.platform</a><span class="delimiter">/</span><span class="current">PlatformCardScale</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Platform</span><wbr><span>Card</span><wbr><span><span>Scale</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Immutable.html"><span class="token annotation builtin">Immutable</span></a></div></div><span class="token keyword">class </span><a href="index.html">PlatformCardScale</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>focusedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pressedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>disabledScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></span></span><span class="token punctuation">)</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformCardScale.kt#L11">source</a>)</span></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Immutable.html"><span class="token annotation builtin">Immutable</span></a></div></div><span class="token keyword">class </span><a href="index.html">PlatformCardScale</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>focusedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pressedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>disabledScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></span></span><span class="token punctuation">)</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling-compose/src/commonMain/kotlin/dev/datlag/tooling/compose/platform/PlatformCardScale.kt#L11">source</a>)</span></span></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="93560959%2FConstructors%2F-833044042" anchor-label="PlatformCardScale" id="93560959%2FConstructors%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+        <div class="table"><a data-name="93560959%2FConstructors%2F2105806472" anchor-label="PlatformCardScale" id="93560959%2FConstructors%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-platform-card-scale.html"><span>Platform</span><wbr><span>Card</span><wbr><span><span>Scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="93560959%2FConstructors%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="93560959%2FConstructors%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">focusedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">pressedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">disabledScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">focusedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">pressedScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span><span class="token punctuation">, </span></span><span class="parameter ">disabledScale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -89,17 +128,17 @@
       </div>
       <div data-togglable="TYPE">
         <h2 class="">Types</h2>
-        <div class="table"><a data-name="155756174%2FClasslikes%2F-833044042" anchor-label="Companion" id="155756174%2FClasslikes%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+        <div class="table"><a data-name="155756174%2FClasslikes%2F2105806472" anchor-label="Companion" id="155756174%2FClasslikes%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="155756174%2FClasslikes%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="155756174%2FClasslikes%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -108,62 +147,62 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="-1565563943%2FProperties%2F-833044042" anchor-label="disabledScale" id="-1565563943%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+        <div class="table"><a data-name="-1565563943%2FProperties%2F2105806472" anchor-label="disabledScale" id="-1565563943%2FProperties%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="disabled-scale.html"><span>disabled</span><wbr><span><span>Scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1565563943%2FProperties%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1565563943%2FProperties%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="disabled-scale.html">disabledScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="disabled-scale.html">disabledScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1047370048%2FProperties%2F-833044042" anchor-label="focusedScale" id="1047370048%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+<a data-name="1047370048%2FProperties%2F2105806472" anchor-label="focusedScale" id="1047370048%2FProperties%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="focused-scale.html"><span>focused</span><wbr><span><span>Scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1047370048%2FProperties%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1047370048%2FProperties%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-scale.html">focusedScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="focused-scale.html">focusedScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1288995669%2FProperties%2F-833044042" anchor-label="pressedScale" id="-1288995669%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+<a data-name="-1288995669%2FProperties%2F2105806472" anchor-label="pressedScale" id="-1288995669%2FProperties%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="pressed-scale.html"><span>pressed</span><wbr><span><span>Scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1288995669%2FProperties%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1288995669%2FProperties%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="pressed-scale.html">pressedScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="pressed-scale.html">pressedScale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1065437245%2FProperties%2F-833044042" anchor-label="scale" id="1065437245%2FProperties%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+<a data-name="1065437245%2FProperties%2F2105806472" anchor-label="scale" id="1065437245%2FProperties%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="scale.html"><span><span>scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1065437245%2FProperties%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1065437245%2FProperties%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="scale.html">scale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="scale.html">scale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.0f</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -172,34 +211,34 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="1453498475%2FFunctions%2F-1401319068" anchor-label="asTv" id="1453498475%2FFunctions%2F-1401319068" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain"></a>
-          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-compose:dokkaHtmlPartial/androidMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain">
+        <div class="table"><a data-name="1453498475%2FFunctions%2F-752328110" anchor-label="asTv" id="1453498475%2FFunctions%2F-752328110" data-filterable-set=":tooling-compose/androidMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-compose/androidMain" data-filterable-set=":tooling-compose/androidMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../as-tv.html"><span>as</span><wbr><span><span>Tv</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1453498475%2FFunctions%2F-1401319068"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1453498475%2FFunctions%2F-752328110"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-compose:dokkaHtmlPartial/androidMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/androidMain" data-active="" data-toggle=":tooling-compose:dokkaHtmlPartial/androidMain">android</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/androidMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">PlatformCardScale</a><span class="token punctuation">.</span><a href="../as-tv.html"><span class="token function">asTv</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/tv/material3/CardScale.html">CardScale</a></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-compose/androidMain" data-filterable-set=":tooling-compose/androidMain" data-active="" data-toggle=":tooling-compose/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/androidMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">PlatformCardScale</a><span class="token punctuation">.</span><a href="../as-tv.html"><span class="token function">asTv</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/tv/material3/CardScale.html">CardScale</a></div></div>                  </div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-2041635882%2FFunctions%2F-833044042" anchor-label="scale" id="-2041635882%2FFunctions%2F-833044042" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain"></a>
-          <div class="table-row" data-filterable-current=":tooling-compose:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling-compose:dokkaHtmlPartial/commonMain">
+<a data-name="-2041635882%2FFunctions%2F2105806472" anchor-label="scale" id="-2041635882%2FFunctions%2F2105806472" data-filterable-set=":tooling-compose/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-compose/commonMain" data-filterable-set=":tooling-compose/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="scale.html"><span><span>scale</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2041635882%2FFunctions%2F-833044042"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2041635882%2FFunctions%2F2105806472"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="scale.html"><span class="token function">scale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">interactionSource<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/interaction/MutableInteractionSource.html">MutableInteractionSource</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="scale.html"><span class="token function">scale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">focused<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">pressed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-compose/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a></div></div><span class="token keyword">fun </span><a href="scale.html"><span class="token function">scale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">interactionSource<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/interaction/MutableInteractionSource.html">MutableInteractionSource</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="scale.html"><span class="token function">scale</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">focused<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">pressed<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -209,12 +248,18 @@
     </div>
   </div>
 </div>
-      <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
-      </div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2024 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
             </div>
         </div>
     </div>
 </body>
 </html>
-

@@ -25,64 +25,188 @@
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
 <link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script>
 <script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
 <body>
     <div class="root">
-<nav class="navigation" id="navigation-wrapper">
-    <div class="navigation--inner">
-        <div class="navigation-title">
-            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
-            <div class="library-name">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
 <a class="library-name--link" href="../../../index.html">
-                            tooling
-                    </a>            </div>
-            <div class="library-version">
+                    tooling
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling/androidMain">android</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/androidNativeMain">androidNative</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/iosMain">ios</button>
+                <button class="platform-tag platform-selector js-like" data-active="" data-filter=":tooling/jsMain">js</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/linuxMain">linux</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/macosMain">macos</button>
+                <button class="platform-tag platform-selector native-like" data-active="" data-filter=":tooling/mingwMain">mingw</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/tvosMain">tvos</button>
+                <button class="platform-tag platform-selector wasm-like" data-active="" data-filter=":tooling/wasmJsMain">wasmJs</button>
+                <button class="platform-tag platform-selector wasm-like" data-active="" data-filter=":tooling/wasmWasiMain">wasmWasi</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling/watchosMain">watchos</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/androidMain" data-filter=":tooling/androidMain">
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/androidNativeMain" data-filter=":tooling/androidNativeMain">
+                                <span class="checkbox--icon"></span>
+                                androidNative
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/commonMain" data-filter=":tooling/commonMain">
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/iosMain" data-filter=":tooling/iosMain">
+                                <span class="checkbox--icon"></span>
+                                ios
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/jsMain" data-filter=":tooling/jsMain">
+                                <span class="checkbox--icon"></span>
+                                js
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/jvmMain" data-filter=":tooling/jvmMain">
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/linuxMain" data-filter=":tooling/linuxMain">
+                                <span class="checkbox--icon"></span>
+                                linux
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/macosMain" data-filter=":tooling/macosMain">
+                                <span class="checkbox--icon"></span>
+                                macos
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/mingwMain" data-filter=":tooling/mingwMain">
+                                <span class="checkbox--icon"></span>
+                                mingw
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/tvosMain" data-filter=":tooling/tvosMain">
+                                <span class="checkbox--icon"></span>
+                                tvos
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option wasm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/wasmJsMain" data-filter=":tooling/wasmJsMain">
+                                <span class="checkbox--icon"></span>
+                                wasmJs
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option wasm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/wasmWasiMain" data-filter=":tooling/wasmWasiMain">
+                                <span class="checkbox--icon"></span>
+                                wasmWasi
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling/watchosMain" data-filter=":tooling/watchosMain">
+                                <span class="checkbox--icon"></span>
+                                watchos
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
         </div>
-        <div class="filter-section" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/commonMain">common</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/iosMain">ios</button>
-                <button class="platform-tag platform-selector js-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/jsMain">js</button>
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/jvmMain">jvm</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/linuxMain">linux</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/macosMain">macos</button>
-                <button class="platform-tag platform-selector native-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/mingwMain">mingw</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/tvosMain">tvos</button>
-                <button class="platform-tag platform-selector wasm-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/wasmJsMain">wasmJs</button>
-                <button class="platform-tag platform-selector wasm-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/wasmWasiMain">wasmWasi</button>
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling:dokkaHtmlPartial/watchosMain">watchos</button>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
         </div>
-    </div>
-    <div class="navigation-controls">
-        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
-        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
-    </div>
-</nav>
+    </nav>
         <div id="container">
             <div class="sidebar" id="leftColumn">
-                <div class="sidebar--inner" id="sideMenu"></div>
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    tooling
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="tooling::dev.datlag.tooling/Platform/isWindowsNative/#/PointingToDeclaration//2009988895">
+<div class="main-content" data-page-type="member" id="content" pageids="tooling::dev.datlag.tooling/Platform/isWindowsNative/#/PointingToDeclaration//121476813">
   <div class="breadcrumbs"><a href="../../index.html">tooling</a><span class="delimiter">/</span><a href="../index.html">dev.datlag.tooling</a><span class="delimiter">/</span><a href="index.html">Platform</a><span class="delimiter">/</span><span class="current">isWindowsNative</span></div>
   <div class="cover ">
     <h1 class="cover"><span>is</span><wbr><span>Windows</span><wbr><span><span>Native</span></span></h1>
   </div>
   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/commonMain" data-filterable-set=":tooling:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":tooling:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/iosMain" data-filterable-set=":tooling:dokkaHtmlPartial/iosMain" data-toggle=":tooling:dokkaHtmlPartial/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/jsMain" data-filterable-set=":tooling:dokkaHtmlPartial/jsMain" data-toggle=":tooling:dokkaHtmlPartial/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/jvmMain" data-filterable-set=":tooling:dokkaHtmlPartial/jvmMain" data-toggle=":tooling:dokkaHtmlPartial/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/linuxMain" data-filterable-set=":tooling:dokkaHtmlPartial/linuxMain" data-toggle=":tooling:dokkaHtmlPartial/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/macosMain" data-filterable-set=":tooling:dokkaHtmlPartial/macosMain" data-toggle=":tooling:dokkaHtmlPartial/macosMain">macos</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/mingwMain" data-filterable-set=":tooling:dokkaHtmlPartial/mingwMain" data-toggle=":tooling:dokkaHtmlPartial/mingwMain">mingw</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/tvosMain" data-filterable-set=":tooling:dokkaHtmlPartial/tvosMain" data-toggle=":tooling:dokkaHtmlPartial/tvosMain">tvos</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/wasmJsMain" data-filterable-set=":tooling:dokkaHtmlPartial/wasmJsMain" data-toggle=":tooling:dokkaHtmlPartial/wasmJsMain">wasmJs</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/wasmWasiMain" data-filterable-set=":tooling:dokkaHtmlPartial/wasmWasiMain" data-toggle=":tooling:dokkaHtmlPartial/wasmWasiMain">wasmWasi</button><button class="platform-bookmark" data-filterable-current=":tooling:dokkaHtmlPartial/watchosMain" data-filterable-set=":tooling:dokkaHtmlPartial/watchosMain" data-toggle=":tooling:dokkaHtmlPartial/watchosMain">watchos</button></div>
-<div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/commonMain/kotlin/dev/datlag/tooling/Platform.kt#L116">source</a>)</span></span></div><p class="paragraph">Whether the current platform is Windows Native (excluding JVM)</p></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/iosMain/kotlin/dev/datlag/tooling/Platform.ios.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/jsMain/kotlin/dev/datlag/tooling/Platform.js.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/jvmMain/kotlin/dev/datlag/tooling/Platform.kt#L50">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/linuxMain/kotlin/dev/datlag/tooling/Platform.linux.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/macosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/macosMain/kotlin/dev/datlag/tooling/Platform.macos.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/mingwMain/kotlin/dev/datlag/tooling/Platform.mingw.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/tvosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/tvosMain/kotlin/dev/datlag/tooling/Platform.tvos.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/wasmJsMain/kotlin/dev/datlag/tooling/Platform.wasmJs.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/wasmWasiMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/wasmWasiMain/kotlin/dev/datlag/tooling/Platform.wasmWasi.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling:dokkaHtmlPartial/watchosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/watchosMain/kotlin/dev/datlag/tooling/Platform.watchos.kt#L25">source</a>)</span></span></div></div>  </div>
+    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling/androidMain" data-filterable-set=":tooling/androidMain" data-active="" data-toggle=":tooling/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":tooling/androidNativeMain" data-filterable-set=":tooling/androidNativeMain" data-toggle=":tooling/androidNativeMain">androidNative</button><button class="platform-bookmark" data-filterable-current=":tooling/commonMain" data-filterable-set=":tooling/commonMain" data-toggle=":tooling/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling/iosMain" data-filterable-set=":tooling/iosMain" data-toggle=":tooling/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":tooling/jsMain" data-filterable-set=":tooling/jsMain" data-toggle=":tooling/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling/jvmMain" data-filterable-set=":tooling/jvmMain" data-toggle=":tooling/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling/linuxMain" data-filterable-set=":tooling/linuxMain" data-toggle=":tooling/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":tooling/macosMain" data-filterable-set=":tooling/macosMain" data-toggle=":tooling/macosMain">macos</button><button class="platform-bookmark" data-filterable-current=":tooling/mingwMain" data-filterable-set=":tooling/mingwMain" data-toggle=":tooling/mingwMain">mingw</button><button class="platform-bookmark" data-filterable-current=":tooling/tvosMain" data-filterable-set=":tooling/tvosMain" data-toggle=":tooling/tvosMain">tvos</button><button class="platform-bookmark" data-filterable-current=":tooling/wasmJsMain" data-filterable-set=":tooling/wasmJsMain" data-toggle=":tooling/wasmJsMain">wasmJs</button><button class="platform-bookmark" data-filterable-current=":tooling/wasmWasiMain" data-filterable-set=":tooling/wasmWasiMain" data-toggle=":tooling/wasmWasiMain">wasmWasi</button><button class="platform-bookmark" data-filterable-current=":tooling/watchosMain" data-filterable-set=":tooling/watchosMain" data-toggle=":tooling/watchosMain">watchos</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":tooling/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/androidMain/kotlin/dev/datlag/tooling/Platform.android.kt#L36">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/androidNativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/androidNativeMain/kotlin/dev/datlag/tooling/Platform.androidNative.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/commonMain/kotlin/dev/datlag/tooling/Platform.kt#L116">source</a>)</span></span></div><p class="paragraph">Whether the current platform is Windows Native (excluding JVM)</p></div><div class="content sourceset-dependent-content" data-togglable=":tooling/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/iosMain/kotlin/dev/datlag/tooling/Platform.ios.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/jsMain/kotlin/dev/datlag/tooling/Platform.js.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/jvmMain/kotlin/dev/datlag/tooling/Platform.kt#L50">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/linuxMain/kotlin/dev/datlag/tooling/Platform.linux.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/macosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/macosMain/kotlin/dev/datlag/tooling/Platform.macos.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/mingwMain/kotlin/dev/datlag/tooling/Platform.mingw.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/tvosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/tvosMain/kotlin/dev/datlag/tooling/Platform.tvos.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/wasmJsMain/kotlin/dev/datlag/tooling/Platform.wasmJs.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/wasmWasiMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/wasmWasiMain/kotlin/dev/datlag/tooling/Platform.wasmWasi.kt#L25">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling/watchosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="is-windows-native.html">isWindowsNative</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="clearfix"><span class="floating-right">(<a href="https://github.com/DatL4g/tooling/tree/master/tooling/src/watchosMain/kotlin/dev/datlag/tooling/Platform.watchos.kt#L25">source</a>)</span></span></div></div>  </div>
 </div>
-      <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
-      </div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2024 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
             </div>
         </div>
     </div>
 </body>
 </html>
-
