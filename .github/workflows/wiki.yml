@@ -7,12 +7,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  publish-wiki:
+  build-core:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,13 +16,245 @@ jobs:
           submodules: 'recursive'
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: 17
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Core
+        continue-on-error: true
+        run: ./gradlew :tooling:build
+
+      - name: Cache Core
+        continue-on-error: true
+        run: ./gradlew :tooling:publishToMavenLocal
+
+      - name: Upload Local Maven Repository
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-core-repo
+          path: ~/.m2/repository
+
+  build-async:
+    needs: build-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Download Local Maven Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-core-repo
+          path: ~/.m2/repository
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Async
+        continue-on-error: true
+        run: ./gradlew :tooling-async:build
+
+      - name: Cache Async
+        continue-on-error: true
+        run: ./gradlew :tooling-async:publishToMavenLocal
+
+      - name: Upload Local Maven Repository
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-async-repo
+          path: ~/.m2/repository
+
+  build-country:
+    needs: build-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Download Local Maven Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-core-repo
+          path: ~/.m2/repository
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Country
+        continue-on-error: true
+        run: ./gradlew :tooling-country:build
+
+      - name: Cache Country
+        continue-on-error: true
+        run: ./gradlew :tooling-country:publishToMavenLocal
+
+      - name: Upload Local Maven Repository
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-country-repo
+          path: ~/.m2/repository
+
+  build-compose:
+    needs: build-async
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Download Local Maven Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-async-repo
+          path: ~/.m2/repository
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Compose
+        continue-on-error: true
+        run: ./gradlew :tooling-compose:build
+
+      - name: Cache Compose
+        continue-on-error: true
+        run: ./gradlew :tooling-compose:publishToMavenLocal
+
+      - name: Upload Local Maven Repository
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-compose-repo
+          path: ~/.m2/repository
+
+  publish-wiki:
+    needs: [build-core, build-async, build-country, build-compose]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Download Local Core Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-core-repo
+          path: ./tmp-core-repo
+
+      - name: Download Local Async Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-async-repo
+          path: ./tmp-async-repo
+
+      - name: Download Local Country Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-country-repo
+          path: ./tmp-country-repo
+
+      - name: Download Local Compose Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-compose-repo
+          path: ./tmp-compose-repo
+
+      - name: Merge all local repos into the main .m2 directory
+        continue-on-error: true
+        run: |
+          mkdir -p ~/.m2/repository
+          cp -r ./tmp-core-repo/. ~/.m2/repository/
+          cp -r ./tmp-async-repo/. ~/.m2/repository/
+          cp -r ./tmp-country-repo/. ~/.m2/repository/
+          cp -r ./tmp-compose-repo/. ~/.m2/repository/
+          
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
 
       - name: Generate Wiki
         run: ./gradlew dokkaGenerate
