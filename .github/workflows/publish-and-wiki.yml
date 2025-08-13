@@ -1,14 +1,20 @@
-name: Publish Wiki
+name: Publish and Wiki
 on:
-  push:
+  workflow_dispatch:
 
 concurrency:
   group: publish-wiki
   cancel-in-progress: true
 
+env:
+  ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
+  ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}
+  ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_IN_MEMORY }}
+  ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_PASSWORD }}
+
 jobs:
   build-core:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,6 +48,9 @@ jobs:
         continue-on-error: true
         run: ./gradlew :tooling:publishToMavenLocal
 
+      - name: Publish Core
+        run: ./gradlew :tooling:publishAllPublicationsToMavenCentralRepository
+
       - name: Upload Local Maven Repository
         continue-on-error: true
         uses: actions/upload-artifact@v4
@@ -50,7 +59,7 @@ jobs:
           path: ~/.m2/repository
 
   build-wanakana:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -84,6 +93,9 @@ jobs:
         continue-on-error: true
         run: ./gradlew :tooling-wanakana:publishToMavenLocal
 
+      - name: Publish WanaKana
+        run: ./gradlew :tooling-wanakana:publishAllPublicationsToMavenCentralRepository
+
       - name: Upload Local Maven Repository
         continue-on-error: true
         uses: actions/upload-artifact@v4
@@ -93,7 +105,7 @@ jobs:
 
   build-async:
     needs: build-core
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -134,6 +146,9 @@ jobs:
         continue-on-error: true
         run: ./gradlew :tooling-async:publishToMavenLocal
 
+      - name: Publish Async
+        run: ./gradlew :tooling-async:publishAllPublicationsToMavenCentralRepository
+
       - name: Upload Local Maven Repository
         continue-on-error: true
         uses: actions/upload-artifact@v4
@@ -143,7 +158,7 @@ jobs:
 
   build-country:
     needs: build-core
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -184,6 +199,9 @@ jobs:
         continue-on-error: true
         run: ./gradlew :tooling-country:publishToMavenLocal
 
+      - name: Publish Country
+        run: ./gradlew :tooling-country:publishAllPublicationsToMavenCentralRepository
+
       - name: Upload Local Maven Repository
         continue-on-error: true
         uses: actions/upload-artifact@v4
@@ -193,7 +211,7 @@ jobs:
 
   build-compose:
     needs: build-async
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -234,6 +252,9 @@ jobs:
         continue-on-error: true
         run: ./gradlew :tooling-compose:publishToMavenLocal
 
+      - name: Publish Compose
+        run: ./gradlew :tooling-compose:publishAllPublicationsToMavenCentralRepository
+
       - name: Upload Local Maven Repository
         continue-on-error: true
         uses: actions/upload-artifact@v4
@@ -243,7 +264,7 @@ jobs:
 
   publish-wiki:
     needs: [build-core, build-async, build-country, build-compose, build-wanakana]
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: write
     steps:

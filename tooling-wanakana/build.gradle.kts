@@ -19,7 +19,7 @@ dokka {
     dokkaSourceSets.configureEach {
         sourceLink {
             localDirectory.set(file("src"))
-            remoteUrl("https://github.com/DatL4g/tooling/tree/master/tooling-country/src")
+            remoteUrl("https://github.com/DatL4g/tooling/tree/master/tooling-wanakana/src")
         }
     }
 }
