@@ -42,6 +42,7 @@ sealed interface Country {
          * @param code country code.
          */
         @Serializable
+        @ConsistentCopyVisibility
         data class Alpha2 internal constructor(
             @SerialName("code") val code: String
         ) : Code, CharSequence {
@@ -93,6 +94,7 @@ sealed interface Country {
          * @param code country code.
          */
         @Serializable
+        @ConsistentCopyVisibility
         data class Alpha3 internal constructor(
             @SerialName("code") val code: String
         ) : Code, CharSequence {
@@ -145,6 +147,7 @@ sealed interface Country {
          * @param code country code.
          */
         @Serializable
+        @ConsistentCopyVisibility
         data class Numeric internal constructor(
             @SerialName("code") val code: Int
         ) : Code, Number() {

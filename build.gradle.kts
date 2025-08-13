@@ -55,7 +55,6 @@ dependencies {
     dokka(project(":tooling-async"))
     dokka(project(":tooling-compose"))
     dokka(project(":tooling-country"))
-    dokka(project(":tooling-decompose"))
 }
 
 tasks.withType<DependencyUpdatesTask> {

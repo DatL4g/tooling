@@ -14,9 +14,9 @@ actual object Platform {
     actual val isMacOS: Boolean = false
     actual val isMacOSJvm: Boolean = false
     actual val isMacOSNative: Boolean = false
-    actual val isJs: Boolean = true
+    actual val isJs: Boolean = false
     actual val isJsDefault: Boolean = false
-    actual val isJsWasm: Boolean = true
+    actual val isJsWasm: Boolean = false
     actual val isLinux: Boolean = false
     actual val isLinuxJvm: Boolean = false
     actual val isLinuxNative: Boolean = false

@@ -54,7 +54,7 @@ inline fun Boolean.alsoTrue(block: (Boolean) -> Unit): Boolean {
  * Runs [also] if the value is false.
  */
 inline fun Boolean.alsoFalse(block: (Boolean) -> Unit): Boolean {
-    if (this) {
+    if (!this) {
         block(this)
     }
     return this

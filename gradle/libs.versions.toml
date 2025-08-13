@@ -1,20 +1,19 @@
 [versions]
 library = "1.7.0"
-android = "8.7.3"
-android-core = "1.15.0"
-appdirs = "1.2.2"
-car = "1.4.0"
-compose = "1.7.3"
-coroutines = "1.10.1"
-decompose = "3.2.2"
+android = "8.12.0"
+android-core = "1.16.0"
+appdirs = "1.4.0"
+car = "1.7.0"
+compose = "1.8.2"
+coroutines = "1.10.2"
 dokka = "2.0.0"
-immutable = "0.3.8"
-kotlin = "2.1.0"
-lang = "3.17.0"
-publish = "0.30.0"
-serialization = "1.7.3"
-tv-compose-material = "1.0.0"
-versions = "0.51.0"
+immutable = "0.4.0"
+kotlin = "2.2.0"
+lang = "3.18.0"
+publish = "0.34.0"
+serialization = "1.9.0"
+tv-compose-material = "1.0.1"
+versions = "0.52.0"
 
 [libraries]
 android = { group = "androidx.core", name = "core-ktx", version.ref = "android-core" }
@@ -24,8 +23,6 @@ tv-compose-material = { group = "androidx.tv", name = "tv-material", version.ref
 coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "coroutines" }
-decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
-decompose-compose = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
 immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "immutable" }
 lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "lang" }
 serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
