@@ -49,6 +49,48 @@ jobs:
           name: local-core-repo
           path: ~/.m2/repository
 
+  build-wanakana:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build WanaKana
+        continue-on-error: true
+        run: ./gradlew :tooling-wanakana:build
+
+      - name: Cache WanaKana
+        continue-on-error: true
+        run: ./gradlew :tooling-wanakana:publishToMavenLocal
+
+      - name: Upload Local Maven Repository
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-wanakana-repo
+          path: ~/.m2/repository
+
   build-async:
     needs: build-core
     runs-on: ubuntu-latest
@@ -200,7 +242,7 @@ jobs:
           path: ~/.m2/repository
 
   publish-wiki:
-    needs: [build-core, build-async, build-country, build-compose]
+    needs: [build-core, build-async, build-country, build-compose, build-wanakana]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -244,6 +286,13 @@ jobs:
           name: local-compose-repo
           path: ./tmp-compose-repo
 
+      - name: Download Local WanaKana Repository
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: local-wanakana-repo
+          path: ./tmp-wanakana-repo
+
       - name: Merge all local repos into the main .m2 directory
         continue-on-error: true
         run: |
@@ -252,7 +301,8 @@ jobs:
           cp -r ./tmp-async-repo/. ~/.m2/repository/
           cp -r ./tmp-country-repo/. ~/.m2/repository/
           cp -r ./tmp-compose-repo/. ~/.m2/repository/
-          
+          cp -r ./tmp-wanakana-repo/. ~/.m2/repository/
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 

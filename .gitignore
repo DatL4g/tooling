@@ -24,7 +24,7 @@ iosApp/iosApp.xcodeproj/*
 
 # Files for the ART/Dalvik VM
 *.dex
-
+*yarn.lock
 # Java class files
 *.class
 

@@ -4,6 +4,7 @@ include(":tooling")
 include(":tooling-async")
 include(":tooling-compose")
 include(":tooling-country")
+include(":tooling-wanakana")
 
 pluginManagement {
     repositories {
