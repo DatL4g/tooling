@@ -1,5 +1,6 @@
 package dev.datlag.tooling.wanakana
 
+import dev.datlag.tooling.wanakana.common.hasJapanese
 import dev.datlag.tooling.wanakana.common.isHiragana
 import dev.datlag.tooling.wanakana.common.isJapanese
 import dev.datlag.tooling.wanakana.common.isKana
@@ -91,6 +92,19 @@ data object WanaKana {
      */
     @JvmStatic
     fun isJapanese(input: Char): Boolean = input.isJapanese()
+
+    /**
+     * Returns `true` if [input] is [Kana](https://en.wikipedia.org/wiki/Kana).
+     *
+     * For example:
+     * - `isKana("あ")` => `true`
+     * - `isKana("ア")` => `true`
+     * - `isKana("あーア")` => `true`
+     * - `isKana("A")` => `false`
+     * - `isKana("あAア")` => `true`
+     */
+    @JvmStatic
+    fun hasJapanese(input: String): Boolean = input.hasJapanese()
 
     /**
      * Returns `true` if [input] is [Kana](https://en.wikipedia.org/wiki/Kana).

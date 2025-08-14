@@ -18,6 +18,10 @@ internal fun String.isJapanese(allowed: Regex? = null): Boolean {
     }
 }
 
+internal fun String.hasJapanese(): Boolean {
+    return any { char -> char.isJapanese() }
+}
+
 internal fun String.isKanji(): Boolean {
     return all { char ->
         char.isKanji()
