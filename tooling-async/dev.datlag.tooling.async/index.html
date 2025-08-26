@@ -45,7 +45,12 @@
         </div>
         <div class="navigation-controls">
         <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling-async/androidMain">android</button>
                 <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling-async/commonMain">common</button>
+                <button class="platform-tag platform-selector js-like" data-active="" data-filter=":tooling-async/jsMain">js</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tooling-async/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":tooling-async/nativeMain">native</button>
+                <button class="platform-tag platform-selector wasm-like" data-active="" data-filter=":tooling-async/wasmJsMain">wasmJs</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
@@ -54,11 +59,46 @@
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-async/androidMain" data-filter=":tooling-async/androidMain">
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
                         <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
                             <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":tooling-async/commonMain" data-filter=":tooling-async/commonMain">
                                 <span class="checkbox--icon"></span>
                                 common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-async/jsMain" data-filter=":tooling-async/jsMain">
+                                <span class="checkbox--icon"></span>
+                                js
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-async/jvmMain" data-filter=":tooling-async/jvmMain">
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-async/nativeMain" data-filter=":tooling-async/nativeMain">
+                                <span class="checkbox--icon"></span>
+                                native
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option wasm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":tooling-async/wasmJsMain" data-filter=":tooling-async/wasmJsMain">
+                                <span class="checkbox--icon"></span>
+                                wasmJs
                             </label>
                         </li>
                 </ul>
@@ -90,14 +130,101 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="package" id="content" pageids="tooling-async::dev.datlag.tooling.async////PointingToDeclaration//-368383630">
+<div class="main-content" data-page-type="package" id="content" pageids="tooling-async::dev.datlag.tooling.async////PointingToDeclaration//569027113">
   <div class="breadcrumbs"><a href="../index.html">tooling-async</a><span class="delimiter">/</span><span class="current">dev.datlag.tooling.async</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
     <div class="tabs-section-body">
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-2124697477%2FProperties%2F569027113" anchor-label="TargetDefault" id="-2124697477%2FProperties%2F569027113" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-target-default.html"><span>Target</span><wbr><span><span>Default</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2124697477%2FProperties%2F569027113"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-async/androidMain" data-filterable-set=":tooling-async/androidMain" data-active="" data-toggle=":tooling-async/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain" data-toggle=":tooling-async/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jsMain" data-filterable-set=":tooling-async/jsMain" data-toggle=":tooling-async/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jvmMain" data-filterable-set=":tooling-async/jvmMain" data-toggle=":tooling-async/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling-async/nativeMain" data-filterable-set=":tooling-async/nativeMain" data-toggle=":tooling-async/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":tooling-async/wasmJsMain" data-filterable-set=":tooling-async/wasmJsMain" data-toggle=":tooling-async/wasmJsMain">wasmJs</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":tooling-async/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div><div class="brief "><p class="paragraph">The default dispatcher on the current platform.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-default.html">TargetDefault</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="975552984%2FProperties%2F569027113" anchor-label="TargetIO" id="975552984%2FProperties%2F569027113" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-target-i-o.html"><span>Target</span><wbr><span><span>IO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="975552984%2FProperties%2F569027113"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-async/androidMain" data-filterable-set=":tooling-async/androidMain" data-active="" data-toggle=":tooling-async/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain" data-toggle=":tooling-async/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jsMain" data-filterable-set=":tooling-async/jsMain" data-toggle=":tooling-async/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jvmMain" data-filterable-set=":tooling-async/jvmMain" data-toggle=":tooling-async/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling-async/nativeMain" data-filterable-set=":tooling-async/nativeMain" data-toggle=":tooling-async/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":tooling-async/wasmJsMain" data-filterable-set=":tooling-async/wasmJsMain" data-toggle=":tooling-async/wasmJsMain">wasmJs</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":tooling-async/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div><div class="brief "><p class="paragraph">The IO dispatcher on the current platform.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-i-o.html">TargetIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1541501829%2FProperties%2F569027113" anchor-label="TargetMain" id="1541501829%2FProperties%2F569027113" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-target-main.html"><span>Target</span><wbr><span><span>Main</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1541501829%2FProperties%2F569027113"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-async/androidMain" data-filterable-set=":tooling-async/androidMain" data-active="" data-toggle=":tooling-async/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain" data-toggle=":tooling-async/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jsMain" data-filterable-set=":tooling-async/jsMain" data-toggle=":tooling-async/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jvmMain" data-filterable-set=":tooling-async/jvmMain" data-toggle=":tooling-async/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling-async/nativeMain" data-filterable-set=":tooling-async/nativeMain" data-toggle=":tooling-async/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":tooling-async/wasmJsMain" data-filterable-set=":tooling-async/wasmJsMain" data-toggle=":tooling-async/wasmJsMain">wasmJs</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":tooling-async/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div><div class="brief "><p class="paragraph">The main dispatcher on the current platform.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-target-main.html">TargetMain</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1388258048%2FProperties%2F569027113" anchor-label="Virtual" id="-1388258048%2FProperties%2F569027113" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain" data-filterable-set=":tooling-async/commonMain,:tooling-async/androidMain,:tooling-async/jsMain,:tooling-async/jvmMain,:tooling-async/nativeMain,:tooling-async/wasmJsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-virtual.html"><span><span>Virtual</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1388258048%2FProperties%2F569027113"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":tooling-async/androidMain" data-filterable-set=":tooling-async/androidMain" data-active="" data-toggle=":tooling-async/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain" data-toggle=":tooling-async/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jsMain" data-filterable-set=":tooling-async/jsMain" data-toggle=":tooling-async/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":tooling-async/jvmMain" data-filterable-set=":tooling-async/jvmMain" data-toggle=":tooling-async/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":tooling-async/nativeMain" data-filterable-set=":tooling-async/nativeMain" data-toggle=":tooling-async/nativeMain">native</button><button class="platform-bookmark" data-filterable-current=":tooling-async/wasmJsMain" data-filterable-set=":tooling-async/wasmJsMain" data-toggle=":tooling-async/wasmJsMain">wasmJs</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":tooling-async/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Virtual Dispatcher available on JVM.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/nativeMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":tooling-async/wasmJsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual.html">Virtual</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1896507482%2FProperties%2F-368383630" anchor-label="VirtualIO" id="1896507482%2FProperties%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-virtual-i-o.html"><span>Virtual</span><wbr><span><span>IO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1896507482%2FProperties%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="kotlinx.coroutines/Dispatchers///PointingToDeclaration/">Dispatchers</span><span class="token punctuation">.</span><a href="-virtual-i-o.html">VirtualIO</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div><div class="brief "><p class="paragraph">Virtual Dispatcher available on JVM or IO fallback.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
         <div class="table"><a data-name="1696729090%2FFunctions%2F-368383630" anchor-label="collectSafe" id="1696729090%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
@@ -111,6 +238,126 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt; </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="collect-safe.html"><span class="token function">collectSafe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">collector<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/FlowCollector///PointingToDeclaration/">FlowCollector</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt; </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="collect-safe.html"><span class="token function">collectSafe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">collector<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/FlowCollector///PointingToDeclaration/">FlowCollector</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><br><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt; </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="collect-safe.html"><span class="token function">collectSafe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">catchTimeout<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">collector<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/FlowCollector///PointingToDeclaration/">FlowCollector</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Collect <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> without throwing an exception, except <span data-unresolved-link="kotlinx.coroutines/CancellationException///PointingToDeclaration/">CancellationException</span> to cancel parent jobs. Tries to emit a single value if <span data-unresolved-link="kotlinx.coroutines.flow/Flow/collect/#kotlinx.coroutines.flow.FlowCollector[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/">Flow.collect</span> can not be called.</p></div><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt; </span><span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="collect-safe.html"><span class="token function">collectSafe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">catchTimeout<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">collector<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/FlowCollector///PointingToDeclaration/">FlowCollector</span><span class="token operator">&lt;</span><a href="collect-safe.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Collect <span data-unresolved-link="kotlinx.coroutines.flow/StateFlow///PointingToDeclaration/">StateFlow</span> without throwing an exception, except <span data-unresolved-link="kotlinx.coroutines/CancellationException///PointingToDeclaration/">CancellationException</span> to cancel parent jobs. Tries to emit a single value if <span data-unresolved-link="kotlinx.coroutines.flow/StateFlow/collect/#kotlinx.coroutines.flow.FlowCollector[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/">StateFlow.collect</span> can not be called.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-118210861%2FFunctions%2F-368383630" anchor-label="defaultDispatcher" id="-118210861%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="default-dispatcher.html"><span>default</span><wbr><span><span>Dispatcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-118210861%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="default-dispatcher.html"><span class="token function">defaultDispatcher</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div><div class="brief "><p class="paragraph">Handy equivalent of <a href="-target-default.html">Dispatchers.TargetDefault</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-235696302%2FFunctions%2F-368383630" anchor-label="ioDispatcher" id="-235696302%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="io-dispatcher.html"><span>io</span><wbr><span><span>Dispatcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-235696302%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="io-dispatcher.html"><span class="token function">ioDispatcher</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div><div class="brief "><p class="paragraph">Handy equivalent of <a href="-target-i-o.html">Dispatchers.TargetIO</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1330503779%2FFunctions%2F-368383630" anchor-label="launchDefault" id="1330503779%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="launch-default.html"><span>launch</span><wbr><span><span>Default</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1330503779%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><a href="launch-default.html"><span class="token function">launchDefault</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//launch/kotlinx.coroutines.CoroutineScope#kotlin.coroutines.CoroutineContext#kotlinx.coroutines.CoroutineStart#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,kotlin.Unit]/PointingToDeclaration/">CoroutineScope.launch</span> to launch directly with the <a href="default-dispatcher.html">defaultDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-897843972%2FFunctions%2F-368383630" anchor-label="launchIO" id="-897843972%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="launch-i-o.html"><span>launch</span><wbr><span><span>IO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-897843972%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><a href="launch-i-o.html"><span class="token function">launchIO</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//launch/kotlinx.coroutines.CoroutineScope#kotlin.coroutines.CoroutineContext#kotlinx.coroutines.CoroutineStart#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,kotlin.Unit]/PointingToDeclaration/">CoroutineScope.launch</span> to launch directly with the <a href="io-dispatcher.html">ioDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-260254039%2FFunctions%2F-368383630" anchor-label="launchMain" id="-260254039%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="launch-main.html"><span>launch</span><wbr><span><span>Main</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-260254039%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><a href="launch-main.html"><span class="token function">launchMain</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//launch/kotlinx.coroutines.CoroutineScope#kotlin.coroutines.CoroutineContext#kotlinx.coroutines.CoroutineStart#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,kotlin.Unit]/PointingToDeclaration/">CoroutineScope.launch</span> to launch directly with the <a href="main-dispatcher.html">mainDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1266760711%2FFunctions%2F-368383630" anchor-label="launchVirtual" id="-1266760711%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="launch-virtual.html"><span>launch</span><wbr><span><span>Virtual</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1266760711%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><a href="launch-virtual.html"><span class="token function">launchVirtual</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fallback<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="923627251%2FFunctions%2F-368383630" anchor-label="launchVirtualIO" id="923627251%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="launch-virtual-i-o.html"><span>launch</span><wbr><span>Virtual</span><wbr><span><span>IO</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="923627251%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><a href="launch-virtual-i-o.html"><span class="token function">launchVirtualIO</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/Job///PointingToDeclaration/">Job</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="111387999%2FFunctions%2F-368383630" anchor-label="mainDispatcher" id="111387999%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="main-dispatcher.html"><span>main</span><wbr><span><span>Dispatcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="111387999%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="main-dispatcher.html"><span class="token function">mainDispatcher</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/MainCoroutineDispatcher///PointingToDeclaration/">MainCoroutineDispatcher</span></div><div class="brief "><p class="paragraph">Handy equivalent of <a href="-target-main.html">Dispatchers.TargetMain</a>.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -156,6 +403,111 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="suspend-safe-cast.html">T</a><span class="token operator">&gt; </span><a href="suspend-safe-cast.html"><span class="token function">suspendSafeCast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="suspend-safe-cast.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="suspend-safe-cast.html">T</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Equivalent of a suspendable <a href="../../tooling/dev.datlag.tooling/index.html">safeCast</a>, able to throw <span data-unresolved-link="kotlinx.coroutines/CancellationException///PointingToDeclaration/">CancellationException</span> to cancel parent jobs.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="920416713%2FFunctions%2F-368383630" anchor-label="virtualDispatcher" id="920416713%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="virtual-dispatcher.html"><span>virtual</span><wbr><span><span>Dispatcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="920416713%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="virtual-dispatcher.html"><span class="token function">virtualDispatcher</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1522284067%2FFunctions%2F-368383630" anchor-label="virtualIODispatcher" id="1522284067%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="virtual-i-o-dispatcher.html"><span>virtual</span><wbr><span><span>IODispatcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1522284067%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="virtual-i-o-dispatcher.html"><span class="token function">virtualIODispatcher</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="118445810%2FFunctions%2F-368383630" anchor-label="withDefaultContext" id="118445810%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-default-context.html"><span>with</span><wbr><span>Default</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="118445810%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="with-default-context.html">T</a><span class="token operator">&gt; </span><a href="with-default-context.html"><span class="token function">withDefaultContext</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="with-default-context.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="with-default-context.html">T</a></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//withContext/#kotlin.coroutines.CoroutineContext#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/">withContext</span> to switch directly with the <a href="default-dispatcher.html">defaultDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="407743045%2FFunctions%2F-368383630" anchor-label="withIOContext" id="407743045%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-i-o-context.html"><span>with</span><wbr><span><span>IOContext</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="407743045%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="with-i-o-context.html">T</a><span class="token operator">&gt; </span><a href="with-i-o-context.html"><span class="token function">withIOContext</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="with-i-o-context.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="with-i-o-context.html">T</a></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//withContext/#kotlin.coroutines.CoroutineContext#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/">withContext</span> to switch directly with the <a href="io-dispatcher.html">ioDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1840822898%2FFunctions%2F-368383630" anchor-label="withMainContext" id="1840822898%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-main-context.html"><span>with</span><wbr><span>Main</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1840822898%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="with-main-context.html">T</a><span class="token operator">&gt; </span><a href="with-main-context.html"><span class="token function">withMainContext</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="with-main-context.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="with-main-context.html">T</a></div><div class="brief "><p class="paragraph">Handy equivalent of <span data-unresolved-link="kotlinx.coroutines//withContext/#kotlin.coroutines.CoroutineContext#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/">withContext</span> to switch directly with the <a href="main-dispatcher.html">mainDispatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1435049488%2FFunctions%2F-368383630" anchor-label="withVirtualContext" id="1435049488%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-virtual-context.html"><span>with</span><wbr><span>Virtual</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1435049488%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="with-virtual-context.html">T</a><span class="token operator">&gt; </span><a href="with-virtual-context.html"><span class="token function">withVirtualContext</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fallback<span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span><span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="with-virtual-context.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="with-virtual-context.html">T</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-638363454%2FFunctions%2F-368383630" anchor-label="withVirtualIOContext" id="-638363454%2FFunctions%2F-368383630" data-filterable-set=":tooling-async/commonMain"></a>
+          <div class="table-row" data-filterable-current=":tooling-async/commonMain" data-filterable-set=":tooling-async/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="with-virtual-i-o-context.html"><span>with</span><wbr><span>Virtual</span><wbr><span><span>IOContext</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-638363454%2FFunctions%2F-368383630"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tooling-async/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="with-virtual-i-o-context.html">T</a><span class="token operator">&gt; </span><a href="with-virtual-i-o-context.html"><span class="token function">withVirtualIOContext</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><span class="token keyword">suspend </span><span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="with-virtual-i-o-context.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="with-virtual-i-o-context.html">T</a></div></div></div>
                 </div>
               </div>
             </div>
