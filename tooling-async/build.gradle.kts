@@ -1,6 +1,5 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
-
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
@@ -73,10 +72,14 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     sourceSets {
-        commonMain.get().dependencies {
+        commonMain.dependencies {
             api(project(":tooling"))
 
             implementation(libs.coroutines)
+        }
+
+        androidMain.dependencies {
+            implementation(libs.coroutines.android)
         }
     }
 }

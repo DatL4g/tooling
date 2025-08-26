@@ -1,4 +1,4 @@
-package dev.datlag.tooling.compose
+package dev.datlag.tooling.async
 
 import kotlinx.coroutines.*
 
@@ -25,6 +25,10 @@ fun ioDispatcher(): CoroutineDispatcher = Dispatchers.TargetIO
  * @return the a [CoroutineDispatcher] for default operations.
  */
 fun defaultDispatcher(): CoroutineDispatcher = Dispatchers.TargetDefault
+
+fun virtualDispatcher(): CoroutineDispatcher? = Dispatchers.Virtual
+
+fun virtualIODispatcher(): CoroutineDispatcher = Dispatchers.VirtualIO
 
 /**
  * Handy equivalent of [CoroutineScope.launch] to launch directly with the [ioDispatcher].
@@ -58,6 +62,18 @@ fun CoroutineScope.launchMain(block: suspend CoroutineScope.() -> Unit): Job {
  */
 fun CoroutineScope.launchDefault(block: suspend CoroutineScope.() -> Unit): Job {
     return this.launch(defaultDispatcher()) {
+        block()
+    }
+}
+
+fun CoroutineScope.launchVirtual(fallback: CoroutineDispatcher, block: suspend CoroutineScope.() -> Unit): Job {
+    return this.launch(virtualDispatcher() ?: fallback) {
+        block()
+    }
+}
+
+fun CoroutineScope.launchVirtualIO(block: suspend CoroutineScope.() -> Unit): Job {
+    return this.launch(virtualIODispatcher()) {
         block()
     }
 }
@@ -100,6 +116,23 @@ suspend fun <T> withDefaultContext(
     block: suspend CoroutineScope.() -> T
 ): T {
     return withContext(defaultDispatcher()) {
+        block()
+    }
+}
+
+suspend fun <T> withVirtualContext(
+    fallback: CoroutineDispatcher,
+    block: suspend CoroutineScope.() -> T
+): T {
+    return withContext(virtualDispatcher() ?: fallback) {
+        block()
+    }
+}
+
+suspend fun <T> withVirtualIOContext(
+    block: suspend CoroutineScope.() -> T
+): T {
+    return withContext(virtualIODispatcher()) {
         block()
     }
 }
